@@ -15,6 +15,70 @@ const savedTheme = localStorage.getItem('theme') ||
 // Get saved language preference or default to English
 const savedLang = localStorage.getItem('language') || 'en';
 
+// Translation object containing all text in both languages
+const translations = {
+  en: {
+    brand_name: "Arab Contractors",
+    brand_name_ar: "Arab Contractors", // For consistency
+    nav: {
+      home: "Home",
+      about: "About Us",
+      leadership: "Leadership",
+      news: "News",
+      hiring: "Hiring",
+      sustainability: "Sustainability",
+      privacy: "Privacy Policy",
+      contact: "Contact",
+      contact_us: "Contact Us",
+      offices: "Offices"
+    },
+    lang_toggle: "AR",
+    home_description: "Welcome to Arab Contractors, your trusted partner for construction services.",
+    footer_description: "Building the future with excellence, innovation, and sustainable development.",
+    footer_quick_links: "Quick Links",
+    footer_services: "Services",
+    footer_service_infrastructure: "Infrastructure",
+    footer_service_construction: "Construction",
+    footer_service_engineering: "Engineering",
+    footer_service_consulting: "Consulting",
+    footer_contact: "Contact Information",
+    footer_address: "Cairo, Egypt",
+    footer_phone: "+20 2 1234 5678",
+    footer_email: "info@arabcontractors.com",
+    footer_copyright: "© 2025 Arab Contractors. All rights reserved."
+  },
+  ar: {
+    brand_name: "المقاولون العرب",
+    brand_name_ar: "المقاولون العرب",
+    nav: {
+      home: "الرئيسية",
+      about: "عن الشركة",
+      leadership: "القيادة",
+      news: "الأخبار",
+      hiring: "التوظيف",
+      sustainability: "الاستدامة",
+      privacy: "سياسة الخصوصية",
+      contact: "اتصل بنا",
+      contact_us: "اتصل بنا",
+      offices: "المكاتب"
+    },
+    lang_toggle: "EN",
+    home_description: "مرحبًا بكم في المقاولون العرب، شريككم الموثوق لخدمات البناء.",
+    footer_description: "نبني المستقبل بالتميز والابتكار والتنمية المستدامة.",
+    footer_quick_links: "روابط سريعة",
+    footer_services: "الخدمات",
+    footer_service_infrastructure: "البنية التحتية",
+    footer_service_construction: "البناء",
+    footer_service_engineering: "الهندسة",
+    footer_service_consulting: "الاستشارات",
+    footer_contact: "معلومات الاتصال",
+    footer_address: "القاهرة، مصر",
+    footer_phone: "+20 2 1234 5678",
+    footer_email: "info@arabcontractors.com",
+    footer_copyright: "© 2025 المقاولون العرب. جميع الحقوق محفوظة."
+  }
+};
+
 // Apply initial theme and language settings
 document.documentElement.setAttribute('data-theme', savedTheme);
 document.documentElement.setAttribute('lang', savedLang);
@@ -22,6 +86,21 @@ document.documentElement.setAttribute('dir', savedLang === 'ar' ? 'rtl' : 'ltr')
 
 // Update theme icon to match current theme
 updateThemeIcon(savedTheme);
+
+// Fallback initialization for immediate language setup
+if (document.readyState === 'loading') {
+  // DOM is still loading, wait for DOMContentLoaded
+} else {
+  // DOM is already loaded, initialize immediately
+  setLanguageWithoutAnimation(savedLang);
+  initializeBrandNameDisplay(savedLang);
+  updateLanguageToggleButton(savedLang);
+  
+  // If page is already complete, hide spinner immediately
+  if (document.readyState === 'complete') {
+    hideLoadingSpinner();
+  }
+}
 
 // #endregion
 
@@ -62,75 +141,14 @@ function toggleTheme() {
 // Translation system and language management
 // =============================================================================
 
-// Translation object containing all text in both languages
-
-// Initialize Language
-const translations = {
-  en: {
-    brand_name: "Arab Contractors",
-    nav: {
-      home: "Home",
-      about: "About Us",
-      leadership: "Leadership",
-      news: "News",
-      hiring: "Hiring",
-      sustainability: "Sustainability",
-      privacy: "Privacy Policy",
-      contact: "Contact",
-      contact_us: "Contact Us",
-      offices: "Offices"
-    },
-    lang_toggle: "AR",
-    home_description: "Welcome to Arab Contractors, your trusted partner for construction services.",
-    footer_description: "Building the future with excellence, innovation, and sustainable development.",
-    footer_quick_links: "Quick Links",
-    footer_services: "Services",
-    footer_service_infrastructure: "Infrastructure",
-    footer_service_construction: "Construction",
-    footer_service_engineering: "Engineering",
-    footer_service_consulting: "Consulting",
-    footer_contact: "Contact Information",
-    footer_address: "Cairo, Egypt",
-    footer_phone: "+20 2 1234 5678",
-    footer_email: "info@arabcontractors.com",
-    footer_copyright: "© 2025 Arab Contractors. All rights reserved."
-  },
-  ar: {
-    brand_name: "المقاولون العرب",
-    nav: {
-      home: "الرئيسية",
-      about: "عن الشركة",
-      leadership: "القيادة",
-      news: "الأخبار",
-      hiring: "التوظيف",
-      sustainability: "الاستدامة",
-      privacy: "سياسة الخصوصية",
-      contact: "اتصل بنا",
-      contact_us: "اتصل بنا",
-      offices: "المكاتب"
-    },
-    lang_toggle: "EN",
-    home_description: "مرحبًا بكم في المقاولون العرب، شريككم الموثوق لخدمات البناء.",
-    footer_description: "نبني المستقبل بالتميز والابتكار والتنمية المستدامة.",
-    footer_quick_links: "روابط سريعة",
-    footer_services: "الخدمات",
-    footer_service_infrastructure: "البنية التحتية",
-    footer_service_construction: "البناء",
-    footer_service_engineering: "الهندسة",
-    footer_service_consulting: "الاستشارات",
-    footer_contact: "معلومات الاتصال",
-    footer_address: "القاهرة، مصر",
-    footer_phone: "+20 2 1234 5678",
-    footer_email: "info@arabcontractors.com",
-    footer_copyright: "© 2025 المقاولون العرب. جميع الحقوق محفوظة."
-  }
-};
+// Translation object is now defined in the Initialization region above
 
 /**
  * Sets language without triggering animations (for initial page load)
  * @param {string} lang - 'en' or 'ar'
  */
 function setLanguageWithoutAnimation(lang) {
+  console.log('Setting language without animation:', lang);
   // Update document attributes
   document.documentElement.setAttribute('lang', lang);
   document.documentElement.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
@@ -166,6 +184,9 @@ function setLanguageWithoutAnimation(lang) {
       'https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css';
   }
   
+  // Update language toggle button
+  updateLanguageToggleButton(lang);
+  
   // Save language preference
   localStorage.setItem('language', lang);
 }
@@ -175,6 +196,7 @@ function setLanguageWithoutAnimation(lang) {
  * @param {string} lang - 'en' or 'ar'
  */
 function setLanguage(lang) {
+  console.log('Setting language to:', lang);
   setLanguageWithoutAnimation(lang);
   animateBrandName(lang);
 }
@@ -201,6 +223,28 @@ function initializeBrandNameDisplay(lang) {
     if (englishElement) {
       englishElement.style.display = 'block';
       englishElement.textContent = translations.en.brand_name;
+    }
+  }
+}
+
+/**
+ * Updates the language toggle button text based on current language
+ * @param {string} lang - 'en' or 'ar'
+ */
+function updateLanguageToggleButton(lang) {
+  const langToggle = document.getElementById('langToggle');
+  if (langToggle) {
+    const enText = langToggle.querySelector('.en-text');
+    const arText = langToggle.querySelector('.ar-text');
+    
+    if (lang === 'ar') {
+      // Show "EN" button when current language is Arabic
+      if (enText) enText.style.display = 'none';
+      if (arText) arText.style.display = 'block';
+    } else {
+      // Show "AR" button when current language is English
+      if (arText) arText.style.display = 'none';
+      if (enText) enText.style.display = 'block';
     }
   }
 }
@@ -298,6 +342,7 @@ document.getElementById('themeToggle')?.addEventListener('click', toggleTheme);
 document.getElementById('langToggle')?.addEventListener('click', () => {
   const currentLang = document.documentElement.getAttribute('lang');
   const newLang = currentLang === 'en' ? 'ar' : 'en';
+  console.log('Language toggle clicked:', currentLang, '->', newLang);
   setLanguage(newLang);
 });
 
@@ -320,13 +365,38 @@ window.addEventListener('scroll', () => {
 
 // Page load initialization
 document.addEventListener('DOMContentLoaded', () => {
+  // Initialize language immediately for page load
+  setLanguageWithoutAnimation(savedLang);
+  
   // Initialize brand name display first (immediate)
   initializeBrandNameDisplay(savedLang);
+  
+  // Update language toggle button
+  updateLanguageToggleButton(savedLang);
+  
+  // Ensure spinner is hidden with fallback timeout
+  ensureSpinnerHidden();
+  
+  // Check if page is already complete
+  if (document.readyState === 'complete') {
+    hideLoadingSpinner();
+  } else {
+    // Wait for page to be fully loaded
+    window.addEventListener('load', () => {
+      hideLoadingSpinner();
+    });
+  }
   
   // Start animation after delay for better UX
   setTimeout(() => {
     animateBrandName(savedLang);
   }, 1000);
+});
+
+// Additional load event listener for cases where page loads very quickly
+window.addEventListener('load', () => {
+  // Hide spinner when page is fully loaded
+  hideLoadingSpinner();
 });
 
 // #endregion
@@ -378,6 +448,42 @@ function getElement(id) {
  */
 function querySelector(selector) {
   return document.querySelector(selector);
+}
+
+/**
+ * Shows the loading spinner
+ */
+function showLoadingSpinner() {
+  const spinner = document.getElementById('loadingSpinner');
+  if (spinner) {
+    spinner.classList.remove('hidden');
+  }
+}
+
+/**
+ * Hides the loading spinner with smooth transition
+ */
+function hideLoadingSpinner() {
+  const spinner = document.getElementById('loadingSpinner');
+  if (spinner) {
+    spinner.classList.add('hidden');
+    // Remove spinner from DOM after transition
+    setTimeout(() => {
+      if (spinner && spinner.parentNode) {
+        spinner.parentNode.removeChild(spinner);
+      }
+    }, 500);
+  }
+}
+
+/**
+ * Ensures loading spinner is hidden with fallback timeout
+ */
+function ensureSpinnerHidden() {
+  // Fallback: Hide spinner after maximum 5 seconds
+  setTimeout(() => {
+    hideLoadingSpinner();
+  }, 5000);
 }
 
 // #endregion
