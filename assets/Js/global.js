@@ -24,11 +24,20 @@ if (document.readyState !== 'loading') {
 // #endregion
 
 // #region Event Listeners
-document.getElementById('themeToggle')?.addEventListener('click', toggleTheme);
-document.getElementById('langToggle')?.addEventListener('click', () => {
-  const current = document.documentElement.getAttribute('lang');
-  setLanguage(current === 'en' ? 'ar' : 'en');
-});
+// Safe event listener attachment with null checks
+const themeToggle = document.getElementById('themeToggle');
+const langToggle = document.getElementById('langToggle');
+
+if (themeToggle) {
+  themeToggle.addEventListener('click', toggleTheme);
+}
+
+if (langToggle) {
+  langToggle.addEventListener('click', () => {
+    const current = document.documentElement.getAttribute('lang');
+    setLanguage(current === 'en' ? 'ar' : 'en');
+  });
+}
 
 window.addEventListener('scroll', debounce(() => {
   const navbar = document.getElementById('mainNavbar');

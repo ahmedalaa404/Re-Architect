@@ -1,7 +1,7 @@
 // lang.js
 
 import { translations } from './Translations.js';
-import { animateBrandName, initializeBrandNameDisplay } from './animations.js';
+import { animateBrandName, initializeBrandNameDisplay } from './Animations.js';
 
 export function applyLanguageToDOM(lang) {
   document.documentElement.setAttribute('lang', lang);
@@ -46,9 +46,6 @@ export function initializeLanguageSettings(lang) {
   updateBootstrapCSS(lang);
   updateLanguageToggleButton(lang);
   initializeBrandNameDisplay(lang);
-  if (document.readyState === 'complete') {
-    hideLoadingSpinner();
-  }
 }
 
 export function setLanguage(lang) {
