@@ -1,0 +1,34 @@
+{
+    "en": {
+      "brand_name": "Arab Contractors",
+      "brand_name_ar": "Arab Contractors",
+      "nav": {
+        "home": "Home",
+        "about": "About",
+        "leadership": "Leadership",
+        "news": "News",
+        "hiring": "Hiring",
+        "sustainability": "Sustainability",
+        "privacy": "Privacy Policy",
+        "contact": "Contact",
+        "contact_us": "Contact Us",
+        "offices": "Offices"
+      }
+    },
+    "ar": {
+      "brand_name": "المقاولون العرب",
+      "brand_name_ar": "المقاولون العرب",
+      "nav": {
+        "home": "الرئيسية",
+        "about": "من نحن",
+        "leadership": "القيادة",
+        "news": "الأخبار",
+        "hiring": "التوظيف",
+        "sustainability": "الاستدامة",
+        "privacy": "سياسة الخصوصية",
+        "contact": "اتصل بنا",
+        "contact_us": "اتصل بنا",
+        "offices": "المكاتب"
+      }
+    }
+  }
