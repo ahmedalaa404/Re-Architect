@@ -17,6 +17,15 @@ export const translations = {
         offices: "Offices"
       },
       lang_toggle: "AR",
+
+      about_title: "About Arab Contractors",
+      about_description: "Founded in 1955, Arab Contractors has been at the forefront of construction and engineering excellence in the Middle East. We specialize in infrastructure development, commercial construction, and sustainable building solutions.",
+      about_projects: "Projects",
+      about_years: "Years",
+      about_employees: "Employees",
+      about_read_more: "Read More",
+
+
       home_description: "Welcome to Arab Contractors, your trusted partner for construction services.",
       footer_description: "Building the future with excellence, innovation, and sustainable development.",
       footer_quick_links: "Quick Links",
@@ -47,6 +56,14 @@ export const translations = {
         offices: "المكاتب"
       },
       lang_toggle: "EN",
+      about_title: "عن المقاولون العرب",
+      about_description: "تأسست شركة المقاولون العرب في عام 1955، وكانت في طليعة التميز في البناء والهندسة في الشرق الأوسط. نتخصص في تطوير البنية التحتية والبناء التجاري والحلول المستدامة.",
+      about_projects: "مشروع",
+      about_years: "سنة",
+      about_employees: "موظف",
+      about_read_more: "اقرأ المزيد",
+
+    
       home_description: "مرحبًا بكم في المقاولون العرب، شريككم الموثوق لخدمات البناء.",
       footer_description: "نبني المستقبل بالتميز والابتكار والتنمية المستدامة.",
       footer_quick_links: "روابط سريعة",
