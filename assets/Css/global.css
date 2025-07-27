@@ -96,8 +96,16 @@
     color: var(--white) !important;
   }
   
+  .navbar-collapse.collapse.show
+  {
+    background: var(--dark-charcoal) !important;
+    border-radius: 20px;
+
+  }
+
   #mainNavbar.scrolled .navbar-nav .nav-link {
     color: var(--white) !important;
+
   }
   
   #mainNavbar.scrolled .navbar-controls .btn {
@@ -237,15 +245,12 @@
   [data-theme="dark"] .dropdown-item {
     color: var(--text-light);
   }
-  
-  .dropdown-item:hover {
-    background: linear-gradient(135deg, var(--primary-gold), var(--secondary-gold));
-    color: var(--white);
-  }
-  
+
 
   
-  .dropdown-item:active {
+  .dropdown-item:active  ,
+  .dropdown-item:hover  {
     background: var(--primary-gold);
     color: var(--white);
+    border-radius: 10px !important;
   }
