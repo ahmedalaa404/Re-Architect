@@ -98,7 +98,6 @@
   
   .navbar-collapse.collapse.show
   {
-    background: var(--dark-charcoal) !important;
     border-radius: 20px;
 
   }
@@ -245,12 +244,35 @@
   [data-theme="dark"] .dropdown-item {
     color: var(--text-light);
   }
-
-
-  
   .dropdown-item:active  ,
   .dropdown-item:hover  {
     background: var(--primary-gold);
     color: var(--white);
     border-radius: 10px !important;
   }
+
+  @media (max-width: 991.98px) { /* For small screens and below */
+    .navbar-collapse.collapse.show {
+      background-color: var(--dark-charcoal);
+      border-radius: 20px !important;
+      padding: 1rem;
+    }
+    .navbar-controls{
+        padding: 2rem;
+    }
+    .carousel-inner img{
+        height: 100vh;
+    }
+
+
+  }
+
+  @media (min-width: 991.98px) { /* For small screens and below */
+    #mainCarousel
+    {
+        height: 100vh;
+    }
+
+  }
+
+
