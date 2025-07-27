@@ -29,7 +29,7 @@ export const translations = {
       footer_address: "Cairo, Egypt",
       footer_phone: "+20 2 1234 5678",
       footer_email: "info@arabcontractors.com",
-      copyright: "© 2025 Arab Contractors. All rights reserved."
+      footer_copyright: "© 2025 Arab Contractors. All rights reserved."
     },
     ar: {
       brand_name: "المقاولون العرب",
@@ -59,6 +59,6 @@ export const translations = {
       footer_address: "القاهرة، مصر",
       footer_phone: "+20 2 1234 5678",
       footer_email: "info@arabcontractors.com",
-      copyright: "© 2025 المقاولون العرب. جميع الحقوق محفوظة."
+      footer_copyright: "© 2025 المقاولون العرب. جميع الحقوق محفوظة."
     }
   };
