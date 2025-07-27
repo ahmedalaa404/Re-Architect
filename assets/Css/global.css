@@ -1,7 +1,7 @@
 /* Global Variables and Root Styles */
 :root {
     --white: #FFFFFF;
-    --dark-charcoal: #2c3e50;
+    --dark-charcoal: #181818;
     --primary-gold: #f39c12;
     --secondary-gold: #e67e22;
     --text-light: #ecf0f1;
@@ -16,12 +16,12 @@
   /* Dark Mode Styles */
   [data-theme="dark"] {
     --white: #ffff;
-    --dark-charcoal: #000000;
+    --dark-charcoal: #181818;
     --text-light: #ffffff;
     --text-dark: #ecf0f1;
-    --bg-light: #2c2c2c;
+    --bg-light: #181818;
     --border-color: #555;
-    --navbar-color: #000000;
+    --navbar-color: #181818;
   }
   
   /* General Styles */
@@ -188,11 +188,62 @@
     color: var(--dark-charcoal);
   }
   
+
+  
+
+
+
+
+
+
+  .navbar-nav .nav-link {
+    font-variation-settings: "wght" 400;
+    position: relative;
+    transition: 
+      color 0.3s ease-in-out,
+      font-variation-settings 0.3s ease-in-out;
+  }
+  
+  /* Hover and Active States */
   .navbar-nav .nav-link:hover,
   .navbar-nav .nav-link.active {
     color: var(--primary-gold) !important;
-    font-weight: bold;
+    font-variation-settings: "wght" 700;
   }
+  
+  /* Underline Animation */
+  .navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    transition: width 0.3s ease-in-out;
+  }
+  
+  .navbar-nav .nav-link:hover::after,
+  .navbar-nav .nav-link.active::after {
+    width: 100%;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   
   .navbar-nav .nav-link::after {
     content: '';
