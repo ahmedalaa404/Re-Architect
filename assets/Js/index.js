@@ -1,13 +1,4 @@
-let translations = {};
-fetch('assets/translations/translations.json')
-  .then(response => response.json())
-  .then(data => {
-    translations = data;
-    const savedLang = localStorage.getItem('language') || 'en';
-    setAboutLanguage(savedLang);
-    AOS.init({ duration: 1000, once: true, offset: 100 });
-  })
-  .catch(error => console.error('Error loading translations:', error));
+
 
 // Set About Section Language
 function setAboutLanguage(lang) {
