@@ -452,7 +452,6 @@ footer {
   }
   
   [data-theme="dark"] .footer-section p,
-  [data-theme="dark"] .footer-section ul li a,
   [data-theme="dark"] .footer-bottom p,
   [data-theme="dark"] .footer-bottom a {
     color: var(--text-light);
