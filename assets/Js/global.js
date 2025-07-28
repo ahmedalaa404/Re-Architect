@@ -95,8 +95,6 @@ function ensureSpinnerHidden() {
 
 
 
-AOS.init();
-
 
 
 
