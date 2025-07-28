@@ -91,3 +91,12 @@ function ensureSpinnerHidden() {
   setTimeout(hideLoadingSpinner, 5000);
 }
 // #endregion
+
+
+
+
+AOS.init();
+
+
+
+
