@@ -95,128 +95,262 @@
 
 
 
+
 <!-- News Section -->
-<section class="news-section py-5">
+<section id="news" class="py-5">
     <div class="container">
         <!-- Section Header -->
-        <div class="text-center mb-5" data-aos="fade-up">
+        <div class="text-center mb-5" data-aos="zoom-in">
             <h2 class="section-title display-4 fw-bold" data-translate="news.title">Latest News & Updates</h2>
             <div class="title-underline"></div>
             <p class="lead mt-3" data-translate="news.lead">Stay informed about our latest projects, achievements, and company news</p>
         </div>
 
         <!-- News Filters -->
-        <div class="news-filters mb-5" data-aos="fade-up" data-aos-delay="200">
-            <div class="d-flex justify-content-center flex-wrap gap-3">
-                <button class="filter-btn active" data-filter="all" data-translate="news.filters.all">All News</button>
-                <button class="filter-btn" data-filter="projects" data-translate="news.filters.projects">Projects</button>
-                <button class="filter-btn" data-filter="awards" data-translate="news.filters.awards">Awards</button>
-                <button class="filter-btn" data-filter="partnerships" data-translate="news.filters.partnerships">Partnerships</button>
-                <button class="filter-btn" data-filter="sustainability" data-translate="news.filters.sustainability">Sustainability</button>
-            </div>
+        <div class="news-filters text-center mb-4" data-aos="fade-up">
+            <button class="filter-btn active" data-filter="all" data-translate="news.filters.all">All News</button>
+            <button class="filter-btn" data-filter="projects" data-translate="news.filters.projects">Projects</button>
+            <button class="filter-btn" data-filter="awards" data-translate="news.filters.awards">Awards</button>
+            <button class="filter-btn" data-filter="partnerships" data-translate="news.filters.partnerships">Partnerships</button>
         </div>
 
         <!-- News Grid -->
         <div class="row g-4">
             <!-- News Card 1 -->
-            <div class="col-lg-4 col-md-6" data-category="projects">
-                <div class="news-card h-100" data-aos="zoom-in" data-aos-delay="200">
-                    <div class="card-image-wrapper">
-                        <img src="https://placehold.co/600x400" class="card-img-top" alt="Metro Project">
-                        <span class="news-category" data-translate="news.items.0.category">Projects</span>
-                        <div class="card-overlay">
-                            <button class="read-more-btn" data-bs-toggle="modal" data-bs-target="#newsModal1" data-translate="news.items.0.read_more">Read More</button>
-                        </div>
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-category="projects">
+                <article class="news-card" data-bs-toggle="modal" data-bs-target="#newsModal1">
+                    <div class="news-img-wrapper">
+                        <img src="https://picsum.photos/600/400?random=1" alt="Metro Project" loading="lazy">
+                        <div class="news-category" data-translate="news.items.0.category">Projects</div>
                     </div>
-                    <div class="card-body">
-                        <div class="news-date mb-2" data-translate="news.items.0.date">December 15, 2024</div>
-                        <h5 class="card-title" data-translate="news.items.0.title">New Metro Line Completion</h5>
-                        <p class="card-text" data-translate="news.items.0.excerpt">Successfully completed construction of Cairo's fourth metro line, connecting major districts.</p>
+                    <div class="news-content">
+                        <div class="news-date" data-translate="news.items.0.date">15 Dec 2024</div>
+                        <h3 data-translate="news.items.0.title">New Metro Line Completion</h3>
+                        <p data-translate="news.items.0.excerpt">Successfully completed the construction of Cairo's fourth metro line, connecting major districts and improving public transportation.</p>
                     </div>
-                </div>
+                </article>
             </div>
 
-            <!-- Similar updates for other news cards... -->
-            <!-- News Card 2 & 3 structure remains the same but with updated classes -->
-
-        </div>
-    </div>
-
-    <!-- Enhanced Modal Structure -->
-    <div class="modal fade news-modal" id="newsModal1" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header border-0">
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="modal-image-wrapper">
-                        <img src="https://placehold.co/800x400" class="img-fluid" alt="Metro Project Details">
-                        <div class="modal-date" data-translate="news.items.0.date">December 15, 2024</div>
+            <!-- News Card 2 -->
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100" data-category="awards">
+                <article class="news-card" data-bs-toggle="modal" data-bs-target="#newsModal2">
+                    <div class="news-img-wrapper">
+                        <img src="https://picsum.photos/600/400?random=2" alt="Excellence Award" loading="lazy">
+                        <div class="news-category" data-translate="news.items.1.category">Awards</div>
                     </div>
-                    <h3 class="modal-title mt-4" data-translate="news.items.0.title">New Metro Line Completion</h3>
-                    <div class="modal-content-text" data-translate="news.items.0.full_content">
-                        Detailed content about the metro project completion...
+                    <div class="news-content">
+                        <div class="news-date" data-translate="news.items.1.date">10 Dec 2024</div>
+                        <h3 data-translate="news.items.1.title">Construction Excellence Award</h3>
+                        <p data-translate="news.items.1.excerpt">Honored with the prestigious Construction Excellence Award for outstanding achievements in sustainable construction.</p>
                     </div>
-                </div>
+                </article>
+            </div>
+
+            <!-- News Card 3 -->
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200" data-category="partnerships">
+                <article class="news-card" data-bs-toggle="modal" data-bs-target="#newsModal3">
+                    <div class="news-img-wrapper">
+                        <img src="https://picsum.photos/600/400?random=3" alt="Partnership" loading="lazy">
+                        <div class="news-category" data-translate="news.items.2.category">Partnerships</div>
+                    </div>
+                    <div class="news-content">
+                        <div class="news-date" data-translate="news.items.2.date">5 Dec 2024</div>
+                        <h3 data-translate="news.items.2.title">International Partnership</h3>
+                        <p data-translate="news.items.2.excerpt">Forming strategic partnerships with international firms to enhance our technological capabilities.</p>
+                    </div>
+                </article>
             </div>
         </div>
     </div>
-
-    <!-- Similar modal structure updates for Modal 2 & 3 -->
 </section>
 
+<!-- News Modals -->
+<!-- Modal 1 -->
+<div class="modal fade news-modal" id="newsModal1" tabindex="-1">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header border-0">
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="https://picsum.photos/600/400?random=1" alt="Metro Project" class="img-fluid rounded-3">
+                        </div>
+                        <div class="col-md-6">
+                            <div class="news-modal-content">
+                                <div class="modal-category" data-translate="news.items.0.category">Projects</div>
+                                <div class="modal-date" data-translate="news.items.0.date">15 Dec 2024</div>
+                                <h2 class="modal-title" data-translate="news.items.0.title">New Metro Line Completion</h2>
+                                <div class="modal-text">
+                                    <p data-translate="news.items.0.full_text">The completion of Cairo's fourth metro line marks a significant milestone in urban transportation infrastructure. This project includes:</p>
+                                    <ul>
+                                        <li>15 new stations</li>
+                                        <li>Advanced signaling systems</li>
+                                        <li>Environmental impact reduction measures</li>
+                                        <li>Integration with existing transport networks</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
+<!-- Modal 2 & 3 structure follows the same pattern -->
 
-<!-- Enhanced JavaScript -->
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    // Enhanced Filter functionality with smooth transitions
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    const newsCards = document.querySelectorAll('[data-category]');
-    
-    filterButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            // Remove active class from all buttons
-            filterButtons.forEach(btn => btn.classList.remove('active'));
-            // Add active class to clicked button
-            button.classList.add('active');
-            
-            const filter = button.getAttribute('data-filter');
-            
-            // Apply filtering with animation
-            newsCards.forEach(card => {
-                card.style.opacity = '0';
-                card.style.transform = 'scale(0.8)';
-                
-                setTimeout(() => {
-                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
-                        card.style.display = '';
-                        setTimeout(() => {
-                            card.style.opacity = '1';
-                            card.style.transform = 'scale(1)';
-                        }, 50);
-                    } else {
-                        card.style.display = 'none';
-                    }
-                }, 300);
-            });
-        });
-    });
+<style>
+    .news-filters {
+        margin-bottom: 2rem;
+    }
 
-    // Initialize AOS
-    AOS.init({
-        duration: 1000,
-        once: true,
-        offset: 100
-    });
-});
-</script>
+    .filter-btn {
+        background: transparent;
+        border: 2px solid var(--primary-gold);
+        color: var(--text-dark);
+        padding: 8px 20px;
+        margin: 0 5px;
+        border-radius: 25px;
+        transition: all 0.3s ease;
+    }
 
+    .filter-btn.active,
+    .filter-btn:hover {
+        background: var(--primary-gold);
+        color: white;
+    }
 
+    .title-underline {
+        height: 4px;
+        width: 70px;
+        background: var(--primary-gold);
+        margin: 15px auto;
+        border-radius: 2px;
+    }
 
+    .news-card {
+        background: var(--white);
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        cursor: pointer;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
 
+    .news-card:hover {
+        transform: translateY(-10px) scale(1.02);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    }
 
+    .news-img-wrapper {
+        position: relative;
+        overflow: hidden;
+        height: 250px;
+    }
+
+    .news-img-wrapper img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.6s ease;
+    }
+
+    .news-card:hover .news-img-wrapper img {
+        transform: scale(1.15);
+    }
+
+    .news-category {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: var(--primary-gold);
+        color: white;
+        padding: 8px 15px;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        font-weight: 600;
+    }
+
+    .news-content {
+        padding: 25px;
+    }
+
+    .news-date {
+        color: var(--primary-gold);
+        font-size: 0.9rem;
+        font-weight: 600;
+        margin-bottom: 10px;
+    }
+
+    .news-content h3 {
+        font-size: 1.4rem;
+        margin-bottom: 15px;
+        color: var(--text-dark);
+    }
+
+    .news-content p {
+        color: var(--text-dark);
+        font-size: 1rem;
+        line-height: 1.6;
+        margin: 0;
+    }
+
+    /* Modal Styles */
+    .news-modal .modal-content {
+        background: var(--bg-light);
+        border: none;
+        border-radius: 20px;
+    }
+
+    .news-modal .modal-category {
+        display: inline-block;
+        background: var(--primary-gold);
+        color: white;
+        padding: 8px 15px;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        margin-bottom: 15px;
+    }
+
+    .news-modal .modal-date {
+        color: var(--primary-gold);
+        font-size: 1rem;
+        margin-bottom: 10px;
+    }
+
+    .news-modal .modal-title {
+        font-size: 2rem;
+        margin-bottom: 20px;
+        color: var(--text-dark);
+    }
+
+    .news-modal .modal-text {
+        color: var(--text-dark);
+        font-size: 1.1rem;
+        line-height: 1.8;
+    }
+
+    .news-modal .btn-close {
+        background-color: var(--white);
+        padding: 10px;
+        border-radius: 50%;
+        opacity: 1;
+    }
+
+    @media (max-width: 768px) {
+        .filter-btn {
+            margin-bottom: 10px;
+        }
+        
+        .news-modal .modal-dialog {
+            margin: 10px;
+        }
+    }
+</style>
 
 
 
