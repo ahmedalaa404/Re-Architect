@@ -187,7 +187,7 @@
 
 .sustainability-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* optional: you can create another variable like --shadow-hover if needed */
+    box-shadow: 0 8px 16px rgb(0 0 0 / 20%); /* optional: you can create another variable like --shadow-hover if needed */
 }
 
 .icon-container {
@@ -231,7 +231,10 @@
     border-radius: 3rem;
 
 }
-.icon-container:hover .icone-sustainability,
+
+
+
+.sustainability-card:hover .icone-sustainability,
 .icone-sustainability:hover{
     transform: rotate(26deg);
 }
