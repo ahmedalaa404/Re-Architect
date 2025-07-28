@@ -1,7 +1,7 @@
 /* Global Variables and Root Styles */
 :root {
     --white: #FFFFFF;
-    --dark-charcoal: #181818;
+    --dark-charcoal: #232323f2;
     --primary-gold: #f39c12;
     --secondary-gold: #e67e22;
     --text-light: #ecf0f1;
@@ -11,24 +11,32 @@
     --transition: all 0.3s ease;
     --shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     --navbar-color: #ffffff0d;
+    --text-primary: rgb(9 187 255) ;
   }
   
   /* Dark Mode Styles */
   [data-theme="dark"] {
     --white: #ffff;
-    --dark-charcoal: #181818;
+    --dark-charcoal: ##232323f2;
     --text-light: #ffffff;
     --text-dark: #ecf0f1;
     --bg-light: #181818;
     --border-color: #555;
-    --navbar-color: #181818;
+    --navbar-color: #ffffff31;
   }
   
+  @font-face {
+    font-family: 'Omar Bold';
+    src: url('../../Omar-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
   /* General Styles */
   body {
     background: var(--bg-light);
     color: var(--text-dark);
-    font-family: 'Noto Sans Arabic', 'Inter', Arial, sans-serif;
+    font-family: 'Omar Bold', sans-serif;
     transition: var(--transition);
   }
   
