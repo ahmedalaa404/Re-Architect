@@ -195,12 +195,7 @@
     margin-bottom: 1.5rem;
 
 }
-.icon-container .fas
 
-{
-    color: rebeccapurple;
-    background-color: var(--primary-gold);
-}
 .sustainability-card h4 {
     font-size: 1.5rem;
     font-weight: 600;
@@ -209,10 +204,56 @@
 
 .sustainability-card p {
     font-size: 1rem;
-    color: var(--text-light); /* This assumes light text on dark bg. You may swap with var(--text-dark) for light mode */
+    color: var(--text-dark); /* This assumes light text on dark bg. You may swap with var(--text-dark) for light mode */
     line-height: 1.6;
+}
+.icon-container
+{
+    background: linear-gradient(135deg, var(--primary-gold), var(--secondary-gold));
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
 }
 
 
 
+
+.icone-sustainability
+{
+    transform: scale(1) rotate(0deg);
+    color: var(--white);
+    padding: 10px;
+    transition: 0.2s 0.01s all;
+    border-radius: 3rem;
+
+}
+.icon-container:hover .icone-sustainability,
+.icone-sustainability:hover{
+    transform: rotate(26deg);
+}
+
+[data-theme="dark"] .sustainability-card 
+{
+    background: #55545433;
+}
+
+
+
+[data-theme="dark"] .sustainability-card {
+    transition: all 0.5s ease;
+  }
+  
+
+
+
+[data-theme="dark"] .sustainability-card:hover
+{
+    background: #2c2c2c33;
+    border: 1px solid var(--primary-gold);
+    box-shadow: 0px 3px 5px -2px var(--primary-gold);
+}
 
