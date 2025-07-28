@@ -190,16 +190,73 @@
 
 
 
-<!-- sustainability.html -->
-<section id="sustainability" class="sustainability-section py-5">
+<section id="sustainability" class="py-5">
     <div class="container">
-      <h2 class="section-title text-center mb-5" id="sustainabilityTitle"></h2>
-  
-      <div class="row g-4" id="sustainabilityCards">
-        <!-- Cards will be injected here via JS -->
-      </div>
+        <h2 class="section-title text-center mb-5" data-aos="fade-up" data-translate="sustainability.title">Our Commitment to Sustainability</h2>
+
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="sustainability-card text-center h-100">
+                    <div class="icon-container mb-4">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h4 class="mb-3" data-translate="sustainability.items.0.title">Green Building</h4>
+                    <p data-translate="sustainability.items.0.text">We implement sustainable building practices and use eco-friendly materials to reduce environmental impact.</p>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                <div class="sustainability-card text-center h-100">
+                    <div class="icon-container mb-4">
+                        <i class="fas fa-hard-hat"></i>
+                    </div>
+                    <h4 class="mb-3" data-translate="sustainability.items.1.title">Worker Safety</h4>
+                    <p data-translate="sustainability.items.1.text">Comprehensive safety protocols and training programs ensure the well-being of all workers on our projects.</p>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
+                <div class="sustainability-card text-center h-100">
+                    <div class="icon-container mb-4">
+                        <i class="fas fa-recycle"></i>
+                    </div>
+                    <h4 class="mb-3" data-translate="sustainability.items.2.title">Waste Management</h4>
+                    <p data-translate="sustainability.items.2.text">Advanced waste management systems and recycling programs minimize environmental footprint.</p>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="sustainability-card text-center h-100">
+                    <div class="icon-container mb-4">
+                        <i class="fas fa-solar-panel"></i>
+                    </div>
+                    <h4 class="mb-3" data-translate="sustainability.items.3.title">Renewable Energy</h4>
+                    <p data-translate="sustainability.items.3.text">Integration of solar panels and renewable energy systems in our construction projects.</p>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                <div class="sustainability-card text-center h-100">
+                    <div class="icon-container mb-4">
+                        <i class="fas fa-water"></i>
+                    </div>
+                    <h4 class="mb-3" data-translate="sustainability.items.4.title">Water Conservation</h4>
+                    <p data-translate="sustainability.items.4.text">Water-efficient systems and conservation practices in all our construction and operational activities.</p>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
+                <div class="sustainability-card text-center h-100">
+                    <div class="icon-container mb-4">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h4 class="mb-3" data-translate="sustainability.items.5.title">Community Impact</h4>
+                    <p data-translate="sustainability.items.5.text">Supporting local communities through employment, training, and infrastructure development programs.</p>
+                </div>
+            </div>
+        </div>
     </div>
-  </section>
+</section>
   
 
 
@@ -334,9 +391,11 @@
 <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/all.min.js" integrity="sha512-b+nQTCdtTBIRIbraqNEwsjB6UvL3UEMkXnhzd8awtCYh0Kcsjl9uEgwVFVbhoj3uu1DO1ZMacNvLoyJJiNfcvg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script type="module" defer src="assets/Js/global.js"></script>
 <script type="module" defer src="assets/Js/index.js"></script>
-
+<script>
+    AOS.init();
+    </script>
 </body>
 </html>

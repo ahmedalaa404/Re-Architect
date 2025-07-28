@@ -168,3 +168,51 @@
 
 
   
+
+
+
+
+
+
+
+
+.sustainability-card {
+    background: var(--white);
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    height: 100%;
+}
+
+.sustainability-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* optional: you can create another variable like --shadow-hover if needed */
+}
+
+.icon-container {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+
+}
+.icon-container .fas
+
+{
+    color: rebeccapurple;
+    background-color: var(--primary-gold);
+}
+.sustainability-card h4 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.sustainability-card p {
+    font-size: 1rem;
+    color: var(--text-light); /* This assumes light text on dark bg. You may swap with var(--text-dark) for light mode */
+    line-height: 1.6;
+}
+
+
+
+
