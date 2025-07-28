@@ -16,6 +16,49 @@ export const translations = {
         contact_us: "Contact Us",
         offices: "Offices"
       },
+
+
+
+
+      sustainability: {
+        title: "Our Commitment to Sustainability",
+        items: [
+          {
+            title: "Green Building",
+            text: "We implement sustainable building practices and use eco-friendly materials to reduce environmental impact."
+          },
+          {
+            title: "Worker Safety",
+            text: "Comprehensive safety protocols and training programs ensure the well-being of all workers on our projects."
+          },
+          {
+            title: "Waste Management",
+            text: "Advanced waste management systems and recycling programs minimize environmental footprint."
+          },
+          {
+            title: "Renewable Energy",
+            text: "Integration of solar panels and renewable energy systems in our construction projects."
+          },
+          {
+            title: "Water Conservation",
+            text: "Water-efficient systems and conservation practices in all our construction and operational activities."
+          },
+          {
+            title: "Community Impact",
+            text: "Supporting local communities through employment, training, and infrastructure development programs."
+          }
+        ]
+      },
+
+
+      
+
+
+
+
+
+
+
       lang_toggle: "AR",
 
       about_title: "About Arab Contractors",
@@ -55,6 +98,41 @@ export const translations = {
         contact_us: "اتصل بنا",
         offices: "المكاتب"
       },
+
+
+      sustainability: {
+        title: "التزامنا بالاستدامة",
+        items: [
+          {
+            title: "البناء الأخضر",
+            text: "نطبق ممارسات البناء المستدامة ونستخدم المواد الصديقة للبيئة لتقليل التأثير البيئي."
+          },
+          {
+            title: "سلامة العمال",
+            text: "ضمان بروتوكولات السلامة الشاملة وبرامج التدريب لرفاهية جميع العمال في مشاريعنا."
+          },
+          {
+            title: "إدارة النفايات",
+            text: "أنظمة إدارة النفايات المتقدمة وبرامج إعادة التدوير تقلل من البصمة البيئية."
+          },
+          {
+            title: "الطاقة المتجددة",
+            text: "دمج الألواح الشمسية وأنظمة الطاقة المتجددة في مشاريع البناء لدينا."
+          },
+          {
+            title: "الحفاظ على المياه",
+            text: "أنظمة موفرة للمياه وممارسات الحفظ في جميع أنشطة البناء والتشغيل لدينا."
+          },
+          {
+            title: "التأثير المجتمعي",
+            text: "دعم المجتمعات المحلية من خلال التوظيف والتدريب وبرامج تطوير البنية التحتية."
+          }
+        ]
+      },
+
+      
+
+
       lang_toggle: "EN",
       about_title: "عن المقاولون العرب",
       about_description: "تأسست شركة المقاولون العرب في عام 1955، وكانت في طليعة التميز في البناء والهندسة في الشرق الأوسط. نتخصص في تطوير البنية التحتية والبناء التجاري والحلول المستدامة.",

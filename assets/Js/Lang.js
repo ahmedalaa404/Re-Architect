@@ -46,6 +46,7 @@ export function initializeLanguageSettings(lang) {
   updateBootstrapCSS(lang);
   updateLanguageToggleButton(lang);
   initializeBrandNameDisplay(lang);
+
 }
 
 export function setLanguage(lang) {
@@ -53,5 +54,4 @@ export function setLanguage(lang) {
   animateBrandName(lang);
   localStorage.setItem('language', lang);
 }
-
 
