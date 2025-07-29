@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="page_title">Arab Contractors - Career Opportunities</title>
+  <meta name="description" content="Join Arab Contractors team. Explore career opportunities in construction, engineering, and infrastructure development.">
+  <meta name="keywords" content="Arab Contractors, careers, jobs, hiring, construction, engineering, employment">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://arabcontractors.com/hiring">
+  <link rel="alternate" hreflang="en" href="https://arabcontractors.com/en/hiring">
+  <link rel="alternate" hreflang="ar" href="https://arabcontractors.com/ar/hiring">
+  <!-- AOS CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="assets/Css/global.css">
+  <style>
+    .hiring-hero {
+      background: linear-gradient(135deg, var(--primary-gold, #f39c12) 0%, var(--secondary-gold, #e67e22) 100%);
+      padding: 8rem 0 4rem 0;
+      color: white;
+      text-align: center;
+    }
+    
+    .hiring-hero h1 {
+      font-size: 3.5rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+    
+    .hiring-hero p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    .job-section {
+      padding: 4rem 0;
+      background: var(--bg-light);
+    }
+    
+    .job-card {
+      background: white;
+      border-radius: 15px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border-left: 4px solid var(--primary-gold, #f39c12);
+    }
+    
+    .job-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    }
+    
+    .job-title {
+      color: var(--text-dark, #2c3e50);
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+    
+    .job-category {
+      display: inline-block;
+      background: var(--primary-gold, #f39c12);
+      color: white;
+      padding: 5px 12px;
+      border-radius: 15px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    
+    .job-location {
+      color: var(--text-muted, #6c757d);
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+    }
+    
+    .job-description {
+      color: var(--text-dark, #2c3e50);
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+    
+    .job-requirements {
+      background: #f8f9fa;
+      padding: 1rem;
+      border-radius: 8px;
+      margin-bottom: 1.5rem;
+    }
+    
+    .job-requirements h5 {
+      color: var(--text-dark, #2c3e50);
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    .job-requirements ul {
+      margin: 0;
+      padding-left: 1.2rem;
+    }
+    
+    .job-requirements li {
+      color: var(--text-dark, #2c3e50);
+      font-size: 0.9rem;
+      margin-bottom: 0.3rem;
+    }
+    
+    .apply-btn {
+      background: var(--primary-gold, #f39c12);
+      border: 2px solid var(--primary-gold, #f39c12);
+      color: white;
+      padding: 10px 25px;
+      border-radius: 25px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+    }
+    
+    .apply-btn:hover {
+      background: var(--secondary-gold, #e67e22);
+      border-color: var(--secondary-gold, #e67e22);
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(243,156,18,0.3);
+    }
+    
+    .application-form {
+      background: white;
+      border-radius: 15px;
+      padding: 2rem;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    }
+    
+    .form-control {
+      border: 2px solid #e9ecef;
+      border-radius: 8px;
+      padding: 12px 15px;
+      transition: border-color 0.3s ease;
+    }
+    
+    .form-control:focus {
+      border-color: var(--primary-gold, #f39c12);
+      box-shadow: 0 0 0 0.2rem rgba(243,156,18,0.25);
+    }
+    
+    .submit-btn {
+      background: var(--primary-gold, #f39c12);
+      border: none;
+      color: white;
+      padding: 12px 30px;
+      border-radius: 25px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    
+    .submit-btn:hover {
+      background: var(--secondary-gold, #e67e22);
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(243,156,18,0.3);
+    }
+    
+    @media (max-width: 768px) {
+      .hiring-hero h1 { font-size: 2.5rem; }
+      .hiring-hero { padding: 6rem 0 3rem 0; }
+      .job-card { padding: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header/Navbar (same as index.html) -->
+  <nav id="mainNavbar" class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <!-- Logo and Brand -->
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <div class="logo-container me-3">
+          <div class="logo-animated-container">
+            <img src="assets/images/logo.webp" alt="Arab Contractors Logo" class="img-fluid" loading="lazy">
+          </div>
+        </div>
+        <div class="brand-text">
+          <div class="en-text" data-translate="brand_name">Arab Contractors</div>
+          <div class="ar-text"><span id="animated-arabic-name" data-translate="brand_name_ar"></span></div>
+        </div>
+      </a>
+
+      <!-- Mobile Toggle -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fa-solid fa-bars text-white"></i>
+      </button>
+
+      <!-- Navigation Links -->
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html" data-translate="nav.home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html#about" data-translate="nav.about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="leadership.html" data-translate="nav.leadership">Leadership</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="News.html" data-translate="nav.news">News</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="hiring.html" data-translate="nav.hiring">Hiring</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html#sustainability" data-translate="nav.sustainability">Sustainability</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="privacy-policy.html" data-translate="nav.privacy">Privacy Policy</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-translate="nav.contact">Contact</a>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li>
+                <a class="dropdown-item" href="contact.html" data-translate="nav.contact_us">Contact Us</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="offices.html" data-translate="nav.offices">Offices</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+
+        <!-- Language and Theme Toggles -->
+        <div class="navbar-controls d-flex align-items-center mx-3">
+          <button id="langToggle" class="btn btn-outline-light btn-sm mx-2" title="Toggle Language" aria-label="Toggle between Arabic and English">
+            <span class="en-text">AR</span>
+            <span class="ar-text">EN</span>
+          </button>
+          <button id="themeToggle" class="btn btn-outline-light btn-sm" title="Toggle Theme" aria-label="Toggle between light and dark mode">
+            <i class="fas fa-moon"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hiring Hero Section -->
+  <section class="hiring-hero" data-aos="fade-up">
+    <div class="container">
+      <h1>
+        <span class="text-en d-block">Join Our Team</span>
+        <span class="text-ar d-none">انضم إلى فريقنا</span>
+      </h1>
+      <p>
+        <span class="text-en d-block">Build your career with one of the leading construction companies in the Middle East. We offer exciting opportunities for talented professionals.</span>
+        <span class="text-ar d-none">ابني مسيرتك المهنية مع إحدى أكبر شركات البناء في الشرق الأوسط. نقدم فرصاً مثيرة للمهنيين الموهوبين.</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- Job Listings Section -->
+  <section class="job-section">
+    <div class="container">
+      <div class="text-center mb-5" data-aos="fade-up">
+        <h2 class="section-title">
+          <span class="text-en d-block">Current Openings</span>
+          <span class="text-ar d-none">الوظائف الشاغرة</span>
+        </h2>
+        <p class="lead">
+          <span class="text-en d-block">Explore our latest job opportunities and find your perfect role</span>
+          <span class="text-ar d-none">اكتشف أحدث فرص العمل واعثر على دورك المثالي</span>
+        </p>
+      </div>
+
+      <div class="row">
+        <!-- Job Card 1 -->
+        <div class="col-lg-6" data-aos="fade-up">
+          <div class="job-card">
+            <div class="job-category">
+              <span class="text-en d-block">Engineering</span>
+              <span class="text-ar d-none">الهندسة</span>
+            </div>
+            <h3 class="job-title">
+              <span class="text-en d-block">Senior Civil Engineer</span>
+              <span class="text-ar d-none">مهندس مدني كبير</span>
+            </h3>
+            <div class="job-location">
+              <i class="fas fa-map-marker-alt me-2"></i>
+              <span class="text-en d-block">Cairo, Egypt</span>
+              <span class="text-ar d-none">القاهرة، مصر</span>
+            </div>
+            <div class="job-description">
+              <span class="text-en d-block">We are seeking an experienced Senior Civil Engineer to lead major infrastructure projects. The ideal candidate will have strong technical skills and project management experience.</span>
+              <span class="text-ar d-none">نبحث عن مهندس مدني كبير ذو خبرة لقيادة المشاريع الكبرى للبنية التحتية. يجب أن يتمتع المرشح المثالي بمهارات تقنية قوية وخبرة في إدارة المشاريع.</span>
+            </div>
+            <div class="job-requirements">
+              <h5>
+                <span class="text-en d-block">Requirements:</span>
+                <span class="text-ar d-none">المتطلبات:</span>
+              </h5>
+              <ul>
+                <li class="text-en d-block">Bachelor's degree in Civil Engineering</li>
+                <li class="text-ar d-none">بكالوريوس في الهندسة المدنية</li>
+                <li class="text-en d-block">8+ years of experience in construction</li>
+                <li class="text-ar d-none">8+ سنوات خبرة في البناء</li>
+                <li class="text-en d-block">Strong project management skills</li>
+                <li class="text-ar d-none">مهارات قوية في إدارة المشاريع</li>
+              </ul>
+            </div>
+            <a href="#apply-form" class="apply-btn">
+              <span class="text-en d-block">Apply Now</span>
+              <span class="text-ar d-none">تقدم الآن</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Job Card 2 -->
+        <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+          <div class="job-card">
+            <div class="job-category">
+              <span class="text-en d-block">Construction</span>
+              <span class="text-ar d-none">البناء</span>
+            </div>
+            <h3 class="job-title">
+              <span class="text-en d-block">Project Manager</span>
+              <span class="text-ar d-none">مدير المشروع</span>
+            </h3>
+            <div class="job-location">
+              <i class="fas fa-map-marker-alt me-2"></i>
+              <span class="text-en d-block">Dubai, UAE</span>
+              <span class="text-ar d-none">دبي، الإمارات</span>
+            </div>
+            <div class="job-description">
+              <span class="text-en d-block">Join our team as a Project Manager overseeing large-scale construction projects. You'll be responsible for planning, execution, and delivery of complex infrastructure projects.</span>
+              <span class="text-ar d-none">انضم إلى فريقنا كمدير مشروع للإشراف على مشاريع البناء واسعة النطاق. ستكون مسؤولاً عن تخطيط وتنفيذ وتسليم مشاريع البنية التحتية المعقدة.</span>
+            </div>
+            <div class="job-requirements">
+              <h5>
+                <span class="text-en d-block">Requirements:</span>
+                <span class="text-ar d-none">المتطلبات:</span>
+              </h5>
+              <ul>
+                <li class="text-en d-block">Master's degree in Construction Management</li>
+                <li class="text-ar d-none">ماجستير في إدارة البناء</li>
+                <li class="text-en d-block">10+ years of project management experience</li>
+                <li class="text-ar d-none">10+ سنوات خبرة في إدارة المشاريع</li>
+                <li class="text-en d-block">PMP certification preferred</li>
+                <li class="text-ar d-none">شهادة PMP مفضلة</li>
+              </ul>
+            </div>
+            <a href="#apply-form" class="apply-btn">
+              <span class="text-en d-block">Apply Now</span>
+              <span class="text-ar d-none">تقدم الآن</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Job Card 3 -->
+        <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+          <div class="job-card">
+            <div class="job-category">
+              <span class="text-en d-block">Architecture</span>
+              <span class="text-ar d-none">الهندسة المعمارية</span>
+            </div>
+            <h3 class="job-title">
+              <span class="text-en d-block">Architectural Designer</span>
+              <span class="text-ar d-none">مصمم معماري</span>
+            </h3>
+            <div class="job-location">
+              <i class="fas fa-map-marker-alt me-2"></i>
+              <span class="text-en d-block">Riyadh, Saudi Arabia</span>
+              <span class="text-ar d-none">الرياض، المملكة العربية السعودية</span>
+            </div>
+            <div class="job-description">
+              <span class="text-en d-block">We're looking for a creative Architectural Designer to join our design team. You'll work on innovative projects and contribute to our portfolio of sustainable buildings.</span>
+              <span class="text-ar d-none">نبحث عن مصمم معماري مبدع للانضمام إلى فريق التصميم لدينا. ستعمل على مشاريع مبتكرة وتساهم في محفظة المباني المستدامة لدينا.</span>
+            </div>
+            <div class="job-requirements">
+              <h5>
+                <span class="text-en d-block">Requirements:</span>
+                <span class="text-ar d-none">المتطلبات:</span>
+              </h5>
+              <ul>
+                <li class="text-en d-block">Bachelor's degree in Architecture</li>
+                <li class="text-ar d-none">بكالوريوس في الهندسة المعمارية</li>
+                <li class="text-en d-block">5+ years of design experience</li>
+                <li class="text-ar d-none">5+ سنوات خبرة في التصميم</li>
+                <li class="text-en d-block">Proficiency in AutoCAD and Revit</li>
+                <li class="text-ar d-none">إتقان AutoCAD و Revit</li>
+              </ul>
+            </div>
+            <a href="#apply-form" class="apply-btn">
+              <span class="text-en d-block">Apply Now</span>
+              <span class="text-ar d-none">تقدم الآن</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Job Card 4 -->
+        <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
+          <div class="job-card">
+            <div class="job-category">
+              <span class="text-en d-block">Management</span>
+              <span class="text-ar d-none">الإدارة</span>
+            </div>
+            <h3 class="job-title">
+              <span class="text-en d-block">Operations Director</span>
+              <span class="text-ar d-none">مدير العمليات</span>
+            </h3>
+            <div class="job-location">
+              <i class="fas fa-map-marker-alt me-2"></i>
+              <span class="text-en d-block">Cairo, Egypt</span>
+              <span class="text-ar d-none">القاهرة، مصر</span>
+            </div>
+            <div class="job-description">
+              <span class="text-en d-block">Lead our operations team and drive efficiency across all construction projects. This role requires strategic thinking and strong leadership skills.</span>
+              <span class="text-ar d-none">قاد فريق العمليات لدينا ودفع الكفاءة عبر جميع مشاريع البناء. تتطلب هذه الوظيفة التفكير الاستراتيجي ومهارات القيادة القوية.</span>
+            </div>
+            <div class="job-requirements">
+              <h5>
+                <span class="text-en d-block">Requirements:</span>
+                <span class="text-ar d-none">المتطلبات:</span>
+              </h5>
+              <ul>
+                <li class="text-en d-block">MBA or related master's degree</li>
+                <li class="text-ar d-none">ماجستير إدارة الأعمال أو ماجستير ذو صلة</li>
+                <li class="text-en d-block">15+ years of operations experience</li>
+                <li class="text-ar d-none">15+ سنوات خبرة في العمليات</li>
+                <li class="text-en d-block">Proven leadership track record</li>
+                <li class="text-ar d-none">سجل قيادي مثبت</li>
+              </ul>
+            </div>
+            <a href="#apply-form" class="apply-btn">
+              <span class="text-en d-block">Apply Now</span>
+              <span class="text-ar d-none">تقدم الآن</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Application Form Section -->
+  <section class="py-5" id="apply-form">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="application-form" data-aos="fade-up">
+            <h3 class="text-center mb-4">
+              <span class="text-en d-block">Apply for a Position</span>
+              <span class="text-ar d-none">تقدم لوظيفة</span>
+            </h3>
+            <form>
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label class="form-label">
+                    <span class="text-en d-block">First Name</span>
+                    <span class="text-ar d-none">الاسم الأول</span>
+                  </label>
+                  <input type="text" class="form-control" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label class="form-label">
+                    <span class="text-en d-block">Last Name</span>
+                    <span class="text-ar d-none">اسم العائلة</span>
+                  </label>
+                  <input type="text" class="form-control" required>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label class="form-label">
+                    <span class="text-en d-block">Email</span>
+                    <span class="text-ar d-none">البريد الإلكتروني</span>
+                  </label>
+                  <input type="email" class="form-control" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label class="form-label">
+                    <span class="text-en d-block">Phone</span>
+                    <span class="text-ar d-none">الهاتف</span>
+                  </label>
+                  <input type="tel" class="form-control" required>
+                </div>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">
+                  <span class="text-en d-block">Position Applied For</span>
+                  <span class="text-ar d-none">الوظيفة المتقدم لها</span>
+                </label>
+                <select class="form-control" required>
+                  <option value="">
+                    <span class="text-en d-block">Select a position</span>
+                    <span class="text-ar d-none">اختر وظيفة</span>
+                  </option>
+                  <option value="senior-civil-engineer">
+                    <span class="text-en d-block">Senior Civil Engineer</span>
+                    <span class="text-ar d-none">مهندس مدني كبير</span>
+                  </option>
+                  <option value="project-manager">
+                    <span class="text-en d-block">Project Manager</span>
+                    <span class="text-ar d-none">مدير المشروع</span>
+                  </option>
+                  <option value="architectural-designer">
+                    <span class="text-en d-block">Architectural Designer</span>
+                    <span class="text-ar d-none">مصمم معماري</span>
+                  </option>
+                  <option value="operations-director">
+                    <span class="text-en d-block">Operations Director</span>
+                    <span class="text-ar d-none">مدير العمليات</span>
+                  </option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">
+                  <span class="text-en d-block">Cover Letter</span>
+                  <span class="text-ar d-none">خطاب التقديم</span>
+                </label>
+                <textarea class="form-control" rows="4" placeholder="Tell us why you're interested in this position..."></textarea>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">
+                  <span class="text-en d-block">Resume/CV</span>
+                  <span class="text-ar d-none">السيرة الذاتية</span>
+                </label>
+                <input type="file" class="form-control" accept=".pdf,.doc,.docx">
+              </div>
+              <div class="text-center">
+                <button type="submit" class="submit-btn">
+                  <span class="text-en d-block">Submit Application</span>
+                  <span class="text-ar d-none">إرسال الطلب</span>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer (same as index.html) -->
+  <footer class="py-5">
+    <div class="container py-4">
+      <div class="row g-4">
+        <!-- Company Info -->
+        <div class="col-lg-4 col-md-6">
+          <div class="footer-section">
+            <div class="d-flex align-items-center mb-3">
+              <div class="logo-container me-3">
+                <img src="assets/images/logo.webp" alt="Arab Contractors Logo" class="img-fluid" style="max-height: 50px;" loading="lazy">
+              </div>
+              <div>
+                <h5 class="mb-0" data-translate="brand_name">Arab Contractors</h5>
+              </div>
+            </div>
+            <p class="mb-3" data-translate="footer_description">Building the future with excellence, innovation, and sustainable development.</p>
+            <div class="social-links">
+              <a href="https://facebook.com/arabcontractors" class="text-white me-3" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a href="https://twitter.com/arabcontractors" class="text-white me-3" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+              <a href="https://linkedin.com/company/arabcontractors" class="text-white me-3" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              <a href="https://instagram.com/arabcontractors" class="text-white" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="col-lg-2 col-md-6">
+          <div class="footer-section">
+            <h6 class="mb-3" data-translate="footer_quick_links">Quick Links</h6>
+            <ul class="list-unstyled">
+              <li class="mb-2">
+                <a href="index.html" class="text-decoration-none" data-translate="nav.home">Home</a>
+              </li>
+              <li class="mb-2">
+                <a href="index.html#about" class="text-decoration-none" data-translate="nav.about">About Us</a>
+              </li>
+              <li class="mb-2">
+                <a href="leadership.html" class="text-decoration-none" data-translate="nav.leadership">Leadership</a>
+              </li>
+              <li class="mb-2">
+                <a href="News.html" class="text-decoration-none" data-translate="nav.news">News</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Services -->
+        <div class="col-lg-2 col-md-6">
+          <div class="footer-section">
+            <h6 class="mb-3" data-translate="footer_services">Services</h6>
+            <ul class="list-unstyled">
+              <li class="mb-2" data-translate="footer_service_infrastructure">Infrastructure</li>
+              <li class="mb-2" data-translate="footer_service_construction">Construction</li>
+              <li class="mb-2" data-translate="footer_service_engineering">Engineering</li>
+              <li class="mb-2" data-translate="footer_service_consulting">Consulting</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="col-lg-4 col-md-6">
+          <div class="footer-section">
+            <h6 class="mb-3" data-translate="footer_contact">Contact Information</h6>
+            <div class="contact-info">
+              <p class="mb-2" data-translate="footer_address"><i class="fas fa-map-marker-alt me-2"></i>Cairo, Egypt</p>
+              <p class="mb-2" data-translate="footer_phone"><i class="fas fa-phone me-2"></i>+20 2 1234 5678</p>
+              <p class="mb-2" data-translate="footer_email"><i class="fas fa-envelope me-2"></i>info@arabcontractors.com</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom mt-4 pt-4 border-top">
+        <div class="row align-items-center">
+          <div class="col-md-6">
+            <p class="mb-0" data-translate="footer_copyright">&copy; 2025 Arab Contractors. All rights reserved.</p>
+          </div>
+          <div class="col-md-6 text-md-end">
+            <a href="privacy-policy.html" class="text-decoration-none me-3" data-translate="nav.privacy">Privacy Policy</a>
+            <a href="contact.html" class="text-decoration-none" data-translate="nav.contact">Contact</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/all.min.js" integrity="sha512-b+nQTCdtTBIRIbraqNEwsjB6UvL3UEMkXnhzd8awtCYh0Kcsjl9uEgwVFVbhoj3uu1DO1ZMacNvLoyJJiNfcvg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script type="module" defer src="assets/Js/global.js"></script>
+  <script type="module" defer src="assets/Js/index.js"></script>
+  <script type="module" defer src="assets/Js/Aos_Animation.js"></script>
+  <script type="module" defer src="assets/Js/hiring-language.js"></script>
+</body>
+</html> 
