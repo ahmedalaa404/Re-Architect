@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="page_title">Arab Contractors - News Details</title>
+  <meta name="description" content="Arab Contractors is one of the largest construction companies in the Middle East, delivering world-class infrastructure projects.">
+  <meta name="keywords" content="Arab Contractors, construction, services, Arabic, English, infrastructure, engineering">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://arabcontractors.com/">
+  <link rel="alternate" hreflang="en" href="https://arabcontractors.com/en/">
+  <link rel="alternate" hreflang="ar" href="https://arabcontractors.com/ar/">
+  <!-- AOS CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="assets/Css/global.css">
+  <style>
+    .news-details-section {
+      padding: 4rem 0 2rem 0;
+      background: var(--bg-light);
+    }
+    .news-details-img {
+      width: 100%;
+      max-height: 400px;
+      object-fit: cover;
+      border-radius: 16px;
+      margin-bottom: 2rem;
+    }
+    .news-details-category {
+      display: inline-block;
+      background: var(--primary-gold, #f39c12);
+      color: #fff;
+      padding: 7px 16px;
+      border-radius: 20px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    .news-details-date {
+      color: var(--primary-gold, #f39c12);
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+    .news-details-title {
+      font-size: 2.2rem;
+      font-weight: bold;
+      color: var(--text-dark, #2c3e50);
+      margin-bottom: 1.5rem;
+    }
+    .news-details-content {
+      color: var(--text-dark, #2c3e50);
+      font-size: 1.15rem;
+      line-height: 1.8;
+    }
+    @media (max-width: 768px) {
+      .news-details-title { font-size: 1.5rem; }
+      .news-details-section { padding: 2rem 0 1rem 0; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header/Navbar (copied from News.html) -->
+  <nav id="mainNavbar" class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <!-- Logo and Brand -->
+      <a class="navbar-brand d-flex align-items-center" href="#home">
+        <div class="logo-container me-3">
+          <div class="logo-animated-container">
+            <img src="assets/images/logo.webp" alt="Arab Contractors Logo" class="img-fluid" loading="lazy">
+          </div>
+        </div>
+        <div class="brand-text">
+          <div class="en-text" data-translate="brand_name">Arab Contractors</div>
+          <div class="ar-text"><span id="animated-arabic-name" data-translate="brand_name_ar"></span></div>
+        </div>
+      </a>
+      <!-- Mobile Toggle -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fa-solid fa-bars text-white"></i>
+      </button>
+      <!-- Navigation Links -->
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html" data-translate="nav.home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about" data-translate="nav.about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="leadership.html" data-translate="nav.leadership">Leadership</a></li>
+          <li class="nav-item"><a class="nav-link active" href="news.html" data-translate="nav.news">News</a></li>
+          <li class="nav-item"><a class="nav-link" href="hiring.html" data-translate="nav.hiring">Hiring</a></li>
+          <li class="nav-item"><a class="nav-link" href="#sustainability" data-translate="nav.sustainability">Sustainability</a></li>
+          <li class="nav-item"><a class="nav-link" href="privacy-policy.html" data-translate="nav.privacy">Privacy Policy</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-translate="nav.contact">Contact</a>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li><a class="dropdown-item" href="contact.html" data-translate="nav.contact_us">Contact Us</a></li>
+              <li><a class="dropdown-item" href="offices.html" data-translate="nav.offices">Offices</a></li>
+            </ul>
+          </li>
+        </ul>
+        <!-- Language and Theme Toggles -->
+        <div class="navbar-controls d-flex align-items-center mx-3">
+          <button id="langToggle" class="btn btn-outline-light btn-sm mx-2" title="Toggle Language" aria-label="Toggle between Arabic and English">
+            <span class="en-text">AR</span>
+            <span class="ar-text">EN</span>
+          </button>
+          <button id="themeToggle" class="btn btn-outline-light btn-sm" title="Toggle Theme" aria-label="Toggle between light and dark mode">
+            <i class="fas fa-moon"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- News Details Section -->
+  <section class="news-details-section">
+    <div class="container">
+      <div id="news-details-content" class="mx-auto" style="max-width: 800px;">
+        <!-- News details will be loaded here by JS -->
+      </div>
+      <div class="mt-4">
+        <a href="news.html" class="btn btn-outline-primary">&larr; Back to News</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer (copied from News.html) -->
+  <footer class="py-5">
+    <div class="container py-4">
+      <div class="row g-4">
+        <!-- Company Info -->
+        <div class="col-lg-4 col-md-6">
+          <div class="footer-section">
+            <div class="d-flex align-items-center mb-3">
+              <div class="logo-container me-3">
+                <img src="assets/images/logo.webp" alt="Arab Contractors Logo" class="img-fluid" style="max-height: 50px;" loading="lazy">
+              </div>
+              <div>
+                <h5 class="mb-0" data-translate="brand_name">Arab Contractors</h5>
+              </div>
+            </div>
+            <p class="mb-3" data-translate="footer_description">Building the future with excellence, innovation, and sustainable development.</p>
+            <div class="social-links">
+              <a href="https://facebook.com/arabcontractors" class="text-white me-3" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a href="https://twitter.com/arabcontractors" class="text-white me-3" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+              <a href="https://linkedin.com/company/arabcontractors" class="text-white me-3" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              <a href="https://instagram.com/arabcontractors" class="text-white" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+        </div>
+        <!-- Quick Links -->
+        <div class="col-lg-2 col-md-6">
+          <div class="footer-section">
+            <h6 class="mb-3" data-translate="footer_quick_links">Quick Links</h6>
+            <ul class="list-unstyled">
+              <li class="mb-2"><a href="index.html" class="text-decoration-none" data-translate="nav.home">Home</a></li>
+              <li class="mb-2"><a href="#about" class="text-decoration-none" data-translate="nav.about">About Us</a></li>
+              <li class="mb-2"><a href="leadership.html" class="text-decoration-none" data-translate="nav.leadership">Leadership</a></li>
+              <li class="mb-2"><a href="news.html" class="text-decoration-none" data-translate="nav.news">News</a></li>
+            </ul>
+          </div>
+        </div>
+        <!-- Services -->
+        <div class="col-lg-2 col-md-6">
+          <div class="footer-section">
+            <h6 class="mb-3" data-translate="footer_services">Services</h6>
+            <ul class="list-unstyled">
+              <li class="mb-2" data-translate="footer_service_infrastructure">Infrastructure</li>
+              <li class="mb-2" data-translate="footer_service_construction">Construction</li>
+              <li class="mb-2" data-translate="footer_service_engineering">Engineering</li>
+              <li class="mb-2" data-translate="footer_service_consulting">Consulting</li>
+            </ul>
+          </div>
+        </div>
+        <!-- Contact Info -->
+        <div class="col-lg-4 col-md-6">
+          <div class="footer-section">
+            <h6 class="mb-3" data-translate="footer_contact">Contact Information</h6>
+            <div class="contact-info">
+              <p class="mb-2" data-translate="footer_address"><i class="fas fa-map-marker-alt me-2"></i>Cairo, Egypt</p>
+              <p class="mb-2" data-translate="footer_phone"><i class="fas fa-phone me-2"></i>+20 2 1234 5678</p>
+              <p class="mb-2" data-translate="footer_email"><i class="fas fa-envelope me-2"></i>info@arabcontractors.com</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Footer Bottom -->
+      <div class="footer-bottom mt-4 pt-4 border-top">
+        <div class="row align-items-center">
+          <div class="col-md-6">
+            <p class="mb-0" data-translate="footer_copyright">&copy; 2025 Arab Contractors. All rights reserved.</p>
+          </div>
+          <div class="col-md-6 text-md-end">
+            <a href="privacy-policy.html" class="text-decoration-none me-3" data-translate="nav.privacy">Privacy Policy</a>
+            <a href="contact.html" class="text-decoration-none" data-translate="nav.contact">Contact</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/all.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script type="module" defer src="assets/Js/global.js"></script>
+<script type="module" defer src="assets/Js/index.js"></script>
+<script type="module" defer src="assets/Js/Aos_Animation.js"></script>
+<script type="module" defer src="assets/Js/news-language.js"></script>
+  <script>
+    // News data with both English and Arabic content
+    const newsData = [
+      {
+        id: 1,
+        image: 'https://picsum.photos/600/400?random=1',
+        category: {
+          en: 'Projects',
+          ar: 'المشاريع'
+        },
+        date: {
+          en: '15 Dec 2024',
+          ar: '15 ديسمبر 2024'
+        },
+        title: {
+          en: 'New Metro Line Completion',
+          ar: 'إنجاز خط المترو الجديد'
+        },
+        content: {
+          en: `<p>The completion of Cairo's fourth metro line marks a significant milestone in urban transportation infrastructure. This project includes:</p>
+            <ul>
+              <li>15 new stations</li>
+              <li>Advanced signaling systems</li>
+              <li>Environmental impact reduction measures</li>
+              <li>Integration with existing transport networks</li>
+            </ul>`,
+          ar: `<p>يعد إنجاز خط مترو القاهرة الرابع علامة فارقة مهمة في البنية التحتية للنقل الحضري. يتضمن هذا المشروع:</p>
+            <ul>
+              <li>15 محطة جديدة</li>
+              <li>أنظمة إشارات متقدمة</li>
+              <li>تدابير تقليل التأثير البيئي</li>
+              <li>التكامل مع شبكات النقل الموجودة</li>
+            </ul>`
+        }
+      },
+      {
+        id: 2,
+        image: 'https://picsum.photos/600/400?random=2',
+        category: {
+          en: 'Awards',
+          ar: 'الجوائز'
+        },
+        date: {
+          en: '10 Dec 2024',
+          ar: '10 ديسمبر 2024'
+        },
+        title: {
+          en: 'Construction Excellence Award',
+          ar: 'جائزة التميز في البناء'
+        },
+        content: {
+          en: `<p>Honored with the prestigious Construction Excellence Award for outstanding achievements in sustainable construction. Our efforts include:</p>
+            <ul>
+              <li>Innovative green building practices</li>
+              <li>Community engagement</li>
+              <li>Quality and safety standards</li>
+            </ul>`,
+          ar: `<p>تم تكريمنا بجائزة التميز في البناء المرموقة لتحقيق إنجازات متميزة في البناء المستدام. تشمل جهودنا:</p>
+            <ul>
+              <li>ممارسات البناء الأخضر المبتكرة</li>
+              <li>التفاعل المجتمعي</li>
+              <li>معايير الجودة والسلامة</li>
+            </ul>`
+        }
+      },
+      {
+        id: 3,
+        image: 'https://picsum.photos/600/400?random=3',
+        category: {
+          en: 'Partnerships',
+          ar: 'الشراكات'
+        },
+        date: {
+          en: '5 Dec 2024',
+          ar: '5 ديسمبر 2024'
+        },
+        title: {
+          en: 'International Partnership',
+          ar: 'الشراكة الدولية'
+        },
+        content: {
+          en: `<p>Forming strategic partnerships with international firms to enhance our technological capabilities. Key highlights:</p>
+            <ul>
+              <li>Joint ventures with global leaders</li>
+              <li>Technology transfer</li>
+              <li>Expanding project portfolio</li>
+            </ul>`,
+          ar: `<p>تشكيل شراكات استراتيجية مع الشركات الدولية لتعزيز قدراتنا التكنولوجية. النقاط الرئيسية:</p>
+            <ul>
+              <li>مشاريع مشتركة مع قادة عالميين</li>
+              <li>نقل التكنولوجيا</li>
+              <li>توسيع محفظة المشاريع</li>
+            </ul>`
+        }
+      }
+    ];
+
+    // Get ID from URL
+    function getNewsId() {
+      const params = new URLSearchParams(window.location.search);
+      return parseInt(params.get('id'), 10);
+    }
+
+    // Get current language
+    function getCurrentLanguage() {
+      return document.documentElement.getAttribute('lang') || 'en';
+    }
+
+    // Render news details
+    function renderNewsDetails() {
+      const id = getNewsId();
+      const news = newsData.find(n => n.id === id);
+      const container = document.getElementById('news-details-content');
+      
+      if (!news) {
+        container.innerHTML = `
+          <div class="alert alert-danger">
+            <div class="text-en d-block">News not found.</div>
+            <div class="text-ar d-none">لم يتم العثور على الخبر.</div>
+          </div>`;
+        return;
+      }
+
+      const lang = getCurrentLanguage();
+      const isArabic = lang === 'ar';
+
+      container.innerHTML = `
+        <img src="${news.image}" alt="${news.title[lang]}" class="news-details-img">
+        <div class="news-details-category">
+          <span class="text-en ${isArabic ? 'd-none' : 'd-block'}">${news.category.en}</span>
+          <span class="text-ar ${isArabic ? 'd-block' : 'd-none'}">${news.category.ar}</span>
+        </div>
+        <div class="news-details-date">
+          <span class="text-en ${isArabic ? 'd-none' : 'd-block'}">${news.date.en}</span>
+          <span class="text-ar ${isArabic ? 'd-block' : 'd-none'}">${news.date.ar}</span>
+        </div>
+        <h1 class="news-details-title">
+          <span class="text-en ${isArabic ? 'd-none' : 'd-block'}">${news.title.en}</span>
+          <span class="text-ar ${isArabic ? 'd-block' : 'd-none'}">${news.title.ar}</span>
+        </h1>
+        <div class="news-details-content">
+          <div class="text-en ${isArabic ? 'd-none' : 'd-block'}">${news.content.en}</div>
+          <div class="text-ar ${isArabic ? 'd-block' : 'd-none'}">${news.content.ar}</div>
+        </div>
+      `;
+    }
+
+    // Listen for language changes
+    document.addEventListener('languageChanged', renderNewsDetails);
+    document.addEventListener('DOMContentLoaded', renderNewsDetails);
+    
+    // Also listen for manual language toggle
+    document.addEventListener('click', (e) => {
+      if (e.target.closest('#langToggle')) {
+        setTimeout(() => {
+          renderNewsDetails();
+        }, 100);
+      }
+    });
+  </script>
+</body>
+</html> 

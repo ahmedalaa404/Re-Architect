@@ -43,62 +43,7 @@ export const translations = {
         }
       ]
     },
-    news: {
-      title: "Latest News & Updates",
-      lead: "Stay updated with our latest projects, achievements, and company news",
-      filters: {
-        all: "All News",
-        projects: "Projects",
-        awards: "Awards",
-        partnerships: "Partnerships",
-        sustainability: "Sustainability"
-      },
-      items: [
-        {
-          category: "Projects",
-          date: "December 15, 2024",
-          title: "New Metro Line Project Completion",
-          excerpt: "Arab Contractors successfully completes the construction of Cairo Metro Line 4, connecting major districts and improving public transportation.",
-          read_more: "Read More"
-        },
-        {
-          category: "Awards",
-          date: "December 10, 2024",
-          title: "Excellence in Construction Award 2024",
-          excerpt: "Arab Contractors receives the prestigious Excellence in Construction Award for outstanding contributions to infrastructure development.",
-          read_more: "Read More"
-        },
-        {
-          category: "Partnerships",
-          date: "December 5, 2024",
-          title: "Strategic Partnership with International Consortium",
-          excerpt: "Arab Contractors announces new strategic partnership with leading international construction consortium for mega projects.",
-          read_more: "Read More"
-        },
-        {
-          category: "Sustainability",
-          date: "November 28, 2024",
-          title: "Green Building Initiative Launch",
-          excerpt: "Arab Contractors launches comprehensive green building initiative to promote sustainable construction practices across Egypt.",
-          read_more: "Read More"
-        },
-        {
-          category: "Projects",
-          date: "November 20, 2024",
-          title: "Smart City Development Project",
-          excerpt: "Arab Contractors begins construction of Egypt's first smart city, integrating advanced technology with sustainable urban planning.",
-          read_more: "Read More"
-        },
-        {
-          category: "Awards",
-          date: "November 15, 2024",
-          title: "Heritage Preservation Award",
-          excerpt: "Arab Contractors receives recognition for outstanding work in preserving and restoring historical architectural landmarks.",
-          read_more: "Read More"
-        }
-      ],
-      load_more: "Load More News"
-    },
+
     lang_toggle: "AR",
     about_title: "About Arab Contractors",
     about_description: "Founded in 1955, Arab Contractors has been at the forefront of construction and engineering excellence in the Middle East. We specialize in infrastructure development, commercial construction, and sustainable building solutions.",
@@ -164,62 +109,7 @@ export const translations = {
         }
       ]
     },
-    news: {
-      title: "أحدث الأخبار والتحديثات",
-      lead: "ابق على اطلاع بأحدث مشاريعنا وإنجازاتنا وأخبار الشركة",
-      filters: {
-        all: "جميع الأخبار",
-        projects: "المشاريع",
-        awards: "الجوائز",
-        partnerships: "الشراكات",
-        sustainability: "الاستدامة"
-      },
-      items: [
-        {
-          category: "المشاريع",
-          date: "15 ديسمبر 2024",
-          title: "إنجاز مشروع خط المترو الجديد",
-          excerpt: "نجحت شركة المقاولون العرب في إنجاز بناء خط مترو القاهرة الرابع، ربط الأحياء الرئيسية وتحسين النقل العام.",
-          read_more: "اقرأ المزيد"
-        },
-        {
-          category: "الجوائز",
-          date: "10 ديسمبر 2024",
-          title: "جائزة التميز في البناء 2024",
-          excerpt: "حصلت شركة المقاولون العرب على جائزة التميز في البناء المرموقة لمساهماتها المتميزة في تطوير البنية التحتية.",
-          read_more: "اقرأ المزيد"
-        },
-        {
-          category: "الشراكات",
-          date: "5 ديسمبر 2024",
-          title: "شراكة استراتيجية مع اتحاد دولي",
-          excerpt: "أعلنت شركة المقاولون العرب عن شراكة استراتيجية جديدة مع اتحاد البناء الدولي الرائد للمشاريع الضخمة.",
-          read_more: "اقرأ المزيد"
-        },
-        {
-          category: "الاستدامة",
-          date: "28 نوفمبر 2024",
-          title: "إطلاق مبادرة المباني الخضراء",
-          excerpt: "أطلقت شركة المقاولون العرب مبادرة شاملة للمباني الخضراء لتعزيز ممارسات البناء المستدام في جميع أنحاء مصر.",
-          read_more: "اقرأ المزيد"
-        },
-        {
-          category: "المشاريع",
-          date: "20 نوفمبر 2024",
-          title: "مشروع تطوير المدينة الذكية",
-          excerpt: "بدأت شركة المقاولون العرب بناء أول مدينة ذكية في مصر، دمج التكنولوجيا المتقدمة مع التخطيط الحضري المستدام.",
-          read_more: "اقرأ المزيد"
-        },
-        {
-          category: "الجوائز",
-          date: "15 نوفمبر 2024",
-          title: "جائزة الحفاظ على التراث",
-          excerpt: "حصلت شركة المقاولون العرب على تقدير لعمله المتميز في الحفاظ على المعالم المعمارية التاريخية واستعادتها.",
-          read_more: "اقرأ المزيد"
-        }
-      ],
-      load_more: "تحميل المزيد من الأخبار"
-    },
+
     lang_toggle: "EN",
     about_title: "عن المقاولون العرب",
     about_description: "تأسست شركة المقاولون العرب في عام 1955، وكانت في طليعة التميز في البناء والهندسة في الشرق الأوسط. نتخصص في تطوير البنية التحتية والبناء التجاري والحلول المستدامة.",
