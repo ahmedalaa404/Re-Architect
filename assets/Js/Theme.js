@@ -10,15 +10,18 @@ export function toggleTheme() {
   }
   
   export function updateThemeIcon(theme) {
-    const icon = document.getElementById('themeIcon');
-    if (!icon) return;
+  const themeToggle = document.getElementById('themeToggle');
+  if (!themeToggle) return;
   
-    if (theme === 'dark') {
-      icon.classList.remove('sun');
-      icon.classList.add('moon');
-    } else {
-      icon.classList.remove('moon');
-      icon.classList.add('sun');
-    }
+  const icon = themeToggle.querySelector('i');
+  if (!icon) return;
+
+  if (theme === 'dark') {
+    icon.classList.remove('fa-moon');
+    icon.classList.add('fa-sun');
+  } else {
+    icon.classList.remove('fa-sun');
+    icon.classList.add('fa-moon');
   }
+}
   
