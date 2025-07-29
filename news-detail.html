@@ -115,11 +115,82 @@
   <!-- News Details Section -->
   <section class="news-details-section">
     <div class="container">
-      <div id="news-details-content" class="mx-auto" style="max-width: 800px;">
-        <!-- News details will be loaded here by JS -->
+      <div class="mx-auto" style="max-width: 800px;">
+        <!-- News Image -->
+        <img src="https://picsum.photos/600/400?random=1" alt="Metro Project" class="news-details-img">
+        
+        <!-- News Category -->
+        <div class="news-details-category">
+          <span class="text-en d-block">Projects</span>
+          <span class="text-ar d-none">المشاريع</span>
+        </div>
+        
+        <!-- News Date -->
+        <div class="news-details-date">
+          <span class="text-en d-block">15 Dec 2024</span>
+          <span class="text-ar d-none">15 ديسمبر 2024</span>
+        </div>
+        
+        <!-- News Title -->
+        <h1 class="news-details-title">
+          <span class="text-en d-block">New Metro Line Completion</span>
+          <span class="text-ar d-none">إنجاز خط المترو الجديد</span>
+        </h1>
+        
+        <!-- News Content -->
+        <div class="news-details-content">
+          <div class="text-en d-block">
+            <p>The completion of Cairo's fourth metro line marks a significant milestone in urban transportation infrastructure. This ambitious project represents a major step forward in modernizing Egypt's public transportation system and improving the daily commute for millions of citizens.</p>
+            
+            <h3>Project Overview</h3>
+            <p>Our team successfully completed the construction of Cairo's fourth metro line, which spans 18 kilometers and connects major districts across the city. This project was completed ahead of schedule and within budget, demonstrating our commitment to excellence and efficiency.</p>
+            
+            <h3>Key Features</h3>
+            <ul>
+              <li><strong>15 New Stations:</strong> Strategically located to serve high-density areas</li>
+              <li><strong>Advanced Signaling Systems:</strong> State-of-the-art technology for safety and efficiency</li>
+              <li><strong>Environmental Impact Reduction:</strong> Sustainable practices throughout construction</li>
+              <li><strong>Integration with Existing Networks:</strong> Seamless connection with current transport systems</li>
+              <li><strong>Accessibility Features:</strong> Full accessibility for passengers with disabilities</li>
+            </ul>
+            
+            <h3>Technical Specifications</h3>
+            <p>The metro line features cutting-edge technology including automated train control systems, real-time passenger information displays, and energy-efficient lighting throughout all stations. The project also includes extensive landscaping and urban development around station areas.</p>
+            
+            <h3>Community Impact</h3>
+            <p>This project has significantly reduced traffic congestion in central Cairo and provides a reliable, affordable transportation option for residents. The metro line is expected to serve over 500,000 passengers daily, contributing to the city's sustainable development goals.</p>
+          </div>
+          
+          <div class="text-ar d-none">
+            <p>يعد إنجاز خط مترو القاهرة الرابع علامة فارقة مهمة في البنية التحتية للنقل الحضري. يمثل هذا المشروع الطموح خطوة كبيرة إلى الأمام في تحديث نظام النقل العام في مصر وتحسين التنقل اليومي لملايين المواطنين.</p>
+            
+            <h3>نظرة عامة على المشروع</h3>
+            <p>نجح فريقنا في إنجاز بناء خط مترو القاهرة الرابع، الذي يمتد لمسافة 18 كيلومتراً ويربط الأحياء الرئيسية في المدينة. تم إنجاز هذا المشروع قبل الموعد المحدد وفي حدود الميزانية، مما يوضح التزامنا بالتميز والكفاءة.</p>
+            
+            <h3>المميزات الرئيسية</h3>
+            <ul>
+              <li><strong>15 محطة جديدة:</strong> موضوعة استراتيجياً لخدمة المناطق عالية الكثافة</li>
+              <li><strong>أنظمة إشارات متقدمة:</strong> تقنية حديثة للسلامة والكفاءة</li>
+              <li><strong>تقليل التأثير البيئي:</strong> ممارسات مستدامة طوال عملية البناء</li>
+              <li><strong>التكامل مع الشبكات الموجودة:</strong> اتصال سلس مع أنظمة النقل الحالية</li>
+              <li><strong>ميزات إمكانية الوصول:</strong> إمكانية وصول كاملة للركاب ذوي الإعاقة</li>
+            </ul>
+            
+            <h3>المواصفات التقنية</h3>
+            <p>يتميز خط المترو بتقنية متطورة تشمل أنظمة التحكم الآلي في القطارات، شاشات عرض معلومات الركاب في الوقت الفعلي، والإضاءة الموفرة للطاقة في جميع المحطات. يتضمن المشروع أيضاً تنسيقاً شاملاً للمناظر الطبيعية والتطوير الحضري حول مناطق المحطات.</p>
+            
+            <h3>التأثير المجتمعي</h3>
+            <p>ساهم هذا المشروع بشكل كبير في تقليل الازدحام المروري في وسط القاهرة ويوفر خيار نقل موثوق وبأسعار معقولة للسكان. من المتوقع أن يخدم خط المترو أكثر من 500,000 راكب يومياً، مما يساهم في أهداف التنمية المستدامة للمدينة.</p>
+          </div>
+        </div>
       </div>
+      
+      <!-- Back Button -->
       <div class="mt-4">
-        <a href="news.html" class="btn btn-outline-primary">&larr; Back to News</a>
+        <a href="news.html" class="btn btn-outline-primary">
+          <span class="text-en d-block">&larr; Back to News</span>
+          <span class="text-ar d-none">&larr; العودة للأخبار</span>
+        </a>
       </div>
     </div>
   </section>
@@ -209,163 +280,10 @@
 <script type="module" defer src="assets/Js/Aos_Animation.js"></script>
 <script type="module" defer src="assets/Js/news-language.js"></script>
   <script>
-    // News data with both English and Arabic content
-    const newsData = [
-      {
-        id: 1,
-        image: 'https://picsum.photos/600/400?random=1',
-        category: {
-          en: 'Projects',
-          ar: 'المشاريع'
-        },
-        date: {
-          en: '15 Dec 2024',
-          ar: '15 ديسمبر 2024'
-        },
-        title: {
-          en: 'New Metro Line Completion',
-          ar: 'إنجاز خط المترو الجديد'
-        },
-        content: {
-          en: `<p>The completion of Cairo's fourth metro line marks a significant milestone in urban transportation infrastructure. This project includes:</p>
-            <ul>
-              <li>15 new stations</li>
-              <li>Advanced signaling systems</li>
-              <li>Environmental impact reduction measures</li>
-              <li>Integration with existing transport networks</li>
-            </ul>`,
-          ar: `<p>يعد إنجاز خط مترو القاهرة الرابع علامة فارقة مهمة في البنية التحتية للنقل الحضري. يتضمن هذا المشروع:</p>
-            <ul>
-              <li>15 محطة جديدة</li>
-              <li>أنظمة إشارات متقدمة</li>
-              <li>تدابير تقليل التأثير البيئي</li>
-              <li>التكامل مع شبكات النقل الموجودة</li>
-            </ul>`
-        }
-      },
-      {
-        id: 2,
-        image: 'https://picsum.photos/600/400?random=2',
-        category: {
-          en: 'Awards',
-          ar: 'الجوائز'
-        },
-        date: {
-          en: '10 Dec 2024',
-          ar: '10 ديسمبر 2024'
-        },
-        title: {
-          en: 'Construction Excellence Award',
-          ar: 'جائزة التميز في البناء'
-        },
-        content: {
-          en: `<p>Honored with the prestigious Construction Excellence Award for outstanding achievements in sustainable construction. Our efforts include:</p>
-            <ul>
-              <li>Innovative green building practices</li>
-              <li>Community engagement</li>
-              <li>Quality and safety standards</li>
-            </ul>`,
-          ar: `<p>تم تكريمنا بجائزة التميز في البناء المرموقة لتحقيق إنجازات متميزة في البناء المستدام. تشمل جهودنا:</p>
-            <ul>
-              <li>ممارسات البناء الأخضر المبتكرة</li>
-              <li>التفاعل المجتمعي</li>
-              <li>معايير الجودة والسلامة</li>
-            </ul>`
-        }
-      },
-      {
-        id: 3,
-        image: 'https://picsum.photos/600/400?random=3',
-        category: {
-          en: 'Partnerships',
-          ar: 'الشراكات'
-        },
-        date: {
-          en: '5 Dec 2024',
-          ar: '5 ديسمبر 2024'
-        },
-        title: {
-          en: 'International Partnership',
-          ar: 'الشراكة الدولية'
-        },
-        content: {
-          en: `<p>Forming strategic partnerships with international firms to enhance our technological capabilities. Key highlights:</p>
-            <ul>
-              <li>Joint ventures with global leaders</li>
-              <li>Technology transfer</li>
-              <li>Expanding project portfolio</li>
-            </ul>`,
-          ar: `<p>تشكيل شراكات استراتيجية مع الشركات الدولية لتعزيز قدراتنا التكنولوجية. النقاط الرئيسية:</p>
-            <ul>
-              <li>مشاريع مشتركة مع قادة عالميين</li>
-              <li>نقل التكنولوجيا</li>
-              <li>توسيع محفظة المشاريع</li>
-            </ul>`
-        }
-      }
-    ];
-
-    // Get ID from URL
-    function getNewsId() {
-      const params = new URLSearchParams(window.location.search);
-      return parseInt(params.get('id'), 10);
-    }
-
-    // Get current language
-    function getCurrentLanguage() {
-      return document.documentElement.getAttribute('lang') || 'en';
-    }
-
-    // Render news details
-    function renderNewsDetails() {
-      const id = getNewsId();
-      const news = newsData.find(n => n.id === id);
-      const container = document.getElementById('news-details-content');
-      
-      if (!news) {
-        container.innerHTML = `
-          <div class="alert alert-danger">
-            <div class="text-en d-block">News not found.</div>
-            <div class="text-ar d-none">لم يتم العثور على الخبر.</div>
-          </div>`;
-        return;
-      }
-
-      const lang = getCurrentLanguage();
-      const isArabic = lang === 'ar';
-
-      container.innerHTML = `
-        <img src="${news.image}" alt="${news.title[lang]}" class="news-details-img">
-        <div class="news-details-category">
-          <span class="text-en ${isArabic ? 'd-none' : 'd-block'}">${news.category.en}</span>
-          <span class="text-ar ${isArabic ? 'd-block' : 'd-none'}">${news.category.ar}</span>
-        </div>
-        <div class="news-details-date">
-          <span class="text-en ${isArabic ? 'd-none' : 'd-block'}">${news.date.en}</span>
-          <span class="text-ar ${isArabic ? 'd-block' : 'd-none'}">${news.date.ar}</span>
-        </div>
-        <h1 class="news-details-title">
-          <span class="text-en ${isArabic ? 'd-none' : 'd-block'}">${news.title.en}</span>
-          <span class="text-ar ${isArabic ? 'd-block' : 'd-none'}">${news.title.ar}</span>
-        </h1>
-        <div class="news-details-content">
-          <div class="text-en ${isArabic ? 'd-none' : 'd-block'}">${news.content.en}</div>
-          <div class="text-ar ${isArabic ? 'd-block' : 'd-none'}">${news.content.ar}</div>
-        </div>
-      `;
-    }
-
-    // Listen for language changes
-    document.addEventListener('languageChanged', renderNewsDetails);
-    document.addEventListener('DOMContentLoaded', renderNewsDetails);
-    
-    // Also listen for manual language toggle
-    document.addEventListener('click', (e) => {
-      if (e.target.closest('#langToggle')) {
-        setTimeout(() => {
-          renderNewsDetails();
-        }, 100);
-      }
+    // Simple script to handle language switching for static content
+    document.addEventListener('DOMContentLoaded', function() {
+      // The news-language.js module will handle the language switching automatically
+      // since we're using text-en and text-ar classes with d-block/d-none
     });
   </script>
 </body>

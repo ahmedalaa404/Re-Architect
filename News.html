@@ -509,10 +509,50 @@
 
 <!-- CSS (add to your CSS file or inside a <style> tag) -->
 <style>
-  #mainNavbar
-  {
-    position: relative;
-  }
+
+/* News Filters */
+.news-filters {
+  margin-bottom: 2rem;
+}
+
+.filter-btn {
+  background: transparent;
+  border: 2px solid var(--primary-gold, #f39c12);
+  color: var(--text-dark, #2c3e50);
+  padding: 10px 24px;
+  margin: 0 8px 8px 0;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  outline: none;
+}
+
+.filter-btn:hover {
+  background: var(--primary-gold, #f39c12);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(243, 156, 18, 0.3);
+}
+
+.filter-btn.active {
+  background: var(--primary-gold, #f39c12);
+  color: white;
+  box-shadow: 0 4px 12px rgba(243, 156, 18, 0.3);
+}
+
+/* Animation for news cards when filtering */
+[data-category] {
+  transition: all 0.4s ease;
+}
+
+[data-category].filtered-out {
+  opacity: 0;
+  transform: scale(0.8);
+  pointer-events: none;
+}
+
 .news-card {
   background: var(--white);
   border-radius: 15px;
@@ -554,6 +594,79 @@
   font-weight: 600;
   z-index: 2;
 }
+/* News Overlay */
+.news-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(243, 156, 18, 0.9), rgba(230, 126, 34, 0.9));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 3;
+}
+
+.news-card:hover .news-overlay {
+  opacity: 1;
+}
+
+.news-overlay-content {
+  text-align: center;
+  transform: translateY(20px);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.news-card:hover .news-overlay-content {
+  transform: translateY(0);
+}
+
+.news-overlay-content i {
+  color: white;
+  margin-bottom: 10px;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+/* Enhanced Read More Button */
+.read-more-btn {
+  background: linear-gradient(135deg, var(--primary-gold, #f39c12), #e67e22);
+  border: none;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 25px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.read-more-btn:hover {
+  background: linear-gradient(135deg, #e67e22, var(--primary-gold, #f39c12));
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(243, 156, 18, 0.4);
+}
+
+.read-more-btn i {
+  transition: transform 0.3s ease;
+}
+
+.read-more-btn:hover i {
+  transform: translateX(5px);
+}
+
 .news-content {
   padding: 25px;
   flex: 1;
@@ -578,20 +691,53 @@
   margin: 0;
   flex: 1;
 }
-.readmore-btn {
-  background: linear-gradient(90deg, var(--primary-gold, #f39c12), var(--secondary-gold, #e67e22));
-  border: none;
+.read-more-btn {
+  background: var(--primary-gold, #f39c12);
+  border: 2px solid var(--primary-gold, #f39c12);
   color: #fff;
   border-radius: 25px;
   font-weight: 600;
-  transition: background 0.3s, box-shadow 0.3s;
-  box-shadow: 0 2px 10px rgba(243,156,18,0.08);
-}
-.readmore-btn:hover {
-  background: linear-gradient(90deg, var(--secondary-gold, #e67e22), var(--primary-gold, #f39c12));
-  color: #fff;
-  box-shadow: 0 6px 18px rgba(243,156,18,0.18);
+  padding: 10px 20px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 10px rgba(243,156,18,0.15);
   text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+  overflow: hidden;
+}
+
+.read-more-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s;
+}
+
+.read-more-btn:hover {
+  background: var(--secondary-gold, #e67e22);
+  border-color: var(--secondary-gold, #e67e22);
+  color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(243,156,18,0.3);
+  text-decoration: none;
+}
+
+.read-more-btn:hover::before {
+  left: 100%;
+}
+
+.read-more-btn:hover i {
+  transform: translateX(3px);
+}
+
+.read-more-btn i {
+  transition: transform 0.3s ease;
 }
 @media (max-width: 768px) {
   .news-img-wrapper { height: 160px; }
@@ -722,6 +868,7 @@
 <script type="module" defer src="assets/Js/index.js"></script>
 <script type="module" defer src="assets/Js/Aos_Animation.js"></script>
 <script type="module" defer src="assets/Js/news-language.js"></script>
+<script type="module" defer src="assets/Js/news-filters.js"></script>
 
 </body>
 </html>
