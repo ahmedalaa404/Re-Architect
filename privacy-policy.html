@@ -41,48 +41,60 @@
       background: var(--bg-light);
     }
     
-    .privacy-section {
+    .privacy-card {
+      height: 100%;
       background: var(--white);
       border-radius: 15px;
-      padding: 2.5rem;
+      padding: 2rem;
       margin-bottom: 2rem;
       box-shadow: 0 5px 20px rgba(0,0,0,0.1);
       transition: all 0.3s ease;
+      border: none;
+      border-left: 4px solid var(--primary-gold, #f39c12);
     }
     
-    .privacy-section:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    .privacy-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
     }
     
-    .privacy-section h2 {
-      color: var(--text-dark);
-      font-size: 1.8rem;
-      font-weight: bold;
+    .privacy-card .card-header {
+      background: transparent;
+      border-bottom: 2px solid var(--primary-gold, #f39c12);
+      padding-bottom: 1rem;
       margin-bottom: 1.5rem;
-      border-bottom: 3px solid var(--primary-gold, #f39c12);
-      padding-bottom: 0.5rem;
     }
     
-    .privacy-section h3 {
+    .privacy-card .card-title {
       color: var(--text-dark);
-      font-size: 1.3rem;
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 0;
+    }
+    
+    .privacy-card .card-body {
+      padding: 0;
+    }
+    
+    .privacy-card h3 {
+      color: var(--text-dark);
+      font-size: 1.2rem;
       font-weight: 600;
       margin: 1.5rem 0 1rem 0;
     }
     
-    .privacy-section p {
+    .privacy-card p {
       color: var(--text-dark);
       line-height: 1.7;
       margin-bottom: 1rem;
     }
     
-    .privacy-section ul {
+    .privacy-card ul {
       margin-bottom: 1rem;
       padding-left: 1.5rem;
     }
     
-    .privacy-section li {
+    .privacy-card li {
       color: var(--text-dark);
       line-height: 1.6;
       margin-bottom: 0.5rem;
@@ -113,14 +125,14 @@
     }
     
     /* Dark mode specific enhancements */
-    [data-theme="dark"] .privacy-section {
+    [data-theme="dark"] .privacy-card {
       background: var(--bg-dark);
       box-shadow: 0 5px 20px rgba(0,0,0,0.3);
       border: 1px solid var(--border-dark);
     }
     
-    [data-theme="dark"] .privacy-section:hover {
-      box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+    [data-theme="dark"] .privacy-card:hover {
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
     }
     
     [data-theme="dark"] .privacy-content {
@@ -139,7 +151,7 @@
     @media (max-width: 768px) {
       .privacy-hero h1 { font-size: 2.5rem; }
       .privacy-hero { padding: 6rem 0 3rem 0; }
-      .privacy-section { padding: 1.5rem; }
+      .privacy-card { padding: 1.5rem; }
     }
   </style>
 </head>
@@ -234,208 +246,207 @@
   <!-- Privacy Policy Content -->
   <section class="privacy-content">
     <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-10">
-          
-          <!-- Introduction Section -->
-          <div class="privacy-section" data-aos="fade-up">
-            <h2>
-              <span class="text-en d-block">Introduction</span>
-              <span class="text-ar d-none">المقدمة</span>
-            </h2>
-            <div class="text-en d-block">
-              <p>Arab Contractors ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our services.</p>
-              <p>By using our website, you consent to the data practices described in this policy. If you do not agree with our policies and practices, please do not use our website.</p>
+      
+      <!-- First Row: Introduction and Information Collection -->
+      <div class="row g-4 mb-4">
+        <div class="col-lg-6">
+          <div class="privacy-card" data-aos="fade-up">
+            <div class="card-header">
+              <h2 class="card-title">
+                <span class="text-en d-block">Introduction</span>
+                <span class="text-ar d-none">المقدمة</span>
+              </h2>
             </div>
-            <div class="text-ar d-none">
-              <p>تلتزم شركة المقاولون العرب ("نحن" أو "لنا") بحماية خصوصيتك. توضح سياسة الخصوصية هذه كيفية جمع واستخدام وكشف وحماية معلوماتك عند زيارة موقعنا الإلكتروني أو استخدام خدماتنا.</p>
-              <p>باستخدام موقعنا الإلكتروني، فإنك توافق على ممارسات البيانات الموضحة في هذه السياسة. إذا كنت لا توافق على سياساتنا وممارساتنا، يرجى عدم استخدام موقعنا الإلكتروني.</p>
-            </div>
-          </div>
-
-          <!-- Information We Collect Section -->
-          <div class="privacy-section" data-aos="fade-up" data-aos-delay="100">
-            <h2>
-              <span class="text-en d-block">Information We Collect</span>
-              <span class="text-ar d-none">المعلومات التي نجمعها</span>
-            </h2>
-            
-            <h3>
-              <span class="text-en d-block">Personal Information</span>
-              <span class="text-ar d-none">المعلومات الشخصية</span>
-            </h3>
-            <div class="text-en d-block">
-              <p>We may collect personal information that you voluntarily provide to us, including:</p>
-              <ul>
-                <li>Name and contact information (email address, phone number)</li>
-                <li>Professional information (job title, company, experience)</li>
-                <li>Resume or CV when applying for positions</li>
-                <li>Communication preferences</li>
-                <li>Any other information you choose to provide</li>
-              </ul>
-            </div>
-            <div class="text-ar d-none">
-              <p>قد نجمع معلومات شخصية تقدمها لنا طواعية، بما في ذلك:</p>
-              <ul>
-                <li>الاسم ومعلومات الاتصال (عنوان البريد الإلكتروني، رقم الهاتف)</li>
-                <li>المعلومات المهنية (المسمى الوظيفي، الشركة، الخبرة)</li>
-                <li>السيرة الذاتية عند التقدم للوظائف</li>
-                <li>تفضيلات التواصل</li>
-                <li>أي معلومات أخرى تختار تقديمها</li>
-              </ul>
-            </div>
-
-            <h3>
-              <span class="text-en d-block">Automatically Collected Information</span>
-              <span class="text-ar d-none">المعلومات المجمعة تلقائياً</span>
-            </h3>
-            <div class="text-en d-block">
-              <p>When you visit our website, we automatically collect certain information, including:</p>
-              <ul>
-                <li>IP address and browser type</li>
-                <li>Pages visited and time spent on each page</li>
-                <li>Referring website or source</li>
-                <li>Device information and operating system</li>
-                <li>Cookies and similar tracking technologies</li>
-              </ul>
-            </div>
-            <div class="text-ar d-none">
-              <p>عند زيارة موقعنا الإلكتروني، نجمع تلقائياً معلومات معينة، بما في ذلك:</p>
-              <ul>
-                <li>عنوان IP ونوع المتصفح</li>
-                <li>الصفحات التي تمت زيارتها والوقت المستغرق في كل صفحة</li>
-                <li>الموقع المرجعي أو المصدر</li>
-                <li>معلومات الجهاز ونظام التشغيل</li>
-                <li>ملفات تعريف الارتباط وتقنيات التتبع المماثلة</li>
-              </ul>
+            <div class="card-body">
+              <div class="text-en d-block">
+                <p>Arab Contractors ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our services.</p>
+                <p>By using our website, you consent to the data practices described in this policy. If you do not agree with our policies and practices, please do not use our website.</p>
+              </div>
+              <div class="text-ar d-none">
+                <p>تلتزم شركة المقاولون العرب ("نحن" أو "لنا") بحماية خصوصيتك. توضح سياسة الخصوصية هذه كيفية جمع واستخدام وكشف وحماية معلوماتك عند زيارة موقعنا الإلكتروني أو استخدام خدماتنا.</p>
+                <p>باستخدام موقعنا الإلكتروني، فإنك توافق على ممارسات البيانات الموضحة في هذه السياسة. إذا كنت لا توافق على سياساتنا وممارساتنا، يرجى عدم استخدام موقعنا الإلكتروني.</p>
+              </div>
             </div>
           </div>
-
-          <!-- How We Use Information Section -->
-          <div class="privacy-section" data-aos="fade-up" data-aos-delay="200">
-            <h2>
-              <span class="text-en d-block">How We Use Your Information</span>
-              <span class="text-ar d-none">كيفية استخدام معلوماتك</span>
-            </h2>
-            <div class="text-en d-block">
-              <p>We use the information we collect for various purposes, including:</p>
-              <ul>
-                <li>Providing and maintaining our services</li>
-                <li>Processing job applications and recruitment</li>
-                <li>Communicating with you about our services</li>
-                <li>Improving our website and user experience</li>
-                <li>Analyzing usage patterns and trends</li>
-                <li>Complying with legal obligations</li>
-                <li>Protecting against fraud and security threats</li>
-              </ul>
+        </div>
+        
+        <div class="col-lg-6">
+          <div class="privacy-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="card-header">
+              <h2 class="card-title">
+                <span class="text-en d-block">Information We Collect</span>
+                <span class="text-ar d-none">المعلومات التي نجمعها</span>
+              </h2>
             </div>
-            <div class="text-ar d-none">
-              <p>نستخدم المعلومات التي نجمعها لأغراض مختلفة، بما في ذلك:</p>
-              <ul>
-                <li>تقديم وصيانة خدماتنا</li>
-                <li>معالجة طلبات التوظيف والتوظيف</li>
-                <li>التواصل معك بشأن خدماتنا</li>
-                <li>تحسين موقعنا الإلكتروني وتجربة المستخدم</li>
-                <li>تحليل أنماط الاستخدام والاتجاهات</li>
-                <li>الامتثال للالتزامات القانونية</li>
-                <li>الحماية من الاحتيال والتهديدات الأمنية</li>
-              </ul>
-            </div>
-          </div>
-
-          <!-- Information Sharing Section -->
-          <div class="privacy-section" data-aos="fade-up" data-aos-delay="300">
-            <h2>
-              <span class="text-en d-block">Information Sharing and Disclosure</span>
-              <span class="text-ar d-none">مشاركة وكشف المعلومات</span>
-            </h2>
-            <div class="text-en d-block">
-              <p>We do not sell, trade, or otherwise transfer your personal information to third parties without your consent, except in the following circumstances:</p>
-              <ul>
-                <li>With your explicit consent</li>
-                <li>To comply with legal requirements or court orders</li>
-                <li>To protect our rights, property, or safety</li>
-                <li>To trusted service providers who assist in our operations</li>
-                <li>In connection with a business transfer or merger</li>
-              </ul>
-            </div>
-            <div class="text-ar d-none">
-              <p>لا نبيع أو نتاجر أو ننقل معلوماتك الشخصية إلى أطراف ثالثة دون موافقتك، إلا في الحالات التالية:</p>
-              <ul>
-                <li>مع موافقتك الصريحة</li>
-                <li>للامتثال للمتطلبات القانونية أو أوامر المحكمة</li>
-                <li>لحماية حقوقنا أو ممتلكاتنا أو سلامتنا</li>
-                <li>إلى مقدمي الخدمات الموثوقين الذين يساعدون في عملياتنا</li>
-                <li>في إطار نقل أو دمج الأعمال</li>
-              </ul>
+            <div class="card-body">
+              <h3>
+                <span class="text-en d-block">Personal Information</span>
+                <span class="text-ar d-none">المعلومات الشخصية</span>
+              </h3>
+              <div class="text-en d-block">
+                <p>We may collect personal information that you voluntarily provide to us, including:</p>
+                <ul>
+                  <li>Name and contact information</li>
+                  <li>Professional information</li>
+                  <li>Resume or CV when applying</li>
+                  <li>Communication preferences</li>
+                </ul>
+              </div>
+              <div class="text-ar d-none">
+                <p>قد نجمع معلومات شخصية تقدمها لنا طواعية، بما في ذلك:</p>
+                <ul>
+                  <li>الاسم ومعلومات الاتصال</li>
+                  <li>المعلومات المهنية</li>
+                  <li>السيرة الذاتية عند التقدم</li>
+                  <li>تفضيلات التواصل</li>
+                </ul>
+              </div>
             </div>
           </div>
+        </div>
+      </div>
 
-          <!-- Data Security Section -->
-          <div class="privacy-section" data-aos="fade-up" data-aos-delay="400">
-            <h2>
-              <span class="text-en d-block">Data Security</span>
-              <span class="text-ar d-none">أمن البيانات</span>
-            </h2>
-            <div class="text-en d-block">
-              <p>We implement appropriate technical and organizational measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction. These measures include:</p>
-              <ul>
-                <li>Encryption of sensitive data</li>
-                <li>Regular security assessments and updates</li>
-                <li>Access controls and authentication</li>
-                <li>Employee training on data protection</li>
-                <li>Secure data transmission protocols</li>
-              </ul>
-              <p>However, no method of transmission over the internet or electronic storage is 100% secure, and we cannot guarantee absolute security.</p>
+      <!-- Second Row: How We Use and Information Sharing -->
+      <div class="row g-4 mb-4">
+        <div class="col-lg-6">
+          <div class="privacy-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="card-header">
+              <h2 class="card-title">
+                <span class="text-en d-block">How We Use Your Information</span>
+                <span class="text-ar d-none">كيفية استخدام معلوماتك</span>
+              </h2>
             </div>
-            <div class="text-ar d-none">
-              <p>نطبق تدابير تقنية وتنظيمية مناسبة لحماية معلوماتك الشخصية من الوصول غير المصرح به أو التغيير أو الكشف أو التدمير. تشمل هذه التدابير:</p>
-              <ul>
-                <li>تشفير البيانات الحساسة</li>
-                <li>التقييمات والتحديثات الأمنية المنتظمة</li>
-                <li>ضوابط الوصول والمصادقة</li>
-                <li>تدريب الموظفين على حماية البيانات</li>
-                <li>بروتوكولات نقل البيانات الآمنة</li>
-              </ul>
-              <p>ومع ذلك، لا توجد طريقة نقل عبر الإنترنت أو التخزين الإلكتروني آمنة بنسبة 100%، ولا يمكننا ضمان الأمان المطلق.</p>
+            <div class="card-body">
+              <div class="text-en d-block">
+                <p>We use the information we collect for various purposes, including:</p>
+                <ul>
+                  <li>Providing and maintaining our services</li>
+                  <li>Processing job applications</li>
+                  <li>Communicating with you</li>
+                  <li>Improving our website</li>
+                  <li>Analyzing usage patterns</li>
+                </ul>
+              </div>
+              <div class="text-ar d-none">
+                <p>نستخدم المعلومات التي نجمعها لأغراض مختلفة، بما في ذلك:</p>
+                <ul>
+                  <li>تقديم وصيانة خدماتنا</li>
+                  <li>معالجة طلبات التوظيف</li>
+                  <li>التواصل معك</li>
+                  <li>تحسين موقعنا الإلكتروني</li>
+                  <li>تحليل أنماط الاستخدام</li>
+                </ul>
+              </div>
             </div>
           </div>
-
-          <!-- Your Rights Section -->
-          <div class="privacy-section" data-aos="fade-up" data-aos-delay="500">
-            <h2>
-              <span class="text-en d-block">Your Rights</span>
-              <span class="text-ar d-none">حقوقك</span>
-            </h2>
-            <div class="text-en d-block">
-              <p>Depending on your location, you may have certain rights regarding your personal information, including:</p>
-              <ul>
-                <li>The right to access your personal information</li>
-                <li>The right to correct inaccurate information</li>
-                <li>The right to delete your personal information</li>
-                <li>The right to restrict processing</li>
-                <li>The right to data portability</li>
-                <li>The right to object to processing</li>
-                <li>The right to withdraw consent</li>
-              </ul>
-              <p>To exercise these rights, please contact us using the information provided below.</p>
+        </div>
+        
+        <div class="col-lg-6">
+          <div class="privacy-card" data-aos="fade-up" data-aos-delay="300">
+            <div class="card-header">
+              <h2 class="card-title">
+                <span class="text-en d-block">Information Sharing</span>
+                <span class="text-ar d-none">مشاركة المعلومات</span>
+              </h2>
             </div>
-            <div class="text-ar d-none">
-              <p>اعتماداً على موقعك، قد تكون لديك حقوق معينة بشأن معلوماتك الشخصية، بما في ذلك:</p>
-              <ul>
-                <li>الحق في الوصول إلى معلوماتك الشخصية</li>
-                <li>الحق في تصحيح المعلومات غير الدقيقة</li>
-                <li>الحق في حذف معلوماتك الشخصية</li>
-                <li>الحق في تقييد المعالجة</li>
-                <li>الحق في نقل البيانات</li>
-                <li>الحق في الاعتراض على المعالجة</li>
-                <li>الحق في سحب الموافقة</li>
-              </ul>
-              <p>لممارسة هذه الحقوق، يرجى الاتصال بنا باستخدام المعلومات المقدمة أدناه.</p>
+            <div class="card-body">
+              <div class="text-en d-block">
+                <p>We do not sell, trade, or transfer your personal information without your consent, except:</p>
+                <ul>
+                  <li>With your explicit consent</li>
+                  <li>To comply with legal requirements</li>
+                  <li>To protect our rights</li>
+                  <li>To trusted service providers</li>
+                </ul>
+              </div>
+              <div class="text-ar d-none">
+                <p>لا نبيع أو نتاجر أو ننقل معلوماتك الشخصية دون موافقتك، إلا:</p>
+                <ul>
+                  <li>مع موافقتك الصريحة</li>
+                  <li>للامتثال للمتطلبات القانونية</li>
+                  <li>لحماية حقوقنا</li>
+                  <li>إلى مقدمي الخدمات الموثوقين</li>
+                </ul>
+              </div>
             </div>
           </div>
+        </div>
+      </div>
 
-          <!-- Contact Information -->
+      <!-- Third Row: Data Security and Your Rights -->
+      <div class="row g-4 mb-4">
+        <div class="col-lg-6">
+          <div class="privacy-card" data-aos="fade-up" data-aos-delay="400">
+            <div class="card-header">
+              <h2 class="card-title">
+                <span class="text-en d-block">Data Security</span>
+                <span class="text-ar d-none">أمن البيانات</span>
+              </h2>
+            </div>
+            <div class="card-body">
+              <div class="text-en d-block">
+                <p>We implement appropriate measures to protect your personal information:</p>
+                <ul>
+                  <li>Encryption of sensitive data</li>
+                  <li>Regular security assessments</li>
+                  <li>Access controls and authentication</li>
+                  <li>Employee training</li>
+                  <li>Secure data transmission</li>
+                </ul>
+              </div>
+              <div class="text-ar d-none">
+                <p>نطبق تدابير مناسبة لحماية معلوماتك الشخصية:</p>
+                <ul>
+                  <li>تشفير البيانات الحساسة</li>
+                  <li>التقييمات الأمنية المنتظمة</li>
+                  <li>ضوابط الوصول والمصادقة</li>
+                  <li>تدريب الموظفين</li>
+                  <li>نقل البيانات الآمن</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-6">
+          <div class="privacy-card" data-aos="fade-up" data-aos-delay="500">
+            <div class="card-header">
+              <h2 class="card-title">
+                <span class="text-en d-block">Your Rights</span>
+                <span class="text-ar d-none">حقوقك</span>
+              </h2>
+            </div>
+            <div class="card-body">
+              <div class="text-en d-block">
+                <p>You may have certain rights regarding your personal information:</p>
+                <ul>
+                  <li>Right to access your information</li>
+                  <li>Right to correct information</li>
+                  <li>Right to delete information</li>
+                  <li>Right to restrict processing</li>
+                  <li>Right to data portability</li>
+                  <li>Right to object to processing</li>
+                </ul>
+              </div>
+              <div class="text-ar d-none">
+                <p>قد تكون لديك حقوق معينة بشأن معلوماتك الشخصية:</p>
+                <ul>
+                  <li>الحق في الوصول إلى معلوماتك</li>
+                  <li>الحق في تصحيح المعلومات</li>
+                  <li>الحق في حذف المعلومات</li>
+                  <li>الحق في تقييد المعالجة</li>
+                  <li>الحق في نقل البيانات</li>
+                  <li>الحق في الاعتراض على المعالجة</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Information -->
+      <div class="row">
+        <div class="col-12">
           <div class="contact-info-box" data-aos="fade-up" data-aos-delay="600">
             <h4>
               <span class="text-en d-block">Contact Us</span>
@@ -454,9 +465,9 @@
               <p>إذا كان لديك أي أسئلة حول سياسة الخصوصية هذه، يرجى الاتصال بنا.</p>
             </div>
           </div>
-
         </div>
       </div>
+
     </div>
   </section>
 

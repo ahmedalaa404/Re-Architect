@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="page_title">Arab Contractors - Our Offices</title>
+  <meta name="description" content="Find Arab Contractors offices worldwide. Contact our regional offices for local support and services.">
+  <meta name="keywords" content="Arab Contractors, offices, locations, branches, regional offices, contact">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://arabcontractors.com/offices">
+  <link rel="alternate" hreflang="en" href="https://arabcontractors.com/en/offices">
+  <link rel="alternate" hreflang="ar" href="https://arabcontractors.com/ar/offices">
+  <!-- AOS CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="assets/Css/global.css">
+  <style>
+    .offices-hero {
+      background: linear-gradient(135deg, var(--primary-gold, #f39c12) 0%, var(--secondary-gold, #e67e22) 100%);
+      padding: 8rem 0 4rem 0;
+      color: white;
+      text-align: center;
+    }
+    
+    .offices-hero h1 {
+      font-size: 3.5rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+    
+    .offices-hero p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    .offices-content {
+      padding: 4rem 0;
+      background: var(--bg-light);
+    }
+    
+    .office-card {
+      background: var(--white);
+      border-radius: 20px;
+      padding: 2.5rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+    }
+    
+    .office-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(243,156,18,0.1), transparent);
+      transition: left 0.6s ease;
+    }
+    
+    .office-card:hover::before {
+      left: 100%;
+    }
+    
+    .office-card:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    }
+    
+    .office-image {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 15px;
+      margin-bottom: 1.5rem;
+      transition: transform 0.4s ease;
+    }
+    
+    .office-card:hover .office-image {
+      transform: scale(1.05);
+    }
+    
+    .office-location {
+      display: inline-block;
+      background: var(--primary-gold, #f39c12);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      transition: all 0.3s ease;
+    }
+    
+    .office-card:hover .office-location {
+      background: var(--secondary-gold, #e67e22);
+      transform: scale(1.05);
+    }
+    
+    .office-title {
+      color: var(--text-dark);
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+      transition: color 0.3s ease;
+    }
+    
+    .office-card:hover .office-title {
+      color: var(--primary-gold, #f39c12);
+    }
+    
+    .office-description {
+      color: var(--text-dark);
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+    
+    .office-info {
+      background: #f8f9fa;
+      padding: 1.5rem;
+      border-radius: 12px;
+      margin-bottom: 1.5rem;
+      transition: all 0.3s ease;
+    }
+    
+    .office-card:hover .office-info {
+      background: var(--primary-gold, #f39c12);
+      color: white;
+    }
+    
+    .office-info i {
+      color: var(--primary-gold, #f39c12);
+      margin-right: 0.5rem;
+      transition: color 0.3s ease;
+    }
+    
+    .office-card:hover .office-info i {
+      color: white;
+    }
+    
+    .office-info p {
+      margin-bottom: 0.5rem;
+      transition: color 0.3s ease;
+    }
+    
+    .office-card:hover .office-info p {
+      color: white;
+    }
+    
+    .contact-btn {
+      background: var(--primary-gold, #f39c12);
+      border: 2px solid var(--primary-gold, #f39c12);
+      color: white;
+      padding: 10px 25px;
+      border-radius: 25px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .contact-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transition: left 0.5s;
+    }
+    
+    .contact-btn:hover::before {
+      left: 100%;
+    }
+    
+    .contact-btn:hover {
+      background: var(--secondary-gold, #e67e22);
+      border-color: var(--secondary-gold, #e67e22);
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(243,156,18,0.3);
+    }
+    
+    /* Dark mode specific enhancements */
+    [data-theme="dark"] .office-card {
+      background: var(--bg-dark);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      border: 1px solid var(--border-dark);
+    }
+    
+    [data-theme="dark"] .office-card:hover {
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    }
+    
+    [data-theme="dark"] .office-info {
+      background: var(--bg-dark);
+      border: 1px solid var(--border-dark);
+    }
+    
+    [data-theme="dark"] .offices-content {
+      background: var(--bg-dark);
+    }
+    
+    @media (max-width: 768px) {
+      .offices-hero h1 { font-size: 2.5rem; }
+      .offices-hero { padding: 6rem 0 3rem 0; }
+      .office-card { padding: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header/Navbar (same as other pages) -->
+  <nav id="mainNavbar" class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <!-- Logo and Brand -->
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <div class="logo-container me-3">
+          <div class="logo-animated-container">
+            <img src="assets/images/logo.webp" alt="Arab Contractors Logo" class="img-fluid" loading="lazy">
+          </div>
+        </div>
+        <div class="brand-text">
+          <div class="en-text" data-translate="brand_name">Arab Contractors</div>
+          <div class="ar-text"><span id="animated-arabic-name" data-translate="brand_name_ar"></span></div>
+        </div>
+      </a>
+
+      <!-- Mobile Toggle -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fa-solid fa-bars text-white"></i>
+      </button>
+
+      <!-- Navigation Links -->
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html" data-translate="nav.home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html#about" data-translate="nav.about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="leadership.html" data-translate="nav.leadership">Leadership</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="News.html" data-translate="nav.news">News</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="hiring.html" data-translate="nav.hiring">Hiring</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html#sustainability" data-translate="nav.sustainability">Sustainability</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="privacy-policy.html" data-translate="nav.privacy">Privacy Policy</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-translate="nav.contact">Contact</a>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li>
+                <a class="dropdown-item" href="contact.html" data-translate="nav.contact_us">Contact Us</a>
+              </li>
+              <li>
+                <a class="dropdown-item active" href="offices.html" data-translate="nav.offices">Offices</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+
+        <!-- Language and Theme Toggles -->
+        <div class="navbar-controls d-flex align-items-center mx-3">
+          <button id="langToggle" class="btn btn-outline-light btn-sm mx-2" title="Toggle Language" aria-label="Toggle between Arabic and English">
+            <span class="en-text">AR</span>
+            <span class="ar-text">EN</span>
+          </button>
+          <button id="themeToggle" class="btn btn-outline-light btn-sm" title="Toggle Theme" aria-label="Toggle between light and dark mode">
+            <i class="fas fa-moon"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Offices Hero Section -->
+  <section class="offices-hero" data-aos="fade-up">
+    <div class="container">
+      <h1>
+        <span class="text-en d-block">Our Offices</span>
+        <span class="text-ar d-none">مكاتبنا</span>
+      </h1>
+      <p>
+        <span class="text-en d-block">Find our regional offices worldwide. We're here to serve you locally with global expertise.</span>
+        <span class="text-ar d-none">اعثر على مكاتبنا الإقليمية في جميع أنحاء العالم. نحن هنا لخدمتك محلياً بخبرة عالمية.</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- Offices Content -->
+  <section class="offices-content">
+    <div class="container">
+      <div class="row">
+        <!-- Cairo Office -->
+        <div class="col-lg-6 mb-4" data-aos="fade-up">
+          <div class="office-card">
+            <img src="https://picsum.photos/600/400?random=10" alt="Cairo Office" class="office-image">
+            <div class="office-location">
+              <span class="text-en d-block">Cairo, Egypt</span>
+              <span class="text-ar d-none">القاهرة، مصر</span>
+            </div>
+            <h3 class="office-title">
+              <span class="text-en d-block">Headquarters</span>
+              <span class="text-ar d-none">المقر الرئيسي</span>
+            </h3>
+            <p class="office-description">
+              <span class="text-en d-block">Our main headquarters in Cairo serves as the central hub for all our operations across the Middle East and Africa.</span>
+              <span class="text-ar d-none">يخدم مقرنا الرئيسي في القاهرة كمركز رئيسي لجميع عملياتنا في الشرق الأوسط وأفريقيا.</span>
+            </p>
+            <div class="office-info">
+              <p><i class="fas fa-map-marker-alt"></i>
+                <span class="text-en d-block">123 Construction Street, Cairo</span>
+                <span class="text-ar d-none">123 شارع البناء، القاهرة</span>
+              </p>
+              <p><i class="fas fa-phone"></i>
+                <span class="text-en d-block">+20 2 1234 5678</span>
+                <span class="text-ar d-none">+20 2 1234 5678</span>
+              </p>
+              <p><i class="fas fa-envelope"></i>
+                <span class="text-en d-block">cairo@arabcontractors.com</span>
+                <span class="text-ar d-none">cairo@arabcontractors.com</span>
+              </p>
+            </div>
+            <a href="contact.html" class="contact-btn">
+              <span class="text-en d-block">Contact Office</span>
+              <span class="text-ar d-none">اتصل بالمكتب</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Dubai Office -->
+        <div class="col-lg-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="office-card">
+            <img src="https://picsum.photos/600/400?random=11" alt="Dubai Office" class="office-image">
+            <div class="office-location">
+              <span class="text-en d-block">Dubai, UAE</span>
+              <span class="text-ar d-none">دبي، الإمارات</span>
+            </div>
+            <h3 class="office-title">
+              <span class="text-en d-block">Gulf Region Office</span>
+              <span class="text-ar d-none">مكتب منطقة الخليج</span>
+            </h3>
+            <p class="office-description">
+              <span class="text-en d-block">Our Dubai office manages projects across the Gulf region, providing specialized services for high-rise and infrastructure projects.</span>
+              <span class="text-ar d-none">يدير مكتب دبي المشاريع في منطقة الخليج، ويقدم خدمات متخصصة للمشاريع العالية والبنية التحتية.</span>
+            </p>
+            <div class="office-info">
+              <p><i class="fas fa-map-marker-alt"></i>
+                <span class="text-en d-block">Sheikh Zayed Road, Dubai</span>
+                <span class="text-ar d-none">طريق الشيخ زايد، دبي</span>
+              </p>
+              <p><i class="fas fa-phone"></i>
+                <span class="text-en d-block">+971 4 1234 5678</span>
+                <span class="text-ar d-none">+971 4 1234 5678</span>
+              </p>
+              <p><i class="fas fa-envelope"></i>
+                <span class="text-en d-block">dubai@arabcontractors.com</span>
+                <span class="text-ar d-none">dubai@arabcontractors.com</span>
+              </p>
+            </div>
+            <a href="contact.html" class="contact-btn">
+              <span class="text-en d-block">Contact Office</span>
+              <span class="text-ar d-none">اتصل بالمكتب</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Riyadh Office -->
+        <div class="col-lg-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="office-card">
+            <img src="https://picsum.photos/600/400?random=12" alt="Riyadh Office" class="office-image">
+            <div class="office-location">
+              <span class="text-en d-block">Riyadh, Saudi Arabia</span>
+              <span class="text-ar d-none">الرياض، المملكة العربية السعودية</span>
+            </div>
+            <h3 class="office-title">
+              <span class="text-en d-block">Saudi Arabia Branch</span>
+              <span class="text-ar d-none">فرع المملكة العربية السعودية</span>
+            </h3>
+            <p class="office-description">
+              <span class="text-en d-block">Our Riyadh office specializes in large-scale infrastructure and megaprojects, supporting Saudi Vision 2030 initiatives.</span>
+              <span class="text-ar d-none">يتخصص مكتب الرياض في مشاريع البنية التحتية واسعة النطاق والمشاريع الكبرى، ويدعم مبادرات رؤية السعودية 2030.</span>
+            </p>
+            <div class="office-info">
+              <p><i class="fas fa-map-marker-alt"></i>
+                <span class="text-en d-block">King Fahd Road, Riyadh</span>
+                <span class="text-ar d-none">طريق الملك فهد، الرياض</span>
+              </p>
+              <p><i class="fas fa-phone"></i>
+                <span class="text-en d-block">+966 11 1234 5678</span>
+                <span class="text-ar d-none">+966 11 1234 5678</span>
+              </p>
+              <p><i class="fas fa-envelope"></i>
+                <span class="text-en d-block">riyadh@arabcontractors.com</span>
+                <span class="text-ar d-none">riyadh@arabcontractors.com</span>
+              </p>
+            </div>
+            <a href="contact.html" class="contact-btn">
+              <span class="text-en d-block">Contact Office</span>
+              <span class="text-ar d-none">اتصل بالمكتب</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Doha Office -->
+        <div class="col-lg-6 mb-4" data-aos="fade-up" data-aos-delay="300">
+          <div class="office-card">
+            <img src="https://picsum.photos/600/400?random=13" alt="Doha Office" class="office-image">
+            <div class="office-location">
+              <span class="text-en d-block">Doha, Qatar</span>
+              <span class="text-ar d-none">الدوحة، قطر</span>
+            </div>
+            <h3 class="office-title">
+              <span class="text-en d-block">Qatar Operations</span>
+              <span class="text-ar d-none">عمليات قطر</span>
+            </h3>
+            <p class="office-description">
+              <span class="text-en d-block">Our Doha office focuses on sustainable construction and smart city projects, contributing to Qatar's development goals.</span>
+              <span class="text-ar d-none">يركز مكتب الدوحة على البناء المستدام ومشاريع المدن الذكية، ويساهم في أهداف التنمية في قطر.</span>
+            </p>
+            <div class="office-info">
+              <p><i class="fas fa-map-marker-alt"></i>
+                <span class="text-en d-block">West Bay, Doha</span>
+                <span class="text-ar d-none">الخليج الغربي، الدوحة</span>
+              </p>
+              <p><i class="fas fa-phone"></i>
+                <span class="text-en d-block">+974 4 1234 5678</span>
+                <span class="text-ar d-none">+974 4 1234 5678</span>
+              </p>
+              <p><i class="fas fa-envelope"></i>
+                <span class="text-en d-block">doha@arabcontractors.com</span>
+                <span class="text-ar d-none">doha@arabcontractors.com</span>
+              </p>
+            </div>
+            <a href="contact.html" class="contact-btn">
+              <span class="text-en d-block">Contact Office</span>
+              <span class="text-ar d-none">اتصل بالمكتب</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer (same as other pages) -->
+  <footer class="py-5">
+    <div class="container py-4">
+      <div class="row g-4">
+        <!-- Company Info -->
+        <div class="col-lg-4 col-md-6">
+          <div class="footer-section">
+            <div class="d-flex align-items-center mb-3">
+              <div class="logo-container me-3">
+                <img src="assets/images/logo.webp" alt="Arab Contractors Logo" class="img-fluid" style="max-height: 50px;" loading="lazy">
+              </div>
+              <div>
+                <h5 class="mb-0" data-translate="brand_name">Arab Contractors</h5>
+              </div>
+            </div>
+            <p class="mb-3" data-translate="footer_description">Building the future with excellence, innovation, and sustainable development.</p>
+            <div class="social-links">
+              <a href="https://facebook.com/arabcontractors" class="text-white me-3" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a href="https://twitter.com/arabcontractors" class="text-white me-3" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+              <a href="https://linkedin.com/company/arabcontractors" class="text-white me-3" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              <a href="https://instagram.com/arabcontractors" class="text-white" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="col-lg-2 col-md-6">
+          <div class="footer-section">
+            <h6 class="mb-3" data-translate="footer_quick_links">Quick Links</h6>
+            <ul class="list-unstyled">
+              <li class="mb-2">
+                <a href="index.html" class="text-decoration-none" data-translate="nav.home">Home</a>
+              </li>
+              <li class="mb-2">
+                <a href="index.html#about" class="text-decoration-none" data-translate="nav.about">About Us</a>
+              </li>
+              <li class="mb-2">
+                <a href="leadership.html" class="text-decoration-none" data-translate="nav.leadership">Leadership</a>
+              </li>
+              <li class="mb-2">
+                <a href="News.html" class="text-decoration-none" data-translate="nav.news">News</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Services -->
+        <div class="col-lg-2 col-md-6">
+          <div class="footer-section">
+            <h6 class="mb-3" data-translate="footer_services">Services</h6>
+            <ul class="list-unstyled">
+              <li class="mb-2" data-translate="footer_service_infrastructure">Infrastructure</li>
+              <li class="mb-2" data-translate="footer_service_construction">Construction</li>
+              <li class="mb-2" data-translate="footer_service_engineering">Engineering</li>
+              <li class="mb-2" data-translate="footer_service_consulting">Consulting</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="col-lg-4 col-md-6">
+          <div class="footer-section">
+            <h6 class="mb-3" data-translate="footer_contact">Contact Information</h6>
+            <div class="contact-info">
+              <p class="mb-2" data-translate="footer_address"><i class="fas fa-map-marker-alt me-2"></i>Cairo, Egypt</p>
+              <p class="mb-2" data-translate="footer_phone"><i class="fas fa-phone me-2"></i>+20 2 1234 5678</p>
+              <p class="mb-2" data-translate="footer_email"><i class="fas fa-envelope me-2"></i>info@arabcontractors.com</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom mt-4 pt-4 border-top">
+        <div class="row align-items-center">
+          <div class="col-md-6">
+            <p class="mb-0" data-translate="footer_copyright">&copy; 2025 Arab Contractors. All rights reserved.</p>
+          </div>
+          <div class="col-md-6 text-md-end">
+            <a href="privacy-policy.html" class="text-decoration-none me-3" data-translate="nav.privacy">Privacy Policy</a>
+            <a href="contact.html" class="text-decoration-none" data-translate="nav.contact">Contact</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/all.min.js" integrity="sha512-b+nQTCdtTBIRIbraqNEwsjB6UvL3UEMkXnhzd8awtCYh0Kcsjl9uEgwVFVbhoj3uu1DO1ZMacNvLoyJJiNfcvg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script type="module" defer src="assets/Js/global.js"></script>
+  <script type="module" defer src="assets/Js/index.js"></script>
+  <script type="module" defer src="assets/Js/Aos_Animation.js"></script>
+  <script type="module" defer src="assets/Js/offices-language.js"></script>
+</body>
+</html> 
