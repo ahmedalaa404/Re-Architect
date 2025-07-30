@@ -63,26 +63,229 @@
           </div>
         </div>
       </nav>
+    <style>
+      .leader-details {
+        padding: 6rem 0;
+        background: linear-gradient(180deg, var(--bg-light) 0%, var(--white) 100%);
+        min-height: 100vh;
+      }
+
+      .back-button {
+        display: inline-flex;
+        align-items: center;
+        color: var(--text-primary);
+        text-decoration: none;
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+        transition: var(--transition);
+      }
+
+      .back-button:hover {
+        transform: translateX(-5px);
+        color: var(--text-dark);
+      }
+
+      .back-button i {
+        margin-right: 0.5rem;
+      }
+
+      .profile-card {
+        background: var(--white);
+        border-radius: 2rem;
+        overflow: hidden;
+        box-shadow: var(--shadow);
+        position: relative;
+      }
+
+      .profile-header {
+        background: linear-gradient(135deg, var(--text-primary) 0%, var(--text-dark) 100%);
+        padding: 3rem;
+        color: var(--text-light);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .profile-header::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        right: -50%;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+        border-radius: 50%;
+        transform: scale(2);
+      }
+
+      .profile-image {
+        width: 220px;
+        height: 220px;
+        border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+        border: 8px solid var(--border-color);
+        margin: 0 auto 2rem;
+        overflow: hidden;
+        transition: var(--transition);
+        position: relative;
+        z-index: 1;
+      }
+
+      .profile-image:hover {
+        border-radius: 70% 30% 30% 70% / 70% 70% 30% 30%;
+        transform: scale(1.05);
+      }
+
+      .profile-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .profile-title {
+        font-size: 2.5rem;
+        font-weight: 800;
+        margin-bottom: 0.5rem;
+        text-align: center;
+      }
+
+      .profile-role {
+        font-size: 1.4rem;
+        opacity: 0.9;
+        margin-bottom: 2rem;
+        text-align: center;
+      }
+
+      .profile-content {
+        padding: 3rem;
+        color: var(--text-dark);
+      }
+
+      .profile-bio {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        margin-bottom: 2rem;
+      }
+
+      .achievements-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+      }
+
+      .achievement-item {
+        background: var(--bg-light);
+        padding: 1.5rem;
+        border-radius: 1rem;
+        display: flex;
+        align-items: center;
+        transition: var(--transition);
+      }
+
+      .achievement-item:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow);
+      }
+
+      .achievement-icon {
+        width: 40px;
+        height: 40px;
+        background: var(--text-primary);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 1rem;
+        color: var(--white);
+      }
+
+      [dir="rtl"] .back-button i {
+        margin-right: 0;
+        margin-left: 0.5rem;
+      }
+
+      [dir="rtl"] .achievement-icon {
+        margin-right: 0;
+        margin-left: 1rem;
+      }
+
+      @media (max-width: 768px) {
+        .profile-header {
+          padding: 2rem;
+        }
+
+        .profile-image {
+          width: 180px;
+          height: 180px;
+        }
+
+        .profile-title {
+          font-size: 2rem;
+        }
+
+        .profile-content {
+          padding: 2rem;
+        }
+      }
+    </style>
     <!-- Main Content -->
-    <main class="container my-5 pt-5">
-      <a href="leadership.html" class="btn btn-link mb-4"><i class="fas fa-arrow-left"></i> Back to Leadership</a>
-      <div class="row justify-content-center">
-        <div class="col-md-8">
-          <div class="card shadow">
-            <div class="row g-0 align-items-center">
-              <div class="col-md-4 text-center">
-                <img src="assets/Images/ceo-placeholder.jpg" class="img-fluid rounded-start my-4" alt="CEO Photo" style="max-width: 180px;">
+    <main class="leader-details">
+      <div class="container">
+        <a href="leadership.html" class="back-button">
+          <i class="fas fa-arrow-left"></i>
+          <span class="en-text">Back to Leadership</span>
+          <span class="ar-text">العودة إلى القيادة</span>
+        </a>
+        <div class="profile-card" data-aos="fade-up">
+          <div class="profile-header">
+            <div class="profile-image" data-aos="zoom-in">
+              <img src="https://ui-avatars.com/api/?name=Ahmed+Hassan&background=1a237e&color=fff&size=256" alt="CEO Photo">
+            </div>
+            <h1 class="profile-title">
+              <span class="en-text">Eng. Ahmed Hassan</span>
+              <span class="ar-text">م. أحمد حسن</span>
+            </h1>
+            <div class="profile-role">
+              <span class="en-text">Chief Executive Officer</span>
+              <span class="ar-text">الرئيس التنفيذي</span>
+            </div>
+          </div>
+          <div class="profile-content">
+            <div class="profile-bio">
+              <span class="en-text">
+                Eng. Ahmed Hassan has led Arab Contractors to new heights with a vision for innovation, sustainability, and excellence in construction. With over 25 years of experience in the industry, he is committed to delivering world-class infrastructure and empowering teams to achieve their best.
+              </span>
+              <span class="ar-text">
+                قاد م. أحمد حسن المقاولون العرب إلى آفاق جديدة برؤية للابتكار والاستدامة والتميز في البناء. مع أكثر من 25 عامًا من الخبرة في الصناعة، يلتزم بتقديم بنية تحتية عالمية المستوى وتمكين الفرق من تحقيق أفضل إمكاناتهم.
+              </span>
+            </div>
+            <div class="achievements-list">
+              <div class="achievement-item" data-aos="fade-up" data-aos-delay="100">
+                <div class="achievement-icon">
+                  <i class="fas fa-briefcase"></i>
+                </div>
+                <div class="achievement-text">
+                  <span class="en-text">25+ years in construction</span>
+                  <span class="ar-text">أكثر من 25 عامًا في البناء</span>
+                </div>
               </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <h2 class="card-title">Eng. Ahmed Hassan</h2>
-                  <h5 class="card-subtitle mb-2 text-muted">Chief Executive Officer</h5>
-                  <p class="card-text mt-3">Eng. Ahmed Hassan has led Arab Contractors to new heights with a vision for innovation, sustainability, and excellence in construction. With over 25 years of experience in the industry, he is committed to delivering world-class infrastructure and empowering teams to achieve their best.</p>
-                  <ul>
-                    <li>25+ years in construction and engineering</li>
-                    <li>Expert in large-scale infrastructure projects</li>
-                    <li>Advocate for sustainable development</li>
-                  </ul>
+              <div class="achievement-item" data-aos="fade-up" data-aos-delay="200">
+                <div class="achievement-icon">
+                  <i class="fas fa-building"></i>
+                </div>
+                <div class="achievement-text">
+                  <span class="en-text">Infrastructure expert</span>
+                  <span class="ar-text">خبير في البنية التحتية</span>
+                </div>
+              </div>
+              <div class="achievement-item" data-aos="fade-up" data-aos-delay="300">
+                <div class="achievement-icon">
+                  <i class="fas fa-leaf"></i>
+                </div>
+                <div class="achievement-text">
+                  <span class="en-text">Sustainable development</span>
+                  <span class="ar-text">التنمية المستدامة</span>
                 </div>
               </div>
             </div>
@@ -164,5 +367,15 @@
         </div>
       </div>
     </footer>
-</body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 800,
+        easing: 'ease-in-out',
+        once: true,
+        mirror: false
+      });
+    </script>
+  </body>
 </html>
