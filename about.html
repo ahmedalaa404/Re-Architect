@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="page_title">About Us - Arab Contractors</title>
+  <meta name="description" content="Learn about Arab Contractors, one of the largest construction companies in the Middle East with over 70 years of excellence in infrastructure development.">
+  <meta name="keywords" content="Arab Contractors, about us, construction company, infrastructure, engineering, Middle East, Egypt">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://arabcontractors.com/about">
+  <link rel="alternate" hreflang="en" href="https://arabcontractors.com/en/about">
+  <link rel="alternate" hreflang="ar" href="https://arabcontractors.com/ar/about">
+  
+  <!-- AOS CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+  <link rel="stylesheet" href="assets/Css/global.css">
+  <link rel="stylesheet" href="assets/Css/about.css">
+  
+  <style>
+    .about-hero {
+      background: linear-gradient(135deg, var(--primary-gold, #f39c12) 0%, var(--secondary-gold, #e67e22) 100%);
+      padding: 8rem 0 4rem 0;
+      color: white;
+      text-align: center;
+    }
+    
+    .about-hero h1 {
+      font-size: 3.5rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+    
+    .about-hero p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    .about-content {
+      padding: 4rem 0;
+      background: var(--bg-light);
+    }
+    
+    .about-card {
+      height: 100%;
+      background: var(--white);
+      border-radius: 15px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+      border: none;
+      border-left: 4px solid var(--primary-gold, #f39c12);
+    }
+    
+    .about-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    }
+    
+    .about-card .card-header {
+      background: transparent;
+      border-bottom: 2px solid var(--primary-gold, #f39c12);
+      padding-bottom: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .about-card .card-title {
+      color: var(--text-dark);
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 0;
+    }
+    
+    .about-card .card-body {
+      padding: 0;
+    }
+    
+    .about-card h3 {
+      color: var(--text-dark);
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin: 1.5rem 0 1rem 0;
+    }
+    
+    .about-card p {
+      color: var(--text-dark);
+      line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+    
+    .about-card ul {
+      margin-bottom: 1rem;
+      padding-left: 1.5rem;
+    }
+    
+    .about-card li {
+      color: var(--text-dark);
+      line-height: 1.6;
+      margin-bottom: 0.5rem;
+    }
+    
+    .stats-section {
+      background: var(--primary-gold, #f39c12);
+      color: white;
+      padding: 4rem 0;
+    }
+    
+    .stat-item {
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+    
+    .stat-number {
+      font-size: 3rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+    
+    .stat-label {
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
+    
+    .timeline-section {
+      padding: 4rem 0;
+      background: var(--white);
+    }
+    
+    .timeline-item {
+      position: relative;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      background: var(--bg-light);
+      border-radius: 15px;
+      border-left: 4px solid var(--primary-gold, #f39c12);
+    }
+    
+    .timeline-year {
+      background: var(--primary-gold, #f39c12);
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-weight: bold;
+      display: inline-block;
+      margin-bottom: 1rem;
+    }
+    
+    .values-section {
+      padding: 4rem 0;
+      background: var(--bg-light);
+    }
+    
+    .value-card {
+      background: var(--white);
+      border-radius: 15px;
+      padding: 2rem;
+      text-align: center;
+      margin-bottom: 2rem;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+    }
+    
+    .value-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    }
+    
+    .value-icon {
+      font-size: 3rem;
+      color: var(--primary-gold, #f39c12);
+      margin-bottom: 1rem;
+    }
+    
+    .value-title {
+      font-size: 1.3rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+      color: var(--text-dark);
+    }
+    
+    .value-description {
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+    
+    /* Dark mode specific enhancements */
+    [data-theme="dark"] .about-card {
+      background: var(--bg-dark);
+      box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+      border: 1px solid var(--border-dark);
+    }
+    
+    [data-theme="dark"] .about-card:hover {
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    }
+    
+    [data-theme="dark"] .about-content {
+      background: var(--bg-dark);
+    }
+    
+    [data-theme="dark"] .timeline-section {
+      background: var(--bg-dark);
+    }
+    
+    [data-theme="dark"] .timeline-item {
+      background: var(--bg-dark);
+      border: 1px solid var(--border-dark);
+    }
+    
+    [data-theme="dark"] .values-section {
+      background: var(--bg-dark);
+    }
+    
+    [data-theme="dark"] .value-card {
+      background: var(--bg-dark);
+      border: 1px solid var(--border-dark);
+    }
+    
+    @media (max-width: 768px) {
+      .about-hero h1 { font-size: 2.5rem; }
+      .about-hero { padding: 6rem 0 3rem 0; }
+      .about-card { padding: 1.5rem; }
+      .stat-number { font-size: 2.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav id="mainNavbar" class="navbar navbar-expand-lg fixed-top">
+    <div class="container-fluid">
+      <!-- Logo and Brand -->
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <div class="logo-container me-3">
+          <div class="logo-animated-container">
+            <img src="assets/Images/logo.webp" alt="Arab Contractors Logo" class="img-fluid" loading="lazy">
+          </div>
+        </div>
+        <div class="brand-text">
+          <div class="en-text" data-translate="brand_name">Arab Contractors</div>
+          <div class="ar-text"><span id="animated-arabic-name" data-translate="brand_name_ar"></span></div>
+        </div>
+      </a>
+
+      <!-- Mobile Toggle -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fa-solid fa-bars text-white"></i>
+      </button>
+
+      <!-- Navigation Links -->
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html" data-translate="nav.home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="about.html" data-translate="nav.about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="leadership.html" data-translate="nav.leadership">Leadership</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="News.html" data-translate="nav.news">News</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="hiring.html" data-translate="nav.hiring">Hiring</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html#sustainability" data-translate="nav.sustainability">Sustainability</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="privacy-policy.html" data-translate="nav.privacy">Privacy Policy</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-translate="nav.contact">Contact</a>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li>
+                <a class="dropdown-item" href="contact.html" data-translate="nav.contact_us">Contact Us</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="offices.html" data-translate="nav.offices">Offices</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+
+        <!-- Language and Theme Toggles -->
+        <div class="navbar-controls d-flex align-items-center mx-3">
+          <button id="langToggle" class="btn btn-outline-light btn-sm mx-2" title="Toggle Language" aria-label="Toggle between Arabic and English">
+            <span class="en-text">AR</span>
+            <span class="ar-text">EN</span>
+          </button>
+          <button id="themeToggle" class="btn btn-outline-light btn-sm" title="Toggle Theme" aria-label="Toggle between light and dark mode">
+            <i class="fas fa-moon"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="about-hero">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8 text-center">
+          <h1 data-aos="fade-up">
+            <span class="text-en d-block">About Arab Contractors</span>
+            <span class="text-ar d-none">عن شركة المقاولون العرب</span>
+          </h1>
+          <p data-aos="fade-up" data-aos-delay="100">
+            <span class="text-en d-block">Building Excellence Since 1955</span>
+            <span class="text-ar d-none">نبني التميز منذ 1955</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Company Overview -->
+  <section class="about-content">
+    <div class="container">
+      
+      <!-- First Row: Company Overview and Mission -->
+      <div class="row g-4 mb-4">
+        <div class="col-lg-6">
+          <div class="about-card" data-aos="fade-up">
+            <div class="card-header">
+              <h2 class="card-title">
+                <span class="text-en d-block">Company Overview</span>
+                <span class="text-ar d-none">نظرة عامة على الشركة</span>
+              </h2>
+            </div>
+            <div class="card-body">
+              <div class="text-en d-block">
+                <p>Arab Contractors is one of the largest construction companies in the Middle East, with over 70 years of experience in delivering world-class infrastructure projects. Founded in 1955, we have grown to become a leading force in construction, engineering, and development across the region.</p>
+                <p>Our company specializes in:</p>
+                <ul>
+                  <li>Infrastructure development</li>
+                  <li>Building construction</li>
+                  <li>Industrial facilities</li>
+                  <li>Transportation projects</li>
+                  <li>Energy and utilities</li>
+                  <li>Environmental projects</li>
+                </ul>
+              </div>
+              <div class="text-ar d-none">
+                <p>شركة المقاولون العرب هي إحدى أكبر شركات البناء في الشرق الأوسط، مع أكثر من 70 عاماً من الخبرة في تنفيذ مشاريع البنية التحتية العالمية. تأسست في عام 1955، نمت لتصبح قوة رائدة في البناء والهندسة والتطوير في جميع أنحاء المنطقة.</p>
+                <p>تتخصص شركتنا في:</p>
+                <ul>
+                  <li>تطوير البنية التحتية</li>
+                  <li>بناء المباني</li>
+                  <li>المنشآت الصناعية</li>
+                  <li>مشاريع النقل</li>
+                  <li>الطاقة والمرافق</li>
+                  <li>المشاريع البيئية</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-6">
+          <div class="about-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="card-header">
+              <h2 class="card-title">
+                <span class="text-en d-block">Our Mission & Vision</span>
+                <span class="text-ar d-none">مهمتنا ورؤيتنا</span>
+              </h2>
+            </div>
+            <div class="card-body">
+              <h3>
+                <span class="text-en d-block">Mission</span>
+                <span class="text-ar d-none">المهمة</span>
+              </h3>
+              <div class="text-en d-block">
+                <p>To deliver exceptional construction and engineering solutions that contribute to the sustainable development of communities and economies across the Middle East and beyond.</p>
+              </div>
+              <div class="text-ar d-none">
+                <p>تقديم حلول بناء وهندسة استثنائية تساهم في التنمية المستدامة للمجتمعات والاقتصادات في الشرق الأوسط وما بعده.</p>
+              </div>
+              
+              <h3>
+                <span class="text-en d-block">Vision</span>
+                <span class="text-ar d-none">الرؤية</span>
+              </h3>
+              <div class="text-en d-block">
+                <p>To be the most trusted and innovative construction partner, recognized for excellence, sustainability, and positive impact on the communities we serve.</p>
+              </div>
+              <div class="text-ar d-none">
+                <p>أن نكون الشريك الأكثر ثقة وابتكاراً في البناء، معروفين بالتميز والاستدامة والتأثير الإيجابي على المجتمعات التي نخدمها.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Second Row: Core Values -->
+      <div class="row g-4 mb-4">
+        <div class="col-lg-6">
+          <div class="about-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="card-header">
+              <h2 class="card-title">
+                <span class="text-en d-block">Core Values</span>
+                <span class="text-ar d-none">القيم الأساسية</span>
+              </h2>
+            </div>
+            <div class="card-body">
+              <div class="text-en d-block">
+                <h3>Excellence</h3>
+                <p>We strive for excellence in every project, maintaining the highest standards of quality and safety.</p>
+                
+                <h3>Innovation</h3>
+                <p>We embrace new technologies and innovative solutions to deliver better results.</p>
+                
+                <h3>Integrity</h3>
+                <p>We conduct business with honesty, transparency, and ethical practices.</p>
+                
+                <h3>Sustainability</h3>
+                <p>We are committed to environmental responsibility and sustainable development.</p>
+              </div>
+              <div class="text-ar d-none">
+                <h3>التميز</h3>
+                <p>نسعى للتميز في كل مشروع، مع الحفاظ على أعلى معايير الجودة والسلامة.</p>
+                
+                <h3>الابتكار</h3>
+                <p>نتبنى التقنيات الجديدة والحلول المبتكرة لتقديم نتائج أفضل.</p>
+                
+                <h3>النزاهة</h3>
+                <p>نمارس الأعمال بأمانة وشفافية وممارسات أخلاقية.</p>
+                
+                <h3>الاستدامة</h3>
+                <p>نلتزم بالمسؤولية البيئية والتنمية المستدامة.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-6">
+          <div class="about-card" data-aos="fade-up" data-aos-delay="300">
+            <div class="card-header">
+              <h2 class="card-title">
+                <span class="text-en d-block">Our Team</span>
+                <span class="text-ar d-none">فريقنا</span>
+              </h2>
+            </div>
+            <div class="card-body">
+              <div class="text-en d-block">
+                <p>Our success is driven by our exceptional team of professionals:</p>
+                <ul>
+                  <li><strong>Engineers:</strong> Civil, structural, mechanical, electrical, and environmental engineers</li>
+                  <li><strong>Project Managers:</strong> Experienced professionals overseeing complex projects</li>
+                  <li><strong>Construction Workers:</strong> Skilled craftsmen and technicians</li>
+                  <li><strong>Support Staff:</strong> Administrative, financial, and technical support teams</li>
+                </ul>
+                <p>We invest in continuous training and development to ensure our team remains at the forefront of industry standards.</p>
+              </div>
+              <div class="text-ar d-none">
+                <p>يحرك نجاحنا فريقنا الاستثنائي من المحترفين:</p>
+                <ul>
+                  <li><strong>المهندسون:</strong> مهندسون مدنيون وإنشائيون وميكانيكيون وكهربائيون وبيئيون</li>
+                  <li><strong>مديرو المشاريع:</strong> محترفون ذوو خبرة يشرفون على المشاريع المعقدة</li>
+                  <li><strong>عمال البناء:</strong> حرفيون وفنيون مهرة</li>
+                  <li><strong>فريق الدعم:</strong> فرق الدعم الإداري والمالي والفني</li>
+                </ul>
+                <p>نستثمر في التدريب والتطوير المستمر لضمان بقاء فريقنا في طليعة معايير الصناعة.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Statistics Section -->
+  <section class="stats-section">
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-lg-3 col-md-6">
+          <div class="stat-item" data-aos="fade-up">
+            <div class="stat-number">70+</div>
+            <div class="stat-label">
+              <span class="text-en d-block">Years of Experience</span>
+              <span class="text-ar d-none">سنوات من الخبرة</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="stat-item" data-aos="fade-up" data-aos-delay="100">
+            <div class="stat-number">1000+</div>
+            <div class="stat-label">
+              <span class="text-en d-block">Projects Completed</span>
+              <span class="text-ar d-none">مشروع مكتمل</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
+            <div class="stat-number">5000+</div>
+            <div class="stat-label">
+              <span class="text-en d-block">Team Members</span>
+              <span class="text-ar d-none">عضو في الفريق</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="stat-item" data-aos="fade-up" data-aos-delay="300">
+            <div class="stat-number">25+</div>
+            <div class="stat-label">
+              <span class="text-en d-block">Countries Served</span>
+              <span class="text-ar d-none">دولة تم خدمتها</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Company History Timeline -->
+  <section class="timeline-section">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <h2 class="text-center mb-5" data-aos="fade-up">
+            <span class="text-en d-block">Our Journey Through Time</span>
+            <span class="text-ar d-none">رحلتنا عبر الزمن</span>
+          </h2>
+          
+          <div class="timeline-item" data-aos="fade-up">
+            <div class="timeline-year">1955</div>
+            <div class="text-en d-block">
+              <h4>Company Foundation</h4>
+              <p>Arab Contractors was established as a pioneering construction company in Egypt, marking the beginning of a legacy of excellence in infrastructure development.</p>
+            </div>
+            <div class="text-ar d-none">
+              <h4>تأسيس الشركة</h4>
+              <p>تم تأسيس شركة المقاولون العرب كشركة بناء رائدة في مصر، مما يمثل بداية إرث من التميز في تطوير البنية التحتية.</p>
+            </div>
+          </div>
+          
+          <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
+            <div class="timeline-year">1970s</div>
+            <div class="text-en d-block">
+              <h4>Regional Expansion</h4>
+              <p>Expanded operations across the Middle East, undertaking major infrastructure projects in multiple countries and establishing regional offices.</p>
+            </div>
+            <div class="text-ar d-none">
+              <h4>التوسع الإقليمي</h4>
+              <p>توسعت العمليات في جميع أنحاء الشرق الأوسط، وتولت مشاريع البنية التحتية الكبرى في عدة دول وإنشاء مكاتب إقليمية.</p>
+            </div>
+          </div>
+          
+          <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
+            <div class="timeline-year">1990s</div>
+            <div class="text-en d-block">
+              <h4>Technological Advancement</h4>
+              <p>Embraced modern construction technologies and methodologies, implementing advanced project management systems and sustainable building practices.</p>
+            </div>
+            <div class="text-ar d-none">
+              <h4>التقدم التكنولوجي</h4>
+              <p>تبنت تقنيات ومنهجيات البناء الحديثة، وتنفيذ أنظمة إدارة المشاريع المتقدمة وممارسات البناء المستدامة.</p>
+            </div>
+          </div>
+          
+          <div class="timeline-item" data-aos="fade-up" data-aos-delay="300">
+            <div class="timeline-year">2000s</div>
+            <div class="text-en d-block">
+              <h4>Global Recognition</h4>
+              <p>Achieved international recognition for excellence in construction, receiving numerous awards and certifications for quality and safety standards.</p>
+            </div>
+            <div class="text-ar d-none">
+              <h4>الاعتراف العالمي</h4>
+              <p>حقق الاعتراف الدولي للتميز في البناء، وحصل على العديد من الجوائز والشهادات لمعايير الجودة والسلامة.</p>
+            </div>
+          </div>
+          
+          <div class="timeline-item" data-aos="fade-up" data-aos-delay="400">
+            <div class="timeline-year">2010s</div>
+            <div class="text-en d-block">
+              <h4>Sustainability Focus</h4>
+              <p>Intensified focus on sustainable development and green building practices, leading the industry in environmental responsibility and innovation.</p>
+            </div>
+            <div class="text-ar d-none">
+              <h4>التركيز على الاستدامة</h4>
+              <p>تعمق التركيز على التنمية المستدامة وممارسات البناء الأخضر، مما أدى إلى ريادة الصناعة في المسؤولية البيئية والابتكار.</p>
+            </div>
+          </div>
+          
+          <div class="timeline-item" data-aos="fade-up" data-aos-delay="500">
+            <div class="timeline-year">2020s</div>
+            <div class="text-en d-block">
+              <h4>Digital Transformation</h4>
+              <p>Embarked on digital transformation journey, implementing smart construction technologies, BIM, and AI-driven project management solutions.</p>
+            </div>
+            <div class="text-ar d-none">
+              <h4>التحول الرقمي</h4>
+              <p>بدأت رحلة التحول الرقمي، وتنفيذ تقنيات البناء الذكية ونمذجة معلومات البناء وحلول إدارة المشاريع المدعومة بالذكاء الاصطناعي.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Core Values Section -->
+  <section class="values-section">
+    <div class="container">
+      <h2 class="text-center mb-5" data-aos="fade-up">
+        <span class="text-en d-block">What Drives Us</span>
+        <span class="text-ar d-none">ما يدفعنا</span>
+      </h2>
+      
+      <div class="row g-4">
+        <div class="col-lg-3 col-md-6">
+          <div class="value-card" data-aos="fade-up">
+            <div class="value-icon">
+              <i class="fas fa-star"></i>
+            </div>
+            <div class="value-title">
+              <span class="text-en d-block">Excellence</span>
+              <span class="text-ar d-none">التميز</span>
+            </div>
+            <div class="value-description">
+              <span class="text-en d-block">We strive for excellence in every project, maintaining the highest standards of quality and safety.</span>
+              <span class="text-ar d-none">نسعى للتميز في كل مشروع، مع الحفاظ على أعلى معايير الجودة والسلامة.</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-3 col-md-6">
+          <div class="value-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="value-icon">
+              <i class="fas fa-lightbulb"></i>
+            </div>
+            <div class="value-title">
+              <span class="text-en d-block">Innovation</span>
+              <span class="text-ar d-none">الابتكار</span>
+            </div>
+            <div class="value-description">
+              <span class="text-en d-block">We embrace new technologies and innovative solutions to deliver better results for our clients.</span>
+              <span class="text-ar d-none">نتبنى التقنيات الجديدة والحلول المبتكرة لتقديم نتائج أفضل لعملائنا.</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-3 col-md-6">
+          <div class="value-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="value-icon">
+              <i class="fas fa-handshake"></i>
+            </div>
+            <div class="value-title">
+              <span class="text-en d-block">Integrity</span>
+              <span class="text-ar d-none">النزاهة</span>
+            </div>
+            <div class="value-description">
+              <span class="text-en d-block">We conduct business with honesty, transparency, and ethical practices in all our dealings.</span>
+              <span class="text-ar d-none">نمارس الأعمال بأمانة وشفافية وممارسات أخلاقية في جميع تعاملاتنا.</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-3 col-md-6">
+          <div class="value-card" data-aos="fade-up" data-aos-delay="300">
+            <div class="value-icon">
+              <i class="fas fa-leaf"></i>
+            </div>
+            <div class="value-title">
+              <span class="text-en d-block">Sustainability</span>
+              <span class="text-ar d-none">الاستدامة</span>
+            </div>
+            <div class="value-description">
+              <span class="text-en d-block">We are committed to environmental responsibility and sustainable development practices.</span>
+              <span class="text-ar d-none">نلتزم بالمسؤولية البيئية وممارسات التنمية المستدامة.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="footer-section">
+            <h5>
+              <span class="text-en d-block">Arab Contractors</span>
+              <span class="text-ar d-none">شركة المقاولون العرب</span>
+            </h5>
+            <p>
+              <span class="text-en d-block">Building excellence since 1955</span>
+              <span class="text-ar d-none">نبني التميز منذ 1955</span>
+            </p>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="footer-section">
+            <h5>
+              <span class="text-en d-block">Contact Info</span>
+              <span class="text-ar d-none">معلومات الاتصال</span>
+            </h5>
+            <p>Email: info@arabcontractors.com</p>
+            <p>Phone: +20 2 1234 5678</p>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="footer-section">
+            <h5>
+              <span class="text-en d-block">Follow Us</span>
+              <span class="text-ar d-none">تابعنا</span>
+            </h5>
+            <div class="social-links">
+              <a href="#"><i class="fab fa-facebook"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-linkedin"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Arab Contractors. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script src="assets/Js/global.js"></script>
+  <script src="assets/Js/Theme.js"></script>
+  <script src="assets/Js/Translations.js"></script>
+  <script src="assets/Js/Lang.js"></script>
+  <script src="assets/Js/Aos_Animation.js"></script>
+
+</body>
+</html> 
