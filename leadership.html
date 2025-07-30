@@ -15,13 +15,13 @@
   <style>
     .leadership-section {
       padding: 4rem 0;
-      background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%);
+      background: linear-gradient(180deg, var(--bg-light) 0%, var(--white) 100%);
     }
 
     .ceo-banner {
       width: 100%;
-      background: linear-gradient(135deg, #1a237e 0%, #283593 100%);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+      background: linear-gradient(135deg, var(--text-primary) 0%, var(--text-dark) 100%);
+      box-shadow: var(--shadow);
       border-radius: 2rem;
       margin-bottom: 4rem;
       display: flex;
@@ -32,7 +32,7 @@
       position: relative;
       overflow: hidden;
       min-height: 400px;
-      color: white;
+      color: var(--text-light);
     }
 
     .ceo-banner::before {
@@ -52,11 +52,11 @@
       height: 250px;
       object-fit: cover;
       border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-      border: 8px solid rgba(255,255,255,0.2);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      border: 8px solid var(--border-color);
+      box-shadow: var(--shadow);
       margin-right: 4rem;
-      background: #e0e0e0;
-      transition: all 0.5s ease;
+      background: var(--bg-light);
+      transition: var(--transition);
     }
 
     .ceo-banner .ceo-img:hover {
@@ -72,14 +72,14 @@
       font-size: 3rem;
       font-weight: 800;
       margin-bottom: 0.5rem;
-      background: linear-gradient(to right, #fff, #e3f2fd);
+      background: linear-gradient(to right, var(--white), var(--text-primary));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
     .ceo-banner .ceo-role {
       font-size: 1.4rem;
-      color: #90caf9;
+      color: var(--text-light);
       margin-bottom: 1.5rem;
       font-weight: 500;
     }
@@ -88,18 +88,18 @@
       margin-top: 2rem;
       padding: 0.8rem 2rem;
       font-size: 1.1rem;
-      background: rgba(255,255,255,0.1);
-      border: 2px solid rgba(255,255,255,0.2);
-      color: white;
+      background: var(--navbar-color);
+      border: 2px solid var(--border-color);
+      color: var(--text-light);
       border-radius: 2rem;
-      transition: all 0.3s ease;
+      transition: var(--transition);
     }
 
     .ceo-banner .btn:hover {
-      background: white;
-      color: #1a237e;
+      background: var(--white);
+      color: var(--text-primary);
       transform: translateY(-3px);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+      box-shadow: var(--shadow);
     }
 
     .leadership-cards {
@@ -110,14 +110,14 @@
     }
 
     .leadership-card {
-      background: white;
+      background: var(--white);
       border-radius: 2rem;
       padding: 2rem;
       text-align: center;
-      transition: all 0.4s ease;
+      transition: var(--transition);
       position: relative;
       overflow: hidden;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      box-shadow: var(--shadow);
     }
 
     .leadership-card::before {
@@ -127,9 +127,9 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: linear-gradient(135deg, #1a237e 0%, #283593 100%);
+      background: linear-gradient(135deg, var(--text-primary) 0%, var(--text-dark) 100%);
       opacity: 0;
-      transition: all 0.4s ease;
+      transition: var(--transition);
       z-index: 0;
     }
 
@@ -142,7 +142,7 @@
     }
 
     .leadership-card:hover * {
-      color: white;
+      color: var(--text-light);
       position: relative;
       z-index: 1;
     }
@@ -153,13 +153,13 @@
       object-fit: cover;
       border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
       margin: 0 auto 1.5rem;
-      border: 6px solid #f5f5f5;
-      transition: all 0.4s ease;
-      background: #e0e0e0;
+      border: 6px solid var(--border-color);
+      transition: var(--transition);
+      background: var(--bg-light);
     }
 
     .leadership-card:hover .card-img-top {
-      border-color: rgba(255,255,255,0.2);
+      border-color: var(--border-color);
       border-radius: 70% 30% 30% 70% / 70% 70% 30% 30%;
     }
 
@@ -167,14 +167,24 @@
       font-size: 1.4rem;
       font-weight: 700;
       margin-bottom: 0.5rem;
-      color: #1a237e;
-      transition: all 0.4s ease;
+      color: var(--text-primary);
+      transition: var(--transition);
     }
 
     .leadership-card .card-text {
-      color: #666;
+      color: var(--text-dark);
       font-size: 1.1rem;
-      transition: all 0.4s ease;
+      transition: var(--transition);
+    }
+
+    /* RTL Support */
+    [dir="rtl"] .ceo-banner .ceo-img {
+      margin-right: 0;
+      margin-left: 4rem;
+    }
+
+    [dir="rtl"] .ceo-banner .ceo-info {
+      text-align: right;
     }
 
     @media (max-width: 992px) {
@@ -193,6 +203,14 @@
 
       .leadership-cards {
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      }
+
+      [dir="rtl"] .ceo-banner .ceo-img {
+        margin: 0 auto 2rem;
+      }
+
+      [dir="rtl"] .ceo-banner .ceo-info {
+        text-align: center;
       }
     }
 
@@ -269,39 +287,75 @@
     <!-- Main Content -->
     <main class="leadership-section">
       <div class="container">
-        <h1 class="text-center mb-5" data-aos="fade-down">Our Leadership Team</h1>
+        <h1 class="text-center mb-5" data-aos="fade-down">
+          <span class="en-text">Our Leadership Team</span>
+          <span class="ar-text">فريق القيادة</span>
+        </h1>
         <!-- CEO Banner -->
         <div class="ceo-banner" data-aos="zoom-in">
-          <img src="https://ui-avatars.com/api/?name=Ahmed+Hassan&background=1a237e&color=fff&size=256" class="ceo-img" alt="CEO Photo">
+          <img src="https://hapijournal.com/wp-content/uploads/2024/06/435495693_743203434604031_7280820576005542632_n.jpg" class="ceo-img" alt="CEO Photo">
           <div class="ceo-info">
-            <div class="ceo-title">Eng. Ahmed Hassan</div>
-            <div class="ceo-role">Chief Executive Officer</div>
-            <p>With over 20 years of experience in construction and engineering, Eng. Ahmed Hassan leads Arab Contractors with a visionary approach to innovation, sustainability, and excellence in construction. Under his leadership, we continue to shape the future of infrastructure across the Middle East and Africa.</p>
-            <a href="leadership-details.html" class="btn">Learn More About Our CEO</a>
+            <div class="ceo-title">
+              <span class="en-text">Eng. Ahmed Hassan</span>
+              <span class="ar-text">م. أحمد حسن</span>
+            </div>
+            <div class="ceo-role">
+              <span class="en-text">Chief Executive Officer</span>
+              <span class="ar-text">الرئيس التنفيذي</span>
+            </div>
+            <p>
+              <span class="en-text">With over 20 years of experience in construction and engineering, Eng. Ahmed Hassan leads Arab Contractors with a visionary approach to innovation, sustainability, and excellence in construction. Under his leadership, we continue to shape the future of infrastructure across the Middle East and Africa.</span>
+              <span class="ar-text">مع أكثر من 20 عامًا من الخبرة في البناء والهندسة، يقود م. أحمد حسن المقاولون العرب برؤية مبتكرة نحو الابتكار والاستدامة والتميز في البناء. تحت قيادته، نواصل تشكيل مستقبل البنية التحتية في الشرق الأوسط وأفريقيا.</span>
+            </p>
+            <a href="leadership-details.html" class="btn">
+              <span class="en-text">Learn More About Our CEO</span>
+              <span class="ar-text">تعرف أكثر على رئيسنا التنفيذي</span>
+            </a>
           </div>
         </div>
         <!-- Other Leadership Cards -->
-        <h2 class="text-center mb-4" data-aos="fade-up">Executive Leadership</h2>
+        <h2 class="text-center mb-4" data-aos="fade-up">
+          <span class="en-text">Executive Leadership</span>
+          <span class="ar-text">القيادة التنفيذية</span>
+        </h2>
         <div class="leadership-cards">
           <div class="leadership-card" data-aos="fade-up" data-aos-delay="100">
             <img src="https://ui-avatars.com/api/?name=Sara+Mostafa&background=283593&color=fff&size=256" class="card-img-top" alt="COO Photo">
             <div class="card-body">
-              <h4 class="card-title">Sara Mostafa</h4>
-              <p class="card-text">Chief Operating Officer</p>
+              <h4 class="card-title">
+                <span class="en-text">Sara Mostafa</span>
+                <span class="ar-text">سارة مصطفى</span>
+              </h4>
+              <p class="card-text">
+                <span class="en-text">Chief Operating Officer</span>
+                <span class="ar-text">رئيس العمليات التنفيذي</span>
+              </p>
             </div>
           </div>
           <div class="leadership-card" data-aos="fade-up" data-aos-delay="200">
             <img src="https://ui-avatars.com/api/?name=Mohamed+Ali&background=283593&color=fff&size=256" class="card-img-top" alt="CFO Photo">
             <div class="card-body">
-              <h4 class="card-title">Mohamed Ali</h4>
-              <p class="card-text">Chief Financial Officer</p>
+              <h4 class="card-title">
+                <span class="en-text">Mohamed Ali</span>
+                <span class="ar-text">محمد علي</span>
+              </h4>
+              <p class="card-text">
+                <span class="en-text">Chief Financial Officer</span>
+                <span class="ar-text">رئيس الشؤون المالية</span>
+              </p>
             </div>
           </div>
           <div class="leadership-card" data-aos="fade-up" data-aos-delay="300">
             <img src="https://ui-avatars.com/api/?name=Laila+Samir&background=283593&color=fff&size=256" class="card-img-top" alt="CTO Photo">
             <div class="card-body">
-              <h4 class="card-title">Laila Samir</h4>
-              <p class="card-text">Chief Technology Officer</p>
+              <h4 class="card-title">
+                <span class="en-text">Laila Samir</span>
+                <span class="ar-text">ليلى سمير</span>
+              </h4>
+              <p class="card-text">
+                <span class="en-text">Chief Technology Officer</span>
+                <span class="ar-text">رئيس التكنولوجيا</span>
+              </p>
             </div>
           </div>
         </div>
