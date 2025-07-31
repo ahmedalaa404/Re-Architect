@@ -287,521 +287,224 @@
 
 
 
-    <!-- News Slider Section -->
-    <section class="news-section py-5">
-      <div class="container">
-          <div class="row">
-              <div class="col-12 text-center mb-5">
-                  <h2 class="section-title">
-                      <i class="fas fa-newspaper me-3"></i>
-                      Latest News
-                  </h2>
-                  <p class="section-subtitle">Stay updated with the most recent developments</p>
-              </div>
-          </div>
-          
-          <!-- Bootstrap Carousel -->
-          <div id="newsCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
-              <!-- Carousel Indicators -->
-              <div class="carousel-indicators">
-                  <button type="button" data-bs-target="#newsCarousel" data-bs-slide-to="0" class="active"></button>
-                  <button type="button" data-bs-target="#newsCarousel" data-bs-slide-to="1"></button>
-                  <button type="button" data-bs-target="#newsCarousel" data-bs-slide-to="2"></button>
-              </div>
-              
-              <!-- Carousel Inner -->
-              <div class="carousel-inner">
-                  <!-- Slide 1 -->
-                  <div class="carousel-item active">
-                      <div class="row g-4">
-                          <div class="col-lg-4 col-md-6">
-                              <div class="news-card">
-                                  <div class="news-image">
-                                      <img src="https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=400" alt="AI Technology" class="img-fluid">
-                                      <div class="news-category">Technology</div>
-                                  </div>
-                                  <div class="news-content">
-                                      <div class="news-meta">
-                                          <span class="news-date"><i class="far fa-calendar"></i> Dec 15, 2024</span>
-                                          <span class="news-author"><i class="far fa-user"></i> John Smith</span>
-                                      </div>
-                                      <h4 class="news-title">Revolutionary AI Technology Transforms Healthcare</h4>
-                                      <p class="news-excerpt">Breakthrough artificial intelligence systems are revolutionizing patient care and medical diagnostics across hospitals worldwide.</p>
-                                      <a href="#" class="read-more-btn">Read More <i class="fas fa-arrow-right"></i></a>
-                                  </div>
-                              </div>
-                          </div>
-                          <div class="col-lg-4 col-md-6">
-                              <div class="news-card">
-                                  <div class="news-image">
-                                      <img src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Climate Change" class="img-fluid">
-                                      <div class="news-category">Environment</div>
-                                  </div>
-                                  <div class="news-content">
-                                      <div class="news-meta">
-                                          <span class="news-date"><i class="far fa-calendar"></i> Dec 14, 2024</span>
-                                          <span class="news-author"><i class="far fa-user"></i> Sarah Johnson</span>
-                                      </div>
-                                      <h4 class="news-title">Global Climate Summit Reaches Historic Agreement</h4>
-                                      <p class="news-excerpt">World leaders unite to implement groundbreaking environmental policies aimed at reducing carbon emissions by 50% within the next decade.</p>
-                                      <a href="#" class="read-more-btn">Read More <i class="fas fa-arrow-right"></i></a>
-                                  </div>
-                              </div>
-                          </div>
-                          <div class="col-lg-4 col-md-6">
-                              <div class="news-card">
-                                  <div class="news-image">
-                                      <img src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Space Exploration" class="img-fluid">
-                                      <div class="news-category">Science</div>
-                                  </div>
-                                  <div class="news-content">
-                                      <div class="news-meta">
-                                          <span class="news-date"><i class="far fa-calendar"></i> Dec 13, 2024</span>
-                                          <span class="news-author"><i class="far fa-user"></i> Mike Chen</span>
-                                      </div>
-                                      <h4 class="news-title">Mars Mission Discovers Signs of Ancient Life</h4>
-                                      <p class="news-excerpt">NASA's latest rover mission uncovers compelling evidence of microbial life that existed on Mars billions of years ago.</p>
-                                      <a href="#" class="read-more-btn">Read More <i class="fas fa-arrow-right"></i></a>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-                  
-                  <!-- Slide 2 -->
-                  <div class="carousel-item">
-                      <div class="row g-4">
-                          <div class="col-lg-4 col-md-6">
-                              <div class="news-card">
-                                  <div class="news-image">
-                                      <img src="https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Economy" class="img-fluid">
-                                      <div class="news-category">Business</div>
-                                  </div>
-                                  <div class="news-content">
-                                      <div class="news-meta">
-                                          <span class="news-date"><i class="far fa-calendar"></i> Dec 12, 2024</span>
-                                          <span class="news-author"><i class="far fa-user"></i> Emma Wilson</span>
-                                      </div>
-                                      <h4 class="news-title">Global Markets Surge Following Economic Recovery</h4>
-                                      <p class="news-excerpt">Stock markets worldwide experience unprecedented growth as economies bounce back stronger than ever from recent challenges.</p>
-                                      <a href="#" class="read-more-btn">Read More <i class="fas fa-arrow-right"></i></a>
-                                  </div>
-                              </div>
-                          </div>
-                          <div class="col-lg-4 col-md-6">
-                              <div class="news-card">
-                                  <div class="news-image">
-                                      <img src="https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Education" class="img-fluid">
-                                      <div class="news-category">Education</div>
-                                  </div>
-                                  <div class="news-content">
-                                      <div class="news-meta">
-                                          <span class="news-date"><i class="far fa-calendar"></i> Dec 11, 2024</span>
-                                          <span class="news-author"><i class="far fa-user"></i> David Brown</span>
-                                      </div>
-                                      <h4 class="news-title">Revolutionary Online Learning Platform Launches</h4>
-                                      <p class="news-excerpt">New AI-powered educational platform promises to personalize learning experiences for millions of students worldwide.</p>
-                                      <a href="#" class="read-more-btn">Read More <i class="fas fa-arrow-right"></i></a>
-                                  </div>
-                              </div>
-                          </div>
-                          <div class="col-lg-4 col-md-6">
-                              <div class="news-card">
-                                  <div class="news-image">
-                                      <img src="https://images.pexels.com/photos/3184357/pexels-photo-3184357.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Sports" class="img-fluid">
-                                      <div class="news-category">Sports</div>
-                                  </div>
-                                  <div class="news-content">
-                                      <div class="news-meta">
-                                          <span class="news-date"><i class="far fa-calendar"></i> Dec 10, 2024</span>
-                                          <span class="news-author"><i class="far fa-user"></i> Lisa Garcia</span>
-                                      </div>
-                                      <h4 class="news-title">Olympic Records Shattered at Winter Championships</h4>
-                                      <p class="news-excerpt">Athletes break multiple world records at the international winter sports championship, setting new standards for excellence.</p>
-                                      <a href="#" class="read-more-btn">Read More <i class="fas fa-arrow-right"></i></a>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-                  
-                  <!-- Slide 3 -->
-                  <div class="carousel-item">
-                      <div class="row g-4">
-                          <div class="col-lg-4 col-md-6">
-                              <div class="news-card">
-                                  <div class="news-image">
-                                      <img src="https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Health" class="img-fluid">
-                                      <div class="news-category">Health</div>
-                                  </div>
-                                  <div class="news-content">
-                                      <div class="news-meta">
-                                          <span class="news-date"><i class="far fa-calendar"></i> Dec 9, 2024</span>
-                                          <span class="news-author"><i class="far fa-user"></i> Dr. James Lee</span>
-                                      </div>
-                                      <h4 class="news-title">Breakthrough Cancer Treatment Shows Promise</h4>
-                                      <p class="news-excerpt">New immunotherapy treatment demonstrates remarkable success rates in clinical trials, offering hope to millions of patients.</p>
-                                      <a href="#" class="read-more-btn">Read More <i class="fas fa-arrow-right"></i></a>
-                                  </div>
-                              </div>
-                          </div>
-                          <div class="col-lg-4 col-md-6">
-                              <div class="news-card">
-                                  <div class="news-image">
-                                      <img src="https://images.pexels.com/photos/3184454/pexels-photo-3184454.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Innovation" class="img-fluid">
-                                      <div class="news-category">Innovation</div>
-                                  </div>
-                                  <div class="news-content">
-                                      <div class="news-meta">
-                                          <span class="news-date"><i class="far fa-calendar"></i> Dec 8, 2024</span>
-                                          <span class="news-author"><i class="far fa-user"></i> Anna Taylor</span>
-                                      </div>
-                                      <h4 class="news-title">Quantum Computing Reaches New Milestone</h4>
-                                      <p class="news-excerpt">Scientists achieve quantum supremacy breakthrough that could revolutionize computing, cryptography, and scientific research.</p>
-                                      <a href="#" class="read-more-btn">Read More <i class="fas fa-arrow-right"></i></a>
-                                  </div>
-                              </div>
-                          </div>
-                          <div class="col-lg-4 col-md-6">
-                              <div class="news-card">
-                                  <div class="news-image">
-                                      <img src="https://images.pexels.com/photos/3184325/pexels-photo-3184325.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Culture" class="img-fluid">
-                                      <div class="news-category">Culture</div>
-                                  </div>
-                                  <div class="news-content">
-                                      <div class="news-meta">
-                                          <span class="news-date"><i class="far fa-calendar"></i> Dec 7, 2024</span>
-                                          <span class="news-author"><i class="far fa-user"></i> Robert Kim</span>
-                                      </div>
-                                      <h4 class="news-title">Ancient Artifacts Discovered in Archaeological Dig</h4>
-                                      <p class="news-excerpt">Archaeologists uncover 3,000-year-old artifacts that provide new insights into ancient civilizations and their daily lives.</p>
-                                      <a href="#" class="read-more-btn">Read More <i class="fas fa-arrow-right"></i></a>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-              
-              <!-- Carousel Controls -->
-              <button class="carousel-control-prev" type="button" data-bs-target="#newsCarousel" data-bs-slide="prev">
-                  <span class="carousel-control-prev-icon"></span>
-                  <span class="visually-hidden">Previous</span>
-              </button>
-              <button class="carousel-control-next" type="button" data-bs-target="#newsCarousel" data-bs-slide="next">
-                  <span class="carousel-control-next-icon"></span>
-                  <span class="visually-hidden">Next</span>
-              </button>
-          </div>
+  <section class="news-section py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center mb-5">
+          <h2 class="section-title">
+            <i class="fas fa-newspaper me-3"></i>
+            <span data-translate="news.title">Latest News</span>
+          </h2>
+          <p class="section-subtitle" data-translate="news.subtitle">
+            Stay updated with the most recent developments
+          </p>
+        </div>
       </div>
+  
+      <div id="newsCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#newsCarousel" data-bs-slide-to="0" class="active"></button>
+          <button type="button" data-bs-target="#newsCarousel" data-bs-slide-to="1"></button>
+          <button type="button" data-bs-target="#newsCarousel" data-bs-slide-to="2"></button>
+        </div>
+  
+        <div class="carousel-inner">
+          <!-- Slide 1 -->
+          <div class="carousel-item active">
+            <div class="row g-4">
+              <div class="col-lg-4 col-md-6">
+                <div class="news-card">
+                  <div class="news-image">
+                    <img src="https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=400" alt="AI Technology" class="img-fluid">
+                    <div class="news-category" data-translate="news.cards.0.category">Technology</div>
+                  </div>
+                  <div class="news-content">
+                    <div class="news-meta">
+                      <span class="news-date"><i class="far fa-calendar"></i> <span data-translate="news.cards.0.date">Dec 15, 2024</span></span>
+                      <span class="news-author"><i class="far fa-user"></i> <span data-translate="news.cards.0.author">John Smith</span></span>
+                    </div>
+                    <h4 class="news-title" data-translate="news.cards.0.title"></h4>
+                    <p class="news-excerpt" data-translate="news.cards.0.excerpt"></p>
+                    <a href="#" class="read-more-btn"><span data-translate="news.read_more">Read More</span> <i class="fas fa-arrow-right"></i></a>
+                  </div>
+                </div>
+              </div>
+  
+              <div class="col-lg-4 col-md-6">
+                <div class="news-card">
+                  <div class="news-image">
+                    <img src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Climate Change" class="img-fluid">
+                    <div class="news-category" data-translate="news.cards.1.category">Environment</div>
+                  </div>
+                  <div class="news-content">
+                    <div class="news-meta">
+                      <span class="news-date"><i class="far fa-calendar"></i> <span data-translate="news.cards.1.date">Dec 14, 2024</span></span>
+                      <span class="news-author"><i class="far fa-user"></i> <span data-translate="news.cards.1.author">Sarah Johnson</span></span>
+                    </div>
+                    <h4 class="news-title" data-translate="news.cards.1.title"></h4>
+                    <p class="news-excerpt" data-translate="news.cards.1.excerpt"></p>
+                    <a href="#" class="read-more-btn"><span data-translate="news.read_more">Read More</span> <i class="fas fa-arrow-right"></i></a>
+                  </div>
+                </div>
+              </div>
+  
+              <div class="col-lg-4 col-md-6">
+                <div class="news-card">
+                  <div class="news-image">
+                    <img src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Space Exploration" class="img-fluid">
+                    <div class="news-category" data-translate="news.cards.2.category">Science</div>
+                  </div>
+                  <div class="news-content">
+                    <div class="news-meta">
+                      <span class="news-date"><i class="far fa-calendar"></i> <span data-translate="news.cards.2.date">Dec 13, 2024</span></span>
+                      <span class="news-author"><i class="far fa-user"></i> <span data-translate="news.cards.2.author">Mike Chen</span></span>
+                    </div>
+                    <h4 class="news-title" data-translate="news.cards.2.title"></h4>
+                    <p class="news-excerpt" data-translate="news.cards.2.excerpt"></p>
+                    <a href="#" class="read-more-btn"><span data-translate="news.read_more">Read More</span> <i class="fas fa-arrow-right"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          <!-- Repeat for Slide 2 and Slide 3 using cards.3 - cards.8 -->
+        </div>
+  
+        <button class="carousel-control-prev" type="button" data-bs-target="#newsCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+          <span class="visually-hidden" data-translate="news.prev">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#newsCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+          <span class="visually-hidden" data-translate="news.next">Next</span>
+        </button>
+      </div>
+    </div>
   </section>
+  
 
 
 
   <style>
-
-.news-section {
-    background: var(--bg-light);
-    backdrop-filter: blur(10px);
-    border-radius: 20px;
-    margin: 2rem;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-}
-
-[data-theme="dark"] .news-section {
-    background: var(--bg-dark);
-}
-
-
-
-
-.section-title {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: var(--text-primary);
-    margin-bottom: 1rem;
-    position: relative;
-}
-
-
-
-.section-title::after {
-  background-color: var(--primary-gold);
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80px;
-    height: 4px;
-    border-radius: 2px;
-}
-
-
-[data-theme="dark"] .section-title {
-  color: var(--white);
-}
-
-.section-subtitle {
-    font-size: 1.1rem;
-    color: var(--text-primary);
-    margin-bottom: 0;
-}
-[data-theme="dark"] .section-subtitle  {
-  color: var(--primary-gold);
-}
-
-/* News Cards */
-.news-card {
-    background: var(--bg-light);
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-    height: 100%;
-    
-}
-
-[data-theme="dark"] .news-card {
-    background: var(--light-dark);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-}
-.news-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-}
-
-.news-image {
-    position: relative;
-    overflow: hidden;
-    height: 200px;
-}
-
-.news-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-}
-
-.news-card:hover .news-image img {
-    transform: scale(1.05);
-}
-
-.news-category {
-    position: absolute;
-    top: 15px;
-    left: 15px;
-    background: linear-gradient(135deg, var(--primary-gold), var(--secondary-gold));
-    color: white;
-    padding: 5px 12px;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.news-content {
-    padding: 1.5rem;
-}
-
-.news-meta {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 1rem;
-    font-size: 0.85rem;
-    color: #7f8c8d;
-}
-
-.news-meta span {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-}
-
-.news-title {
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: #2c3e50;
-    margin-bottom: 0.8rem;
-    line-height: 1.4;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-}
-
-[data-theme="dark"] .news-title {
-    color: var(--primary-gold);
-} 
-
-.news-excerpt {
-    color: #7f8c8d;
-    font-size: 0.95rem;
-    line-height: 1.6;
-    margin-bottom: 1.2rem;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-}
-
-.read-more-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    color: linear-gradient(135deg, var(--primary-gold), var(--secondary-gold));
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 0.9rem;
-    transition: all 0.3s ease;
-    position: relative;
-}
-
-.read-more-btn:hover {
-    color: #764ba2;
-    transform: translateX(5px);
-}
-
-.read-more-btn i {
-    transition: transform 0.3s ease;
-}
-
-.read-more-btn:hover i {
-    transform: translateX(3px);
-}
-
-/* Carousel Customization */
-.carousel-indicators {
-    bottom: -50px;
-}
-
-.carousel-indicators button {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    border: none;
-    background: linear-gradient(135deg, var(--primary-gold), var(--secondary-gold));
-    margin: 0 5px;
-    transition: all 0.3s ease;
-}
-
-.carousel-indicators button.active {
-    background: linear-gradient(135deg, var(--primary-gold), var(--secondary-gold));
-    transform: scale(1.2);
-}
-
-.carousel-control-prev,
-.carousel-control-next {
-    width: 50px;
-    height: 50px;
-    background: linear-gradient(135deg, var(--primary-gold), var(--secondary-gold));
-    border-radius: 50%;
-    top: 50%;
-    transform: translateY(-50%);
-    transition: all 0.3s ease;
-}
-
-.carousel-control-prev {
-    left: -25px;
-}
-
-.carousel-control-next {
-    right: -25px;
-}
-
-.carousel-control-prev:hover,
-.carousel-control-next:hover {
-    background: linear-gradient(135deg, var(--primary-gold), var(--secondary-gold));
-    transform: translateY(-50%) scale(1.1);
-}
-
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-    width: 20px;
-    height: 20px;
-}
-
-/* Responsive Design */
-@media (max-width: 992px) {
-    .section-title {
-        font-size: 2rem;
-    }
-    
     .news-section {
-        margin: 1rem;
+      background-color: var(--bg-light);
+      color: var(--text-dark);
+      transition: var(--transition);
     }
     
-    .carousel-control-prev,
-    .carousel-control-next {
-        display: none;
+    [data-theme="dark"] .news-section {
+      background-color: var(--bg-light);
+      color: var(--text-light);
     }
-}
-
-@media (max-width: 768px) {
+    
     .section-title {
-        font-size: 1.8rem;
+      font-size: 2.5rem;
+      color: var(--text-primary);
+      font-weight: bold;
+      margin-bottom: 0.5rem;
     }
     
-    .news-meta {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 5px;
+    .section-subtitle {
+      font-size: 1.2rem;
+      color: var(--text-dark);
+      opacity: 0.8;
     }
     
-    .news-content {
-        padding: 1rem;
+    [data-theme="dark"] .section-subtitle {
+      color: var(--text-light);
+    }
+    
+    .news-card {
+      background-color: var(--white);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    [data-theme="dark"] .news-card {
+      background-color: var(--dark-charcoal);
     }
     
     .news-image {
-        height: 180px;
-    }
-}
-
-@media (max-width: 576px) {
-    .section-title {
-        font-size: 1.5rem;
+      position: relative;
     }
     
-    .news-section {
-        margin: 0.5rem;
-        border-radius: 15px;
+    .news-image img {
+      width: 100%;
+      height: auto;
+      display: block;
     }
     
-    .carousel-indicators {
-        bottom: -40px;
+    .news-category {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: var(--primary-gold);
+      color: var(--white);
+      padding: 0.25rem 0.75rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      border-radius: 20px;
     }
-}
-
-/* Loading Animation */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
+    
+    .news-content {
+      padding: 1rem;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
     }
-    to {
-        opacity: 1;
-        transform: translateY(0);
+    
+    .news-meta {
+      font-size: 0.8rem;
+      color: var(--text-dark);
+      margin-bottom: 0.5rem;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
     }
-}
-
-.news-card {
-    animation: fadeInUp 0.6s ease forwards;
-}
-
-.news-card:nth-child(1) { animation-delay: 0.1s; }
-.news-card:nth-child(2) { animation-delay: 0.2s; }
-.news-card:nth-child(3) { animation-delay: 0.3s; }
-.carousel-control-next{
-  right: -5%;
-} 
-.carousel-control-prev {
-  right: 100%;
-}
-
-  </style>
+    
+    [data-theme="dark"] .news-meta {
+      color: var(--text-light);
+    }
+    
+    .news-title {
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+    
+    .news-excerpt {
+      font-size: 0.95rem;
+      flex-grow: 1;
+      color: var(--text-dark);
+    }
+    
+    [data-theme="dark"] .news-excerpt {
+      color: var(--text-light);
+    }
+    
+    .read-more-btn {
+      margin-top: 1rem;
+      display: inline-flex;
+      align-items: center;
+      font-weight: bold;
+      color: var(--primary-gold);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+    
+    .read-more-btn:hover {
+      text-decoration: underline;
+      color: var(--secondary-gold);
+    }
+    </style>
+    
 
 
 
