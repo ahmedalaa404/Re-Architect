@@ -1,9 +1,62 @@
 /* About Section Styles */
 #about {
-    background: var(--bg-light);
-    padding: 5rem 0;
+  position: relative;
+  background-color: var(--bg-light);
+  padding: 5rem 0;
+  overflow: hidden;
+  animation: fadeInBg 2s ease-in-out;
   }
   
+
+
+  
+/* Circle element */
+#about::before {
+  content: "";
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background-color: var(--primary-gold);
+  opacity: 0.1;
+  border-radius: 50%;
+  top: -100px;
+  left: -100px;
+  animation: floatCircle 10s infinite ease-in-out alternate;
+  z-index: 0;
+}
+
+
+
+/* Optional fade animation for the whole section */
+@keyframes fadeInBg {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Optional slow movement animation for the circle */
+@keyframes floatCircle {
+  0% {
+    transform: translate(0, 0) scale(1.5);
+  }
+  100% {
+    transform: translate(30px, 20px) scale(1.05);
+  }
+}
+
+
+
+/* Ensure content is above the circle */
+#about > * {
+  position: relative;
+  z-index: 1;
+}
+
   #about .section-title {
     font-size: 2rem;
     font-weight: 700;
@@ -156,6 +209,7 @@
         margin-bottom: 1rem;
     }
   }
+
 
 
 
