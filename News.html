@@ -14,10 +14,6 @@
    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />  <link rel="stylesheet" href="assets/Css/global.css">
-  <link rel="stylesheet" href="assets/Css/global.css">
-  <link rel="stylesheet" href="assets/Css/News.css">
-
-
 
 </head>
 <body>
@@ -114,402 +110,192 @@
           <span class="text-ar d-none">ابق على اطلاع بأحدث مشاريعنا وإنجازاتنا وأخبار الشركة</span>
         </p>
       </div>
-    <!-- News Filters -->
-    <div class="news-filters text-center mb-4" data-aos="fade-up">
-      <button class="filter-btn active" data-filter="all">
-        <span class="text-en d-block">All News</span>
-        <span class="text-ar d-none">جميع الأخبار</span>
-      </button>
-      <button class="filter-btn" data-filter="projects">
-        <span class="text-en d-block">Projects</span>
-        <span class="text-ar d-none">المشاريع</span>
-      </button>
-      <button class="filter-btn" data-filter="awards">
-        <span class="text-en d-block">Awards</span>
-        <span class="text-ar d-none">الجوائز</span>
-      </button>
-      <button class="filter-btn" data-filter="partnerships">
-        <span class="text-en d-block">Partnerships</span>
-        <span class="text-ar d-none">الشراكات</span>
-      </button>
-      <button class="filter-btn" data-filter="technology">
-        <span class="text-en d-block">Technology</span>
-        <span class="text-ar d-none">التكنولوجيا</span>
-      </button>
-    </div>
-
-    <div class="row g-4" id="newsGrid">
-      <!-- News Card 1 -->
-      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-category="projects">
-        <article class="news-card h-100">
-          <div class="news-img-wrapper">
-            <img src="https://picsum.photos/600/400?random=1" alt="Metro Project" loading="lazy">
-            <div class="news-category">
-              <span class="text-en d-block">Projects</span>
-              <span class="text-ar d-none">المشاريع</span>
-            </div>
-            <div class="news-overlay">
-              <div class="news-overlay-content">
-                <i class="fas fa-eye fa-2x mb-3"></i>
-                <p class="text-white">
-                  <span class="text-en d-block">Click to read more</span>
-                  <span class="text-ar d-none">انقر لقراءة المزيد</span>
-                </p>
+    <div class="row g-4">
+              <!-- News Card 1 -->
+        <div class="col-lg-4 col-md-6">
+          <article class="news-card h-100">
+            <div class="news-img-wrapper">
+              <img src="https://picsum.photos/600/400?random=1" alt="Metro Project" loading="lazy">
+              <div class="news-category">
+                <span class="text-en d-block">Projects</span>
+                <span class="text-ar d-none">المشاريع</span>
               </div>
             </div>
-          </div>
-          <div class="news-content">
-            <div class="news-date">
-              <span class="text-en d-block">15 Dec 2024</span>
-              <span class="text-ar d-none">15 ديسمبر 2024</span>
+            <div class="news-content">
+              <div class="news-date">
+                <span class="text-en d-block">15 Dec 2024</span>
+                <span class="text-ar d-none">15 ديسمبر 2024</span>
+              </div>
+              <h3>
+                <span class="text-en d-block">New Metro Line Completion</span>
+                <span class="text-ar d-none">إنجاز خط المترو الجديد</span>
+              </h3>
+              <p>
+                <span class="text-en d-block">Successfully completed the construction of Cairo's fourth metro line, connecting major districts and improving public transportation.</span>
+                <span class="text-ar d-none">نجحت في إنجاز بناء خط مترو القاهرة الرابع، ربط الأحياء الرئيسية وتحسين النقل العام.</span>
+              </p>
+              <a href="news-details.html?id=1" class="btn btn-primary mt-3 readmore-btn">
+                <span class="text-en d-block">Read More</span>
+                <span class="text-ar d-none">اقرأ المزيد</span>
+              </a>
             </div>
-            <h3>
-              <span class="text-en d-block">New Metro Line Completion</span>
-              <span class="text-ar d-none">إنجاز خط المترو الجديد</span>
-            </h3>
-            <p>
-              <span class="text-en d-block">Successfully completed the construction of Cairo's fourth metro line, connecting major districts and improving public transportation.</span>
-              <span class="text-ar d-none">نجحت في إنجاز بناء خط مترو القاهرة الرابع، ربط الأحياء الرئيسية وتحسين النقل العام.</span>
-            </p>
-            <a href="news-detail.html?id=1" class="btn btn-primary mt-3 read-more-btn">
-              <span class="text-en d-block">Read More</span>
-              <span class="text-ar d-none">اقرأ المزيد</span>
-              <i class="fas fa-arrow-right ms-2"></i>
-            </a>
-          </div>
-        </article>
-      </div>
-
-      <!-- News Card 2 -->
-      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100" data-category="awards">
-        <article class="news-card h-100">
-          <div class="news-img-wrapper">
-            <img src="https://picsum.photos/600/400?random=2" alt="Excellence Award" loading="lazy">
-            <div class="news-category">
-              <span class="text-en d-block">Awards</span>
-              <span class="text-ar d-none">الجوائز</span>
-            </div>
-            <div class="news-overlay">
-              <div class="news-overlay-content">
-                <i class="fas fa-eye fa-2x mb-3"></i>
-                <p class="text-white">
-                  <span class="text-en d-block">Click to read more</span>
-                  <span class="text-ar d-none">انقر لقراءة المزيد</span>
-                </p>
+          </article>
+        </div>
+        <!-- News Card 2 -->
+        <div class="col-lg-4 col-md-6">
+          <article class="news-card h-100">
+            <div class="news-img-wrapper">
+              <img src="https://picsum.photos/600/400?random=2" alt="Excellence Award" loading="lazy">
+              <div class="news-category">
+                <span class="text-en d-block">Awards</span>
+                <span class="text-ar d-none">الجوائز</span>
               </div>
             </div>
-          </div>
-          <div class="news-content">
-            <div class="news-date">
-              <span class="text-en d-block">10 Dec 2024</span>
-              <span class="text-ar d-none">10 ديسمبر 2024</span>
+            <div class="news-content">
+              <div class="news-date">
+                <span class="text-en d-block">10 Dec 2024</span>
+                <span class="text-ar d-none">10 ديسمبر 2024</span>
+              </div>
+              <h3>
+                <span class="text-en d-block">Construction Excellence Award</span>
+                <span class="text-ar d-none">جائزة التميز في البناء</span>
+              </h3>
+              <p>
+                <span class="text-en d-block">Honored with the prestigious Construction Excellence Award for outstanding achievements in sustainable construction.</span>
+                <span class="text-ar d-none">تم تكريمنا بجائزة التميز في البناء المرموقة لتحقيق إنجازات متميزة في البناء المستدام.</span>
+              </p>
+              <a href="news-details.html?id=2" class="btn btn-primary mt-3 readmore-btn">
+                <span class="text-en d-block">Read More</span>
+                <span class="text-ar d-none">اقرأ المزيد</span>
+              </a>
             </div>
-            <h3>
-              <span class="text-en d-block">Construction Excellence Award</span>
-              <span class="text-ar d-none">جائزة التميز في البناء</span>
-            </h3>
-            <p>
-              <span class="text-en d-block">Honored with the prestigious Construction Excellence Award for outstanding achievements in sustainable construction.</span>
-              <span class="text-ar d-none">تم تكريمنا بجائزة التميز في البناء المرموقة لتحقيق إنجازات متميزة في البناء المستدام.</span>
-            </p>
-            <a href="news-detail.html?id=2" class="btn btn-primary mt-3 read-more-btn">
-              <span class="text-en d-block">Read More</span>
-              <span class="text-ar d-none">اقرأ المزيد</span>
-              <i class="fas fa-arrow-right ms-2"></i>
-            </a>
-          </div>
-        </article>
-      </div>
-
-      <!-- News Card 3 -->
-      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200" data-category="partnerships">
-        <article class="news-card h-100">
-          <div class="news-img-wrapper">
-            <img src="https://picsum.photos/600/400?random=3" alt="Partnership" loading="lazy">
-            <div class="news-category">
-              <span class="text-en d-block">Partnerships</span>
-              <span class="text-ar d-none">الشراكات</span>
-            </div>
-            <div class="news-overlay">
-              <div class="news-overlay-content">
-                <i class="fas fa-eye fa-2x mb-3"></i>
-                <p class="text-white">
-                  <span class="text-en d-block">Click to read more</span>
-                  <span class="text-ar d-none">انقر لقراءة المزيد</span>
-                </p>
+          </article>
+        </div>
+        <!-- News Card 3 -->
+        <div class="col-lg-4 col-md-6">
+          <article class="news-card h-100">
+            <div class="news-img-wrapper">
+              <img src="https://picsum.photos/600/400?random=3" alt="Partnership" loading="lazy">
+              <div class="news-category">
+                <span class="text-en d-block">Partnerships</span>
+                <span class="text-ar d-none">الشراكات</span>
               </div>
             </div>
-          </div>
-          <div class="news-content">
-            <div class="news-date">
-              <span class="text-en d-block">5 Dec 2024</span>
-              <span class="text-ar d-none">5 ديسمبر 2024</span>
-            </div>
-            <h3>
-              <span class="text-en d-block">International Partnership</span>
-              <span class="text-ar d-none">الشراكة الدولية</span>
-            </h3>
-            <p>
-              <span class="text-en d-block">Forming strategic partnerships with international firms to enhance our technological capabilities.</span>
-              <span class="text-ar d-none">تشكيل شراكات استراتيجية مع الشركات الدولية لتعزيز قدراتنا التكنولوجية.</span>
-            </p>
-            <a href="news-detail.html?id=3" class="btn btn-primary mt-3 read-more-btn">
-              <span class="text-en d-block">Read More</span>
-              <span class="text-ar d-none">اقرأ المزيد</span>
-              <i class="fas fa-arrow-right ms-2"></i>
-            </a>
-          </div>
-        </article>
-      </div>
-
-      <!-- News Card 4 -->
-      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300" data-category="technology">
-        <article class="news-card h-100">
-          <div class="news-img-wrapper">
-            <img src="https://picsum.photos/600/400?random=4" alt="Smart Construction" loading="lazy">
-            <div class="news-category">
-              <span class="text-en d-block">Technology</span>
-              <span class="text-ar d-none">التكنولوجيا</span>
-            </div>
-            <div class="news-overlay">
-              <div class="news-overlay-content">
-                <i class="fas fa-eye fa-2x mb-3"></i>
-                <p class="text-white">
-                  <span class="text-en d-block">Click to read more</span>
-                  <span class="text-ar d-none">انقر لقراءة المزيد</span>
-                </p>
+            <div class="news-content">
+              <div class="news-date">
+                <span class="text-en d-block">5 Dec 2024</span>
+                <span class="text-ar d-none">5 ديسمبر 2024</span>
               </div>
-            </div>
-          </div>
-          <div class="news-content">
-            <div class="news-date">
-              <span class="text-en d-block">1 Dec 2024</span>
-              <span class="text-ar d-none">1 ديسمبر 2024</span>
-            </div>
-            <h3>
-              <span class="text-en d-block">Smart Construction Technology</span>
-              <span class="text-ar d-none">تقنية البناء الذكي</span>
-            </h3>
-            <p>
-              <span class="text-en d-block">Implementing cutting-edge IoT and AI technologies to revolutionize construction processes and improve efficiency.</span>
-              <span class="text-ar d-none">تطبيق تقنيات إنترنت الأشياء والذكاء الاصطناعي المتطورة لثورة في عمليات البناء وتحسين الكفاءة.</span>
-            </p>
-            <a href="news-detail.html?id=4" class="btn btn-primary mt-3 read-more-btn">
-              <span class="text-en d-block">Read More</span>
-              <span class="text-ar d-none">اقرأ المزيد</span>
-              <i class="fas fa-arrow-right ms-2"></i>
-            </a>
-          </div>
-        </article>
-      </div>
-
-      <!-- News Card 5 -->
-      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400" data-category="projects">
-        <article class="news-card h-100">
-          <div class="news-img-wrapper">
-            <img src="https://picsum.photos/600/400?random=5" alt="Bridge Project" loading="lazy">
-            <div class="news-category">
-              <span class="text-en d-block">Projects</span>
-              <span class="text-ar d-none">المشاريع</span>
-            </div>
-            <div class="news-overlay">
-              <div class="news-overlay-content">
-                <i class="fas fa-eye fa-2x mb-3"></i>
-                <p class="text-white">
-                  <span class="text-en d-block">Click to read more</span>
-                  <span class="text-ar d-none">انقر لقراءة المزيد</span>
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="news-content">
-            <div class="news-date">
-              <span class="text-en d-block">28 Nov 2024</span>
-              <span class="text-ar d-none">28 نوفمبر 2024</span>
-            </div>
-            <h3>
-              <span class="text-en d-block">New Nile Bridge Construction</span>
-              <span class="text-ar d-none">بناء جسر النيل الجديد</span>
-            </h3>
-            <p>
-              <span class="text-en d-block">Breaking ground on a new suspension bridge across the Nile River, featuring innovative design and sustainable materials.</span>
-              <span class="text-ar d-none">بدء العمل في جسر معلق جديد عبر نهر النيل، يتميز بتصميم مبتكر ومواد مستدامة.</span>
-            </p>
-            <a href="news-detail.html?id=5" class="btn btn-primary mt-3 read-more-btn">
-              <span class="text-en d-block">Read More</span>
-              <span class="text-ar d-none">اقرأ المزيد</span>
-              <i class="fas fa-arrow-right ms-2"></i>
-            </a>
-          </div>
-        </article>
-      </div>
-
-      <!-- News Card 6 -->
-      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500" data-category="awards">
-        <article class="news-card h-100">
-          <div class="news-img-wrapper">
-            <img src="https://picsum.photos/600/400?random=6" alt="Safety Award" loading="lazy">
-            <div class="news-category">
-              <span class="text-en d-block">Awards</span>
-              <span class="text-ar d-none">الجوائز</span>
-            </div>
-            <div class="news-overlay">
-              <div class="news-overlay-content">
-                <i class="fas fa-eye fa-2x mb-3"></i>
-                <p class="text-white">
-                  <span class="text-en d-block">Click to read more</span>
-                  <span class="text-ar d-none">انقر لقراءة المزيد</span>
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="news-content">
-            <div class="news-date">
-              <span class="text-en d-block">25 Nov 2024</span>
-              <span class="text-ar d-none">25 نوفمبر 2024</span>
-            </div>
-            <h3>
-              <span class="text-en d-block">Safety Excellence Recognition</span>
-              <span class="text-ar d-none">تقدير التميز في السلامة</span>
-            </h3>
-            <p>
-              <span class="text-en d-block">Received the National Safety Excellence Award for maintaining zero accidents across all construction sites for 18 months.</span>
-              <span class="text-ar d-none">حصلنا على جائزة التميز الوطني للسلامة للحفاظ على صفر حوادث في جميع مواقع البناء لمدة 18 شهرًا.</span>
-            </p>
-            <a href="news-detail.html?id=6" class="btn btn-primary mt-3 read-more-btn">
-              <span class="text-en d-block">Read More</span>
-              <span class="text-ar d-none">اقرأ المزيد</span>
-              <i class="fas fa-arrow-right ms-2"></i>
-            </a>
-          </div>
-        </article>
-      </div>
-
-      <!-- News Card 7 -->
-      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600" data-category="partnerships">
-        <article class="news-card h-100">
-          <div class="news-img-wrapper">
-            <img src="https://picsum.photos/600/400?random=7" alt="Green Initiative" loading="lazy">
-            <div class="news-category">
-              <span class="text-en d-block">Partnerships</span>
-              <span class="text-ar d-none">الشراكات</span>
-            </div>
-            <div class="news-overlay">
-              <div class="news-overlay-content">
-                <i class="fas fa-eye fa-2x mb-3"></i>
-                <p class="text-white">
-                  <span class="text-en d-block">Click to read more</span>
-                  <span class="text-ar d-none">انقر لقراءة المزيد</span>
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="news-content">
-            <div class="news-date">
-              <span class="text-en d-block">20 Nov 2024</span>
-              <span class="text-ar d-none">20 نوفمبر 2024</span>
-            </div>
-            <h3>
-              <span class="text-en d-block">Green Building Initiative</span>
-              <span class="text-ar d-none">مبادرة البناء الأخضر</span>
-            </h3>
-            <p>
-              <span class="text-en d-block">Partnering with environmental organizations to implement sustainable building practices and reduce carbon footprint.</span>
-              <span class="text-ar d-none">الشراكة مع المنظمات البيئية لتطبيق ممارسات البناء المستدام وتقليل البصمة الكربونية.</span>
-            </p>
-            <a href="news-detail.html?id=7" class="btn btn-primary mt-3 read-more-btn">
-              <span class="text-en d-block">Read More</span>
-              <span class="text-ar d-none">اقرأ المزيد</span>
-              <i class="fas fa-arrow-right ms-2"></i>
-            </a>
-          </div>
-        </article>
-      </div>
-
-      <!-- News Card 8 -->
-      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="700" data-category="technology">
-        <article class="news-card h-100">
-          <div class="news-img-wrapper">
-            <img src="https://picsum.photos/600/400?random=8" alt="Digital Innovation" loading="lazy">
-            <div class="news-category">
-              <span class="text-en d-block">Technology</span>
-              <span class="text-ar d-none">التكنولوجيا</span>
-            </div>
-            <div class="news-overlay">
-              <div class="news-overlay-content">
-                <i class="fas fa-eye fa-2x mb-3"></i>
-                <p class="text-white">
-                  <span class="text-en d-block">Click to read more</span>
-                  <span class="text-ar d-none">انقر لقراءة المزيد</span>
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="news-content">
-            <div class="news-date">
-              <span class="text-en d-block">15 Nov 2024</span>
-              <span class="text-ar d-none">15 نوفمبر 2024</span>
-            </div>
-            <h3>
-              <span class="text-en d-block">Digital Twin Technology</span>
-              <span class="text-ar d-none">تقنية التوأم الرقمي</span>
-            </h3>
-            <p>
-              <span class="text-en d-block">Launching digital twin technology for real-time project monitoring and predictive maintenance across all major projects.</span>
-              <span class="text-ar d-none">إطلاق تقنية التوأم الرقمي لمراقبة المشاريع في الوقت الفعلي والصيانة التنبؤية عبر جميع المشاريع الكبرى.</span>
-            </p>
-            <a href="news-detail.html?id=8" class="btn btn-primary mt-3 read-more-btn">
-              <span class="text-en d-block">Read More</span>
-              <span class="text-ar d-none">اقرأ المزيد</span>
-              <i class="fas fa-arrow-right ms-2"></i>
-            </a>
-          </div>
-        </article>
-      </div>
-
-      <!-- News Card 9 -->
-      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="800" data-category="projects">
-        <article class="news-card h-100">
-          <div class="news-img-wrapper">
-            <img src="https://picsum.photos/600/400?random=9" alt="Hospital Project" loading="lazy">
-            <div class="news-category">
-              <span class="text-en d-block">Projects</span>
-              <span class="text-ar d-none">المشاريع</span>
-            </div>
-            <div class="news-overlay">
-              <div class="news-overlay-content">
-                <i class="fas fa-eye fa-2x mb-3"></i>
-                <p class="text-white">
-                  <span class="text-en d-block">Click to read more</span>
-                  <span class="text-ar d-none">انقر لقراءة المزيد</span>
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="news-content">
-            <div class="news-date">
-              <span class="text-en d-block">10 Nov 2024</span>
-              <span class="text-ar d-none">10 نوفمبر 2024</span>
-            </div>
-            <h3>
-              <span class="text-en d-block">New Medical Complex Opening</span>
-              <span class="text-ar d-none">افتتاح المجمع الطبي الجديد</span>
-            </h3>
-            <p>
-              <span class="text-en d-block">Grand opening of the state-of-the-art medical complex featuring advanced healthcare facilities and modern architecture.</span>
-              <span class="text-ar d-none">الافتتاح الكبير للمجمع الطبي المتطور الذي يضم مرافق رعاية صحية متقدمة وهندسة معمارية حديثة.</span>
-            </p>
-            <a href="news-detail.html?id=9" class="btn btn-primary mt-3 read-more-btn">
-              <span class="text-en d-block">Read More</span>
-              <span class="text-ar d-none">اقرأ المزيد</span>
-              <i class="fas fa-arrow-right ms-2"></i>
-            </a>
+              <h3>
+                <span class="text-en d-block">International Partnership</span>
+                <span class="text-ar d-none">الشراكة الدولية</span>
+              </h3>
+              <p>
+                <span class="text-en d-block">Forming strategic partnerships with international firms to enhance our technological capabilities.</span>
+                <span class="text-ar d-none">تشكيل شراكات استراتيجية مع الشركات الدولية لتعزيز قدراتنا التكنولوجية.</span>
+              </p>
+              <a href="news-details.html?id=3" class="btn btn-primary mt-3 readmore-btn">
+                <span class="text-en d-block">Read More</span>
+                <span class="text-ar d-none">اقرأ المزيد</span>
+              </a>
             </div>
           </article>
         </div>
     </div>
   </div>
 </section>
+
+<!-- CSS (add to your CSS file or inside a <style> tag) -->
+<style>
+  #mainNavbar
+  {
+    position: relative;
+  }
+.news-card {
+  background: var(--white);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.news-card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.18);
+}
+.news-img-wrapper {
+  position: relative;
+  overflow: hidden;
+  height: 220px;
+}
+.news-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.news-card:hover .news-img-wrapper img {
+  transform: scale(1.12);
+}
+.news-category {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  background: var(--primary-gold, #f39c12);
+  color: #fff;
+  padding: 7px 16px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  z-index: 2;
+}
+.news-content {
+  padding: 25px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.news-date {
+  color: var(--primary-gold, #f39c12);
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.news-content h3 {
+  font-size: 1.3rem;
+  margin-bottom: 12px;
+  color: var(--text-dark, #2c3e50);
+}
+.news-content p {
+  color: var(--text-dark, #2c3e50);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0;
+  flex: 1;
+}
+.readmore-btn {
+  background: linear-gradient(90deg, var(--primary-gold, #f39c12), var(--secondary-gold, #e67e22));
+  border: none;
+  color: #fff;
+  border-radius: 25px;
+  font-weight: 600;
+  transition: background 0.3s, box-shadow 0.3s;
+  box-shadow: 0 2px 10px rgba(243,156,18,0.08);
+}
+.readmore-btn:hover {
+  background: linear-gradient(90deg, var(--secondary-gold, #e67e22), var(--primary-gold, #f39c12));
+  color: #fff;
+  box-shadow: 0 6px 18px rgba(243,156,18,0.18);
+  text-decoration: none;
+}
+@media (max-width: 768px) {
+  .news-img-wrapper { height: 160px; }
+  .news-content { padding: 16px; }
+}
+</style>
 
 
 
@@ -634,7 +420,6 @@
 <script type="module" defer src="assets/Js/index.js"></script>
 <script type="module" defer src="assets/Js/Aos_Animation.js"></script>
 <script type="module" defer src="assets/Js/news-language.js"></script>
-<script type="module" defer src="assets/Js/news-filters.js"></script>
 
 </body>
 </html>

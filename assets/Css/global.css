@@ -173,7 +173,7 @@
   .brand-text .ar-text,
   #animated-arabic-name {
     color: var(--white) !important;
-    font-family: 'Inter', Arial, sans-serif;
+    font-family: 'Inter', 'Omar', sans-serif;
     font-weight: 500;
     font-size: 1.12em;
     letter-spacing: 0.05em;
