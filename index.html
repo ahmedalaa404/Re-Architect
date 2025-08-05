@@ -295,8 +295,322 @@
 
 
 
+<!-- News Section -->
+<section id="news" class="py-5" style="background: var(--bg-light);">
+  <div class="container">
+    <h2 class="section-title text-center mb-5" data-aos="fade-up" data-translate="news.title">Latest News</h2>
+    <div class="row g-4">
+      <!-- News Card 1 -->
+      <div class="col-lg-4 col-md-6" data-aos="fade-up">
+        <div class="news-card h-100">
+          <div class="news-image">
+            <img src="assets/Images/project3.webp" alt="News 1" class="img-fluid">
+            <div class="news-date">
+              <span class="day">15</span>
+              <span class="month">Jan</span>
+            </div>
+          </div>
+          <div class="news-content">
+            <h3 class="news-title" data-translate="news.card1.title">New Metro Line Opening</h3>
+            <p class="news-text" data-translate="news.card1.text">Successfully completed the new metro line connecting major districts.</p>
+            <a href="#" class="news-link">Read More <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
 
+      <!-- News Card 2 -->
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+        <div class="news-card h-100">
+          <div class="news-image">
+            <img src="assets/Images/AswanDamAxis-01.webp" alt="News 2" class="img-fluid">
+            <div class="news-date">
+              <span class="day">12</span>
+              <span class="month">Jan</span>
+            </div>
+          </div>
+          <div class="news-content">
+            <h3 class="news-title" data-translate="news.card2.title">Sustainability Award</h3>
+            <p class="news-text" data-translate="news.card2.text">Received recognition for sustainable construction practices.</p>
+            <a href="#" class="news-link">Read More <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
 
+      <!-- News Card 3 -->
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+        <div class="news-card h-100">
+          <div class="news-image">
+            <img src="assets/Images/CairoMetro3C_01.webp" alt="News 3" class="img-fluid">
+            <div class="news-date">
+              <span class="day">10</span>
+              <span class="month">Jan</span>
+            </div>
+          </div>
+          <div class="news-content">
+            <h3 class="news-title" data-translate="news.card3.title">Community Initiative</h3>
+            <p class="news-text" data-translate="news.card3.text">Launched new community development program.</p>
+            <a href="#" class="news-link">Read More <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Featured Projects Section -->
+<section id="projects" class="py-5" style="background: var(--bg-gray);">
+  <div class="container">
+    <h2 class="section-title text-center mb-5" data-aos="fade-up" data-translate="projects.title">Featured Projects</h2>
+    <div class="row g-4">
+      <!-- Project Card 1 -->
+      <div class="col-lg-6" data-aos="fade-right">
+        <div class="project-card h-100">
+          <div class="project-image">
+            <img src="assets/Images/AswanDamAxis-04.webp" alt="Project 1" class="img-fluid">
+            <div class="project-overlay">
+              <span class="project-category" data-translate="projects.category1">Infrastructure</span>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title" data-translate="projects.card1.title">Cairo Metro Line Extension</h3>
+            <p class="project-text" data-translate="projects.card1.text">Major infrastructure project connecting key districts with modern transit solutions.</p>
+            <div class="project-stats">
+              <div class="stat">42km <span>Length</span></div>
+              <div class="stat">34 <span>Stations</span></div>
+              <div class="stat">2024 <span>Completion</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project Card 2 -->
+      <div class="col-lg-6" data-aos="fade-left">
+        <div class="project-card h-100">
+          <div class="project-image">
+            <img src="assets/Images/project3.webp" alt="Project 2" class="img-fluid">
+            <div class="project-overlay">
+              <span class="project-category" data-translate="projects.category2">Commercial</span>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title" data-translate="projects.card2.title">Business District Development</h3>
+            <p class="project-text" data-translate="projects.card2.text">Modern commercial complex with sustainable design and smart building features.</p>
+            <div class="project-stats">
+              <div class="stat">200k <span>Sqm</span></div>
+              <div class="stat">50 <span>Floors</span></div>
+              <div class="stat">2025 <span>Completion</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+/* News Section Styles */
+.news-card {
+  background: var(--bg-card);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: var(--shadow-light);
+  transition: transform 0.3s ease;
+  border: 1px solid var(--border-light);
+}
+
+.news-card:hover {
+  transform: translateY(-10px);
+}
+
+.news-image {
+  position: relative;
+  overflow: hidden;
+}
+
+.news-image img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.news-card:hover .news-image img {
+  transform: scale(1.1);
+}
+
+.news-date {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: var(--primary-color);
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+  animation: dateFloat 3s ease-in-out infinite;
+}
+
+@keyframes dateFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.news-date .day {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.news-date .month {
+  display: block;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
+
+.news-content {
+  padding: 1.5rem;
+}
+
+.news-title {
+  color: var(--text-dark);
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.news-text {
+  color: var(--text-light);
+  margin-bottom: 1rem;
+}
+
+.news-link {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: gap 0.3s ease;
+}
+
+.news-link:hover {
+  gap: 1rem;
+}
+
+/* Projects Section Styles */
+.project-card {
+  background: var(--bg-card);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: var(--shadow-light);
+  transition: all 0.3s ease;
+  border: 1px solid var(--border-light);
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-hover);
+}
+
+.project-image {
+  position: relative;
+  height: 300px;
+  overflow: hidden;
+}
+
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.project-card:hover .project-image img {
+  transform: scale(1.1);
+}
+
+.project-overlay {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  animation: fadeInUp 0.5s ease;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.project-category {
+  background: var(--primary-color);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.project-content {
+  padding: 2rem;
+}
+
+.project-title {
+  color: var(--text-dark);
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.project-text {
+  color: var(--text-light);
+  margin-bottom: 1.5rem;
+}
+
+.project-stats {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid var(--border-light);
+  padding-top: 1.5rem;
+}
+
+.stat {
+  text-align: center;
+  color: var(--primary-color);
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.stat span {
+  display: block;
+  color: var(--text-light);
+  font-size: 0.8rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin-top: 0.25rem;
+}
+
+/* Dark mode specific styles are handled by CSS variables */
+[data-theme="dark"] .news-card,
+[data-theme="dark"] .project-card {
+  background: var(--bg-card);
+  border-color: var(--border-light);
+}
+
+[data-theme="dark"] .news-title,
+[data-theme="dark"] .project-title {
+  color: var(--text-dark);
+}
+
+[data-theme="dark"] .news-text,
+[data-theme="dark"] .project-text {
+  color: var(--text-light);
+}
+</style>
 
 
 
