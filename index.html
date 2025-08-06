@@ -21,11 +21,17 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
     integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+
   <link rel="stylesheet" href="assets/Css/global.css">
   <link rel="stylesheet" href="assets/Css/carousel.css">
   <link rel="stylesheet" href="assets/Css/index.css">
   <link rel="stylesheet" href="assets/Css/sustainability.css">
   <link rel="stylesheet" href="assets/Css/about.css">
+  
+
+
 </head>
 
 <body>
@@ -110,14 +116,20 @@
   </nav>
 
 
-  <!-- navbar end -->
+
+
+
+
+
+
+
+
 
   <div id="home" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-indicators">
-      <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="0" class="active" aria-current="true"
-        aria-label="Slide 1"></button>
-      <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-      <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      <button type="button" data-bs-target="#home" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#home" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#home" data-bs-slide-to="2" aria-label="Slide 3"></button>
     </div>
     <div class="carousel-inner vh-100">
       <div class="carousel-item active">
@@ -130,18 +142,16 @@
         <img src="assets/Images/CairoMetro3C_01.webp" class="d-block w-100" alt="Slide 3">
       </div>
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
+    <button class="carousel-control-prev" type="button" data-bs-target="#home" data-bs-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Previous</span>
     </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
+    <button class="carousel-control-next" type="button" data-bs-target="#home" data-bs-slide="next">
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Next</span>
     </button>
   </div>
-
-
-
+  
 
 
 
@@ -194,15 +204,6 @@
       </div>
     </div>
   </section>
-
-
-
-
-
-
-
-
-
 
 
 
@@ -291,14 +292,79 @@
 
 
 
+  <style>
+    /* Base Style for Section Title */
+    .section-title {
+      position: relative;
+      display: inline-block;
+    }
+    
+    /* Underline pseudo-element */
+    .section-title::after {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      width: 20%;
+      height: 2px;
+      background-color: var(--primary-gold);
+      border-radius: 10px;
+      transition: background-color 0.3s ease;
+    }
+    
+    /* Hover triggers animation */
+    .section-title:hover::after {
+      animation: expandUnderline 0.4s forwards;
+    }
+    
+    /* Define keyframes for expanding underline */
+    @keyframes expandUnderline {
+      from {
+        width: 20%;
+      }
+      to {
+        width: 100%;
+      }
+    }
 
+    .section-title:not(:hover)::after {
+  animation: shrinkUnderline 0.4s forwards;
+}
+
+@keyframes shrinkUnderline {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 20%;
+  }
+}
+/* Base Style */
+.news-date {
+  background-color: var(--primary-white); /* Light mode fallback */
+  transition: background-color 0.5s ease, transform 0.5s ease;
+  transform: scale(1); /* Default scale */
+}
+
+/* Dark Mode Style */
+[data-theme="dark"] .news-date {
+  background-color: var(--primary-gold);
+  transform: scale(1.05); /* Slight zoom for effect */
+}
+    </style>
+    
 
 
 
 <!-- News Section -->
 <section id="news" class="py-5" style="background: var(--bg-light);">
   <div class="container">
-    <h2 class="section-title text-center mb-5" data-aos="fade-up" data-translate="news.title">Latest News</h2>
+    <div class="text-center ">
+      <h2 class="section-title text-center mb-5" data-aos="fade-up" data-translate="news.title">Latest News</h2>
+    </div>
+
     <div class="row g-4">
       <!-- News Card 1 -->
       <div class="col-lg-4 col-md-6" data-aos="fade-up">
@@ -357,55 +423,13 @@
   </div>
 </section>
 
-<!-- Featured Projects Section -->
-<section id="projects" class="py-5" style="background: var(--bg-gray);">
-  <div class="container">
-    <h2 class="section-title text-center mb-5" data-aos="fade-up" data-translate="projects.title">Featured Projects</h2>
-    <div class="row g-4">
-      <!-- Project Card 1 -->
-      <div class="col-lg-6" data-aos="fade-right">
-        <div class="project-card h-100">
-          <div class="project-image">
-            <img src="assets/Images/AswanDamAxis-04.webp" alt="Project 1" class="img-fluid">
-            <div class="project-overlay">
-              <span class="project-category" data-translate="projects.category1">Infrastructure</span>
-            </div>
-          </div>
-          <div class="project-content">
-            <h3 class="project-title" data-translate="projects.card1.title">Cairo Metro Line Extension</h3>
-            <p class="project-text" data-translate="projects.card1.text">Major infrastructure project connecting key districts with modern transit solutions.</p>
-            <div class="project-stats">
-              <div class="stat">42km <span>Length</span></div>
-              <div class="stat">34 <span>Stations</span></div>
-              <div class="stat">2024 <span>Completion</span></div>
-            </div>
-          </div>
-        </div>
-      </div>
 
-      <!-- Project Card 2 -->
-      <div class="col-lg-6" data-aos="fade-left">
-        <div class="project-card h-100">
-          <div class="project-image">
-            <img src="assets/Images/project3.webp" alt="Project 2" class="img-fluid">
-            <div class="project-overlay">
-              <span class="project-category" data-translate="projects.category2">Commercial</span>
-            </div>
-          </div>
-          <div class="project-content">
-            <h3 class="project-title" data-translate="projects.card2.title">Business District Development</h3>
-            <p class="project-text" data-translate="projects.card2.text">Modern commercial complex with sustainable design and smart building features.</p>
-            <div class="project-stats">
-              <div class="stat">200k <span>Sqm</span></div>
-              <div class="stat">50 <span>Floors</span></div>
-              <div class="stat">2025 <span>Completion</span></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+
+
+
+
+
+
 
 <style>
 /* News Section Styles */
@@ -479,7 +503,7 @@
 }
 
 .news-text {
-  color: var(--text-light);
+  color: var(--text-dark);
   margin-bottom: 1rem;
 }
 
@@ -496,125 +520,7 @@
 .news-link:hover {
   gap: 1rem;
 }
-
-/* Projects Section Styles */
-.project-card {
-  background: var(--bg-card);
-  border-radius: 15px;
-  overflow: hidden;
-  box-shadow: var(--shadow-light);
-  transition: all 0.3s ease;
-  border: 1px solid var(--border-light);
-}
-
-.project-card:hover {
-  transform: translateY(-10px);
-  box-shadow: var(--shadow-hover);
-}
-
-.project-image {
-  position: relative;
-  height: 300px;
-  overflow: hidden;
-}
-
-.project-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s ease;
-}
-
-.project-card:hover .project-image img {
-  transform: scale(1.1);
-}
-
-.project-overlay {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  animation: fadeInUp 0.5s ease;
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.project-category {
-  background: var(--primary-color);
-  color: white;
-  padding: 0.5rem 1rem;
-  border-radius: 25px;
-  font-size: 0.9rem;
-  font-weight: 500;
-}
-
-.project-content {
-  padding: 2rem;
-}
-
-.project-title {
-  color: var(--text-dark);
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-}
-
-.project-text {
-  color: var(--text-light);
-  margin-bottom: 1.5rem;
-}
-
-.project-stats {
-  display: flex;
-  justify-content: space-between;
-  border-top: 1px solid var(--border-light);
-  padding-top: 1.5rem;
-}
-
-.stat {
-  text-align: center;
-  color: var(--primary-color);
-  font-weight: 700;
-  font-size: 1.2rem;
-}
-
-.stat span {
-  display: block;
-  color: var(--text-light);
-  font-size: 0.8rem;
-  font-weight: 400;
-  text-transform: uppercase;
-  margin-top: 0.25rem;
-}
-
-/* Dark mode specific styles are handled by CSS variables */
-[data-theme="dark"] .news-card,
-[data-theme="dark"] .project-card {
-  background: var(--bg-card);
-  border-color: var(--border-light);
-}
-
-[data-theme="dark"] .news-title,
-[data-theme="dark"] .project-title {
-  color: var(--text-dark);
-}
-
-[data-theme="dark"] .news-text,
-[data-theme="dark"] .project-text {
-  color: var(--text-light);
-}
 </style>
-
-
-
-
 
 
 
@@ -714,8 +620,6 @@
       </div>
     </div>
   </footer>
-
-
 
 
 
