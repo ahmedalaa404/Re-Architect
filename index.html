@@ -421,7 +421,7 @@
 </section>
 
 <!-- Featured Projects Section -->
-<section id="projects" class="py-5" style="background: var(--bg-gray);">
+<section id="projects" class="py-5">
   <div class="container">
     <h2 class="section-title text-center mb-5" data-aos="fade-up" data-translate="projects.title">Featured Projects</h2>
     <div class="row g-4">
@@ -431,41 +431,60 @@
           <div class="project-image">
             <img src="assets/Images/AswanDamAxis-04.webp" alt="Project 1" class="img-fluid">
             <div class="project-overlay">
-              <span class="project-category" data-translate="projects.category1">Infrastructure</span>
+              <span class="project-category badge text-bg-secondary bg-primary-gold" data-translate="projects.category1">Infrastructure</span>
             </div>
           </div>
           <div class="project-content">
-            <h3 class="project-title" data-translate="projects.card1.title">Cairo Metro Line Extension</h3>
-            <p class="project-text" data-translate="projects.card1.text">Major infrastructure project connecting key districts with modern transit solutions.</p>
+            <h3 class="project-title" data-translate="projects.card1.title" data-aos="flip-up" data-aos-delay="160">Cairo Metro Line Extension</h3>
+            <p class="project-text" data-translate="projects.card1.text" data-aos="zoom-out" data-aos-delay="060">Major infrastructure project connecting key districts with modern transit solutions.</p>
+            
+            <!-- Stat cards -->
             <div class="project-stats">
-              <div class="stat">42km <span>Length</span></div>
-              <div class="stat">34 <span>Stations</span></div>
-              <div class="stat">2024 <span>Completion</span></div>
+              <div class="stat-card" data-aos="zoom-in" data-aos-delay="100">
+                42km <span data-translate="projects.stats.length">Length</span>
+              </div>
+              <div class="stat-card" data-aos="zoom-in" data-aos-delay="200">
+                34 <span data-translate="projects.stats.stations">Stations</span>
+              </div>
+              <div class="stat-card" data-aos="zoom-in" data-aos-delay="300">
+                2024 <span data-translate="projects.stats.completion">Completion</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-lg-6" data-aos="fade-left">
+        <div class="project-card h-100">
+          <div class="project-image">
+            <img src="assets/Images/AswanDamAxis-04.webp" alt="Project 1" class="img-fluid">
+            <div class="project-overlay">
+              <span class="project-category badge text-bg-secondary bg-primary-gold" data-translate="projects.category1">Infrastructure</span>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title" data-translate="projects.card1.title" data-aos="flip-up" data-aos-delay="160">Cairo Metro Line Extension</h3>
+            <p class="project-text" data-translate="projects.card1.text" data-aos="zoom-out" data-aos-delay="060">Major infrastructure project connecting key districts with modern transit solutions.</p>
+            
+            <!-- Stat cards -->
+            <div class="project-stats">
+              <div class="stat-card" data-aos="zoom-in" data-aos-delay="100">
+                42km <span data-translate="projects.stats.length">Length</span>
+              </div>
+              <div class="stat-card" data-aos="zoom-in" data-aos-delay="200">
+                34 <span data-translate="projects.stats.stations">Stations</span>
+              </div>
+              <div class="stat-card" data-aos="zoom-in" data-aos-delay="300">
+                2024 <span data-translate="projects.stats.completion">Completion</span>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Project Card 2 -->
-      <div class="col-lg-6" data-aos="fade-left">
-        <div class="project-card h-100">
-          <div class="project-image">
-            <img src="assets/Images/project3.webp" alt="Project 2" class="img-fluid">
-            <div class="project-overlay">
-              <span class="project-category" data-translate="projects.category2">Commercial</span>
-            </div>
-          </div>
-          <div class="project-content">
-            <h3 class="project-title" data-translate="projects.card2.title">Business District Development</h3>
-            <p class="project-text" data-translate="projects.card2.text">Modern commercial complex with sustainable design and smart building features.</p>
-            <div class="project-stats">
-              <div class="stat">200k <span>Sqm</span></div>
-              <div class="stat">50 <span>Floors</span></div>
-              <div class="stat">2025 <span>Completion</span></div>
-            </div>
-          </div>
-        </div>
-      </div>
+
+
+
     </div>
   </div>
 </section>
@@ -542,7 +561,7 @@
 }
 
 .news-text {
-  color: var(--text-light);
+  color: var(--text-dark);
   margin-bottom: 1rem;
 }
 
@@ -562,83 +581,96 @@
 
 /* Projects Section Styles */
 .project-card {
-  background: var(--bg-card);
-  border-radius: 15px;
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
   overflow: hidden;
-  box-shadow: var(--shadow-light);
-  transition: all 0.3s ease;
-  border: 1px solid var(--border-light);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project-card:hover {
-  transform: translateY(-10px);
-  box-shadow: var(--shadow-hover);
+  transform: translateY(-6px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
 }
 
 .project-image {
   position: relative;
-  height: 300px;
   overflow: hidden;
 }
 
+
 .project-image img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
+  display: block;
   transition: transform 0.5s ease;
 }
 
 .project-card:hover .project-image img {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 .project-overlay {
   position: absolute;
-  top: 20px;
-  left: 20px;
-  animation: fadeInUp 0.5s ease;
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  bottom: 12px;
+  left: 12px;
 }
 
 .project-category {
-  background: var(--primary-color);
-  color: white;
-  padding: 0.5rem 1rem;
-  border-radius: 25px;
-  font-size: 0.9rem;
-  font-weight: 500;
+  font-size: 0.85rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 12px;
 }
 
 .project-content {
-  padding: 2rem;
+  padding: 1.5rem;
 }
 
 .project-title {
-  color: var(--text-dark);
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
 }
 
 .project-text {
-  color: var(--text-light);
-  margin-bottom: 1.5rem;
+  color: #555;
+  font-size: 1rem;
+  margin-bottom: 1rem;
 }
 
+/* Stats section as cards */
 .project-stats {
   display: flex;
-  justify-content: space-between;
-  border-top: 1px solid var(--border-light);
-  padding-top: 1.5rem;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.stat-card {
+  flex: 1;
+  min-width: 100px;
+  background-color: #f8f9fa;
+  color: #333;
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 1rem;
+  border-radius: 12px;
+  text-align: center;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
+  cursor: default;
+}
+
+.stat-card span {
+  display: block;
+  font-size: 0.85rem;
+  color: #666;
+  font-weight: 400;
+  margin-top: 0.3rem;
+}
+
+.stat-card:hover {
+  background-color: #e9ecef;
+  transform: translateY(-3px);
 }
 
 .stat {
@@ -646,11 +678,48 @@
   color: var(--primary-color);
   font-weight: 700;
   font-size: 1.2rem;
+  background-color: var(--text-white);
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  cursor: pointer;
 }
+
+/* Hover effect: smooth lift and soft background color */
+.stat:hover {
+  transform: translateY(-4px);
+  background-color: #f9f9f9; /* light gray background */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+
+@media (prefers-color-scheme: dark) {
+  .stat {
+    background-color: #1e1e1e;
+    color: #f0f0f0;
+  }
+
+  .stat:hover {
+    background-color: #2a2a2a;
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.05);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
 
 .stat span {
   display: block;
-  color: var(--text-light);
+  color: var(--text-dark);
   font-size: 0.8rem;
   font-weight: 400;
   text-transform: uppercase;
