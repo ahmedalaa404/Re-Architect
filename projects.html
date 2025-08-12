@@ -116,6 +116,34 @@
       border:1px solid var(--border); border-radius:10px;
     }
 
+    /* Destination Tabs */
+    .tabs{ display:flex; flex-wrap:wrap; gap:8px }
+    .tab{
+      appearance:none; -webkit-appearance:none;
+      border:1px solid var(--border);
+      background: transparent;
+      color: var(--text);
+      padding:10px 14px; border-radius:9999px;
+      font-size:14px; letter-spacing:.2px;
+      transition: background-color .25s ease, color .25s ease, border-color .25s ease, box-shadow .25s ease, transform .2s ease;
+      cursor:pointer;
+    }
+    .tab:hover{
+      background: linear-gradient(135deg, color-mix(in oklab, var(--gold) 88%, #fff 0%), var(--gold-600));
+      color:#fff; border-color: color-mix(in oklab, var(--gold) 70%, var(--border));
+      box-shadow: var(--shadow);
+      transform: translateY(-1px);
+    }
+    .tab[aria-selected="true"]{
+      background: linear-gradient(135deg, var(--gold), var(--gold-600));
+      color:#fff; border-color: transparent;
+      box-shadow: var(--shadow);
+    }
+    .tab:focus-visible{
+      outline: none;
+      box-shadow: 0 0 0 4px color-mix(in oklab, var(--gold) 22%, transparent);
+    }
+
     .grid{
       margin-top:20px;
       display:grid;
@@ -239,12 +267,8 @@
 
     <section class="filters" aria-label="Project Filters">
       <div class="filter">
-        <label class="label" for="destinationSelect">Destination</label>
-        <div class="select">
-          <select id="destinationSelect" aria-label="Destination filter">
-            <option value="all">All Destinations</option>
-          </select>
-        </div>
+        <label class="label">Destination</label>
+        <div class="tabs" id="destinationTabs" role="tablist" aria-label="Destination filter"></div>
       </div>
 
       <div class="filter">
@@ -330,10 +354,11 @@
     ];
 
     // DOM refs
-    const destinationSelect = document.getElementById('destinationSelect');
+    const destinationTabs = document.getElementById('destinationTabs');
     const locationSelect = document.getElementById('locationSelect');
     const projectsGrid = document.getElementById('projectsGrid');
     const countLabel = document.getElementById('countLabel');
+    let activeDestination = 'all';
 
     // Populate dropdowns
     function uniqueDestinations(list){
@@ -346,10 +371,35 @@
       return Array.from(new Set(scoped.map(p => p.location))).sort();
     }
 
-    function fillDestinationOptions(){
+    function buildDestinationTabs(){
       const dests = uniqueDestinations(projects);
-      destinationSelect.innerHTML = `<option value="all">All Destinations</option>` +
-        dests.map(d => `<option value="${d}">${d}</option>`).join('');
+      const items = ['all', ...dests];
+      destinationTabs.innerHTML = '';
+      items.forEach((val) => {
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'tab';
+        btn.setAttribute('role','tab');
+        btn.setAttribute('data-value', val);
+        const selected = val === activeDestination;
+        btn.setAttribute('aria-selected', selected ? 'true' : 'false');
+        btn.tabIndex = selected ? 0 : -1;
+        btn.textContent = val === 'all' ? 'All' : val;
+        btn.addEventListener('click', () => {
+          if(activeDestination === val) return;
+          activeDestination = val;
+          // update selected state
+          Array.from(destinationTabs.children).forEach(child => {
+            const isSel = child.getAttribute('data-value') === val;
+            child.setAttribute('aria-selected', isSel ? 'true' : 'false');
+            child.tabIndex = isSel ? 0 : -1;
+          });
+          fillLocationOptions(activeDestination);
+          locationSelect.value = 'all';
+          applyFilters();
+        });
+        destinationTabs.appendChild(btn);
+      });
     }
 
     function fillLocationOptions(destValue){
@@ -360,7 +410,7 @@
 
     // Filtering
     function applyFilters(){
-      const dest = destinationSelect.value;
+      const dest = activeDestination;
       const loc = locationSelect.value;
 
       let filtered = projects.slice();
@@ -455,15 +505,10 @@
     }
 
     // Events
-    destinationSelect.addEventListener('change', () => {
-      fillLocationOptions(destinationSelect.value);
-      locationSelect.value = 'all';
-      applyFilters();
-    });
     locationSelect.addEventListener('change', applyFilters);
 
     // Init
-    fillDestinationOptions();
+    buildDestinationTabs();
     fillLocationOptions('all');
     applyFilters();
   </script>
