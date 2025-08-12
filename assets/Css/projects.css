@@ -1,0 +1,156 @@
+
+/* Projects Section Styles */
+.project-card {
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .project-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  }
+  
+  .project-image {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  
+  .project-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s ease;
+  }
+  
+  .project-card:hover .project-image img {
+    transform: scale(1.05);
+  }
+  
+  .project-overlay {
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+  }
+  
+  .project-category {
+    font-size: 0.85rem;
+    padding: 0.4rem 0.8rem;
+    border-radius: 12px;
+  }
+  
+  .project-content {
+    padding: 1.5rem;
+  }
+  
+  .project-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+  
+  .project-text {
+    color: #555;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  /* Stats section as cards */
+  .project-stats {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  .stat-card {
+    flex: 1;
+    min-width: 100px;
+    background-color: #f8f9fa;
+    color: #333;
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 1rem;
+    border-radius: 12px;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
+    cursor: default;
+  }
+  
+  .stat-card span {
+    display: block;
+    font-size: 0.85rem;
+    color: #666;
+    font-weight: 400;
+    margin-top: 0.3rem;
+  }
+  
+  .stat-card:hover {
+    background-color: #e9ecef;
+    transform: translateY(-3px);
+  }
+  
+  .stat {
+    text-align: center;
+    color: var(--primary-color);
+    font-weight: 700;
+    font-size: 1.2rem;
+    background-color: var(--text-white);
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    cursor: pointer;
+  }
+  
+  /* Hover effect: smooth lift and soft background color */
+  .stat:hover {
+    transform: translateY(-4px);
+    background-color: #f9f9f9; /* light gray background */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  
+  @media (prefers-color-scheme: dark) {
+    .stat {
+      background-color: #1e1e1e;
+      color: #f0f0f0;
+    }
+  
+    .stat:hover {
+      background-color: #2a2a2a;
+      box-shadow: 0 4px 12px rgba(255, 255, 255, 0.05);
+    }
+  }
+  
+
+
+
+  .stat span {
+    display: block;
+    color: var(--text-dark);
+    font-size: 0.8rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    margin-top: 0.25rem;
+  }
+  
+  /* Dark mode specific styles are handled by CSS variables */
+  [data-theme="dark"] .news-card,
+  [data-theme="dark"] .project-card {
+    background: var(--bg-card);
+    border-color: var(--border-light);
+  }
+  
+  [data-theme="dark"] .news-title,
+  [data-theme="dark"] .project-title {
+    color: var(--text-dark);
+  }
+  
+  [data-theme="dark"] .news-text,
+  [data-theme="dark"] .project-text {
+    color: var(--text-light);
+  }  

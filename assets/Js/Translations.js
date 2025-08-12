@@ -43,6 +43,18 @@ export const translations = {
         }
       ]
     },
+    projects: {
+      title: "Featured Projects",
+      category1: "Infrastructure",
+      card1: {
+        title: "Cairo Metro Line Extension",
+        text: "Major infrastructure project connecting key districts with modern transit solutions."
+      },  stats: {
+        length: "Length",
+        stations: "Stations",
+        completion: "Completion"
+      }
+    },
 
     lang_toggle: "AR",
     about_title: "About Arab Contractors",
@@ -109,7 +121,18 @@ export const translations = {
         }
       ]
     },
-
+    projects: {
+      title: "مشاريع مميزة",
+      category1: "البنية التحتية",
+      card1: {
+        title: "تمديد خط مترو القاهرة",
+        text: "مشروع بنية تحتية ضخم يربط بين المناطق الرئيسية بحلول نقل حديثة."
+      },
+      stats: {
+        length: "الطول",
+        stations: "المحطات",
+        completion: "الانتهاء"
+      }},
     lang_toggle: "EN",
     about_title: "عن المقاولون العرب",
     about_description: "تأسست شركة المقاولون العرب في عام 1955، وكانت في طليعة التميز في البناء والهندسة في الشرق الأوسط. نتخصص في تطوير البنية التحتية والبناء التجاري والحلول المستدامة.",

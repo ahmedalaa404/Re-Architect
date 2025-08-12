@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Project Details</title>
+  <style>
+    :root{
+      --bg: #f7f7f8;
+      --text: #1b1f23;
+      --muted: #6b7280;
+      --card: #ffffff;
+      --border: #e5e7eb;
+      --gold: #c9a227;
+      --gold-600: #b6911f;
+      --shadow: 0 8px 24px rgba(0,0,0,0.08);
+    }
+    @media (prefers-color-scheme: dark){
+      :root{
+        --bg: #0f1216;
+        --text: #e7eaee;
+        --muted: #a3acb9;
+        --card: #161b22;
+        --border: #283040;
+      }
+    }
+    *{box-sizing:border-box}
+    body{ margin:0; font-family: ui-sans-serif, -apple-system, Segoe UI, Roboto, Helvetica, Arial; background: var(--bg); color: var(--text) }
+    .page{ max-width: 1000px; margin: 0 auto; padding: 24px 16px 48px }
+    .header{ display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:18px }
+    .title{ display:flex; align-items:center; gap:12px }
+    .title-badge{ width:42px; height:42px; border-radius:12px; display:grid; place-items:center; color:#fff; background: linear-gradient(135deg, var(--gold), var(--gold-600)); box-shadow: var(--shadow) }
+    .title h1{ margin:0; font-size: clamp(20px, 3vw, 26px) }
+    .lang-switch{ display:flex; gap:8px; align-items:center }
+    .lang-btn{ border:1px solid var(--border); background: var(--card); color: var(--text); padding:8px 10px; border-radius:10px; font-size:12px; cursor:pointer }
+    .lang-btn[aria-pressed="true"]{ background: linear-gradient(135deg, var(--gold), var(--gold-600)); color:#fff; border-color: transparent }
+    .card{ background: var(--card); border:1px solid var(--border); border-radius:16px; box-shadow: var(--shadow); overflow:hidden }
+    .hero{ width:100%; height:min(420px, 50vh); object-fit:cover; display:block; background:#d1d5db }
+    .content{ display:grid; grid-template-columns: 1fr 1fr; gap:18px; padding:16px }
+    .meta{ display:flex; flex-wrap:wrap; gap:10px; color: var(--muted) }
+    .badge{ display:inline-flex; align-items:center; gap:6px; padding:6px 10px; border-radius:999px; background: color-mix(in oklab, var(--card) 85%, var(--bg)); border:1px solid var(--border); font-size:13px }
+    .desc{ margin:10px 0 0; font-size:14px; line-height:1.6 }
+    @media (max-width: 760px){ .content{ grid-template-columns: 1fr } }
+    .back{ appearance:none; border:none; cursor:pointer; border-radius:10px; padding:8px 12px; font-size:13px; color:#fff; background: linear-gradient(135deg, var(--gold), var(--gold-600)) }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="header">
+      <div class="title">
+        <div class="title-badge" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+            <path d="M4 20h16M4 10l8-6 8 6M6 10v10M18 10v10M10 20v-6h4v6" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h1 id="pageTitle">Project Details</h1>
+      </div>
+      <div class="lang-switch">
+        <button class="lang-btn" id="langEn" aria-pressed="true">EN</button>
+        <button class="lang-btn" id="langAr" aria-pressed="false">AR</button>
+      </div>
+    </section>
+
+    <section class="card">
+      <img id="hero" class="hero" alt=""/>
+      <div class="content">
+        <div>
+          <h2 id="title"></h2>
+          <div class="meta">
+            <span class="badge" id="dest"></span>
+            <span class="badge" id="loc"></span>
+            <span class="badge" id="start"></span>
+            <span class="badge" id="end"></span>
+          </div>
+          <p id="desc" class="desc"></p>
+        </div>
+        <div>
+          <button class="back" id="backBtn">Back</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const i18n = {
+      en: {
+        pageTitle: 'Project Details',
+        destination: 'Destination',
+        location: 'Location',
+        start: 'Start',
+        end: 'End',
+        back: 'Back'
+      },
+      ar: {
+        pageTitle: 'تفاصيل المشروع',
+        destination: 'الدولة',
+        location: 'المدينة',
+        start: 'البداية',
+        end: 'النهاية',
+        back: 'رجوع'
+      }
+    };
+
+    const params = new URLSearchParams(location.search);
+    let currentLang = (params.get('lang') === 'ar') ? 'ar' : 'en';
+
+    function swapDir(){
+      if(currentLang === 'ar'){
+        document.documentElement.setAttribute('dir','rtl');
+        document.documentElement.setAttribute('lang','ar');
+      }else{
+        document.documentElement.setAttribute('dir','ltr');
+        document.documentElement.setAttribute('lang','en');
+      }
+    }
+
+    function render(){
+      const t = i18n[currentLang];
+      document.getElementById('pageTitle').textContent = t.pageTitle;
+      document.getElementById('title').textContent = params.get('title') || '';
+      const img = document.getElementById('hero');
+      img.src = params.get('image') || '';
+      img.alt = params.get('title') || '';
+      document.getElementById('desc').textContent = params.get('description') || '';
+      document.getElementById('dest').textContent = `${t.destination}: ${params.get('destination') || ''}`;
+      document.getElementById('loc').textContent = `${t.location}: ${params.get('location') || ''}`;
+      document.getElementById('start').textContent = `${t.start}: ${params.get('start') || ''}`;
+      document.getElementById('end').textContent = `${t.end}: ${params.get('end') || ''}`;
+      document.getElementById('backBtn').textContent = t.back;
+    }
+
+    const enBtn = document.getElementById('langEn');
+    const arBtn = document.getElementById('langAr');
+    enBtn.addEventListener('click', () => {
+      if(currentLang === 'en') return;
+      currentLang = 'en';
+      enBtn.setAttribute('aria-pressed','true');
+      arBtn.setAttribute('aria-pressed','false');
+      swapDir();
+      render();
+    });
+    arBtn.addEventListener('click', () => {
+      if(currentLang === 'ar') return;
+      currentLang = 'ar';
+      enBtn.setAttribute('aria-pressed','false');
+      arBtn.setAttribute('aria-pressed','true');
+      swapDir();
+      render();
+    });
+
+    document.getElementById('backBtn').addEventListener('click', () => {
+      const refererLang = params.get('lang') || currentLang;
+      // Try to go back keeping language; fallback to projects.html
+      if(history.length > 1) history.back();
+      else window.location.href = `projects.html?lang=${refererLang}`;
+    });
+
+    swapDir();
+    render();
+  </script>
+</body>
+</html>
+
+
