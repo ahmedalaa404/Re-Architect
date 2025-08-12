@@ -129,8 +129,19 @@
       background: linear-gradient(135deg, var(--gold), var(--gold-600)); color:#fff; border-color: transparent; transform: translateY(-1px);
     }
 
+
+
+
+
     /* Destination Tabs */
     .tabs{ display:flex; flex-wrap:wrap; gap:8px }
+
+@media all and (min-wdith:1px) and(max-width:100px){
+
+}
+
+
+
     .tab{
       appearance:none; -webkit-appearance:none;
       border:1px solid var(--border);
@@ -743,6 +754,17 @@
       });
     });
 
+    // Respect lang from URL on load
+    (function initLangFromURL(){
+      const urlLang = new URLSearchParams(location.search).get('lang');
+      if(urlLang === 'ar'){
+        currentLang = 'ar';
+        langEnBtn.setAttribute('aria-pressed','false');
+        langArBtn.setAttribute('aria-pressed','true');
+        swapDir();
+      }
+    })();
+
     // Location change
     locationSelect.addEventListener('change', applyFilters);
 
@@ -805,67 +827,23 @@
       applyTranslations();
     });
 
-    // Modal logic
-    function ensureModal(){
-      let backdrop = document.getElementById('projectModalBackdrop');
-      if(backdrop) return backdrop;
-      backdrop = document.createElement('div');
-      backdrop.id = 'projectModalBackdrop';
-      backdrop.className = 'modal-backdrop';
-      backdrop.innerHTML = `
-        <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-          <div class="modal-header">
-            <h3 class="modal-title" id="modalTitle"></h3>
-            <button class="modal-close" aria-label="Close">✕</button>
-          </div>
-          <div class="modal-body">
-            <img class="modal-img" alt="" />
-            <div class="modal-section">
-              <div class="modal-meta">
-                <span class="badge" id="modalDest"></span>
-                <span class="badge" id="modalLoc"></span>
-                <span class="badge" id="modalStart"></span>
-                <span class="badge" id="modalEnd"></span>
-              </div>
-              <p id="modalDesc"></p>
-            </div>
-          </div>
-        </div>`;
-      document.body.appendChild(backdrop);
-      const closeBtn = backdrop.querySelector('.modal-close');
-      backdrop.addEventListener('click', (e) => { if(e.target === backdrop) toggleModal(false); });
-      closeBtn.addEventListener('click', () => toggleModal(false));
-      return backdrop;
-    }
-
-    function toggleModal(open){
-      const backdrop = ensureModal();
-      backdrop.setAttribute('data-open', open ? 'true' : 'false');
-      document.body.style.overflow = open ? 'hidden' : '';
-    }
-
-    function openDetails(btn){
-      const backdrop = ensureModal();
-      const t = i18n[currentLang];
-      backdrop.querySelector('#modalTitle').textContent = btn.dataset.title || '';
-      const img = backdrop.querySelector('.modal-img');
-      img.src = btn.dataset.image || '';
-      img.alt = btn.dataset.title || '';
-      backdrop.querySelector('#modalDesc').textContent = btn.dataset.description || '';
-      backdrop.querySelector('#modalDest').textContent = `${t.destination}: ${btn.dataset.destination || ''}`;
-      backdrop.querySelector('#modalLoc').textContent = `${t.location}: ${btn.dataset.location || ''}`;
-      backdrop.querySelector('#modalStart').textContent = `${t.start}: ${btn.dataset.start || ''}`;
-      backdrop.querySelector('#modalEnd').textContent = `${t.end}: ${btn.dataset.end || ''}`;
-      toggleModal(true);
-    }
-
+    // Details navigation
     document.addEventListener('click', (e) => {
       const btn = e.target.closest('button.details-btn');
       if(!btn) return;
-      openDetails(btn);
+      const params = new URLSearchParams({
+        title: btn.dataset.title || '',
+        destination: btn.dataset.destination || '',
+        location: btn.dataset.location || '',
+        image: btn.dataset.image || '',
+        description: btn.dataset.description || '',
+        start: btn.dataset.start || '',
+        end: btn.dataset.end || '',
+        lang: currentLang
+      });
+      window.location.href = `project-detail.html?${params.toString()}`;
     });
 
-    // Init
     fillLocationOptions('all');
     applyFilters();
     applyTranslations();
