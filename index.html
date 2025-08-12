@@ -30,6 +30,8 @@
   <link rel="stylesheet" href="assets/Css/sustainability.css">
   <link rel="stylesheet" href="assets/Css/about.css">
   
+  <link rel="stylesheet" href="assets/Css/index_news.css">
+  <link rel="stylesheet" href="assets/Css/projects.css">
 
 
 </head>
@@ -42,7 +44,7 @@
       <a class="navbar-brand d-flex align-items-center" href="#home">
         <div class="logo-container me-3">
           <div class="logo-animated-container">
-            <img src="assets/images/logo.webp" alt="Arab Contractors Logo" class="img-fluid" loading="lazy">
+            <img src="assets/Images/logo.webp" alt="Arab Contractors Logo" class="img-fluid"loading="lazy">
           </div>
         </div>
         <div class="brand-text">
@@ -292,302 +294,146 @@
 
 
 
-  <style>
-    /* Base Style for Section Title */
-    .section-title {
-      position: relative;
-      display: inline-block;
-    }
-    
-    /* Underline pseudo-element */
-    .section-title::after {
-      content: "";
-      position: absolute;
-      bottom: -10px;
-      left: 0;
-      right: 0;
-      margin: 0 auto;
-      width: 20%;
-      height: 2px;
-      background-color: var(--primary-gold);
-      border-radius: 10px;
-      transition: background-color 0.3s ease;
-    }
-    
-    /* Hover triggers animation */
-    .section-title:hover::after {
-      animation: expandUnderline 0.4s forwards;
-    }
-    
-    /* Define keyframes for expanding underline */
-    @keyframes expandUnderline {
-      from {
-        width: 20%;
-      }
-      to {
-        width: 100%;
-      }
-    }
 
-    .section-title:not(:hover)::after {
-  animation: shrinkUnderline 0.4s forwards;
-}
-
-@keyframes shrinkUnderline {
-  from {
-    width: 100%;
-  }
-  to {
-    width: 20%;
-  }
-}
-/* Base Style */
-.news-date {
-  background-color: var(--primary-white); /* Light mode fallback */
-  transition: background-color 0.5s ease, transform 0.5s ease;
-  transform: scale(1); /* Default scale */
-}
-
-/* Dark Mode Style */
-[data-theme="dark"] .news-date {
-  background-color: var(--primary-gold);
-  transform: scale(1.05); /* Slight zoom for effect */
-}
-    </style>
     
 
 
 
-  <!-- News Section -->
-  <section id="news" class="py-5" style="background: var(--bg-light);">
-    <div class="container">
-      <div class="text-center">
-        <h2 class="section-title" data-aos="fade-up" data-translate="news.title">Latest News</h2>
+<!-- News Section -->
+<section id="news" class="py-5" style="background: var(--bg-light);">
+  <div class="container">
+    <h2 class="section-title text-center mb-5" data-aos="fade-up" data-translate="news.title">Latest News</h2>
+    <div class="row g-4">
+      <!-- News Card 1 -->
+      <div class="col-lg-4 col-md-6" data-aos="fade-up">
+        <div class="news-card h-100">
+          <div class="news-image">
+            <img src="assets/Images/project3.webp" alt="News 1" class="img-fluid">
+            <div class="news-date">
+              <span class="day">15</span>
+              <span class="month">Jan</span>
+            </div>
+          </div>
+          <div class="news-content">
+            <h3 class="news-title" data-translate="news.card1.title">New Metro Line Opening</h3>
+            <p class="news-text" data-translate="news.card1.text">Successfully completed the new metro line connecting major districts.</p>
+            <a href="#" class="news-link">Read More <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
       </div>
 
-      <div class="row g-4">
-        <!-- News Card 1 -->
-        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="0" data-aos-duration="800" data-aos-easing="ease-out-cubic">
-          <div class="news-card h-100">
-            <div class="news-image">
-              <img src="assets/Images/project3.webp" alt="News 1" class="img-fluid" />
-              <div class="news-date">
-                <span class="day">15</span>
-                <span class="month">Jan</span>
-              </div>
-            </div>
-            <div class="news-content">
-              <h3 class="news-title" data-translate="news.card1.title">New Metro Line Opening</h3>
-              <p class="news-text" data-translate="news.card1.text">Successfully completed the new metro line connecting major districts.</p>
-              <a href="#" class="news-link">Read More <i class="fas fa-arrow-right"></i></a>
+      <!-- News Card 2 -->
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+        <div class="news-card h-100">
+          <div class="news-image">
+            <img src="assets/Images/AswanDamAxis-01.webp" alt="News 2" class="img-fluid">
+            <div class="news-date">
+              <span class="day">12</span>
+              <span class="month">Jan</span>
             </div>
           </div>
-        </div>
-
-        <!-- News Card 2 -->
-        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800" data-aos-easing="ease-out-cubic">
-          <div class="news-card h-100">
-            <div class="news-image">
-              <img src="assets/Images/AswanDamAxis-01.webp" alt="News 2" class="img-fluid" />
-              <div class="news-date">
-                <span class="day">12</span>
-                <span class="month">Jan</span>
-              </div>
-            </div>
-            <div class="news-content">
-              <h3 class="news-title" data-translate="news.card2.title">Sustainability Award</h3>
-              <p class="news-text" data-translate="news.card2.text">Received recognition for sustainable construction practices.</p>
-              <a href="#" class="news-link">Read More <i class="fas fa-arrow-right"></i></a>
-            </div>
+          <div class="news-content">
+            <h3 class="news-title" data-translate="news.card2.title">Sustainability Award</h3>
+            <p class="news-text" data-translate="news.card2.text">Received recognition for sustainable construction practices.</p>
+            <a href="#" class="news-link">Read More <i class="fas fa-arrow-right"></i></a>
           </div>
         </div>
+      </div>
 
-        <!-- News Card 3 -->
-        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400" data-aos-duration="800" data-aos-easing="ease-out-cubic">
-          <div class="news-card h-100">
-            <div class="news-image">
-              <img src="assets/Images/CairoMetro3C_01.webp" alt="News 3" class="img-fluid" />
-              <div class="news-date">
-                <span class="day">10</span>
-                <span class="month">Jan</span>
-              </div>
+      <!-- News Card 3 -->
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+        <div class="news-card h-100">
+          <div class="news-image">
+            <img src="assets/Images/CairoMetro3C_01.webp" alt="News 3" class="img-fluid">
+            <div class="news-date">
+              <span class="day">10</span>
+              <span class="month">Jan</span>
             </div>
-            <div class="news-content">
-              <h3 class="news-title" data-translate="news.card3.title">Community Initiative</h3>
-              <p class="news-text" data-translate="news.card3.text">Launched new community development program.</p>
-              <a href="#" class="news-link">Read More <i class="fas fa-arrow-right"></i></a>
-            </div>
+          </div>
+          <div class="news-content">
+            <h3 class="news-title" data-translate="news.card3.title">Community Initiative</h3>
+            <p class="news-text" data-translate="news.card3.text">Launched new community development program.</p>
+            <a href="#" class="news-link">Read More <i class="fas fa-arrow-right"></i></a>
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
+<!-- Featured Projects Section -->
+<section id="projects" class="py-5">
+  <div class="container">
+    <h2 class="section-title text-center mb-5" data-aos="fade-up" data-translate="projects.title">Featured Projects</h2>
+    <div class="row g-4">
+      <!-- Project Card 1 -->
+      <div class="col-lg-6" data-aos="fade-right">
+        <div class="project-card h-100">
+          <div class="project-image">
+            <img src="assets/Images/AswanDamAxis-04.webp" alt="Project 1" class="img-fluid">
+            <div class="project-overlay">
+              <span class="project-category badge text-bg-secondary bg-primary-gold" data-translate="projects.category1">Infrastructure</span>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title" data-translate="projects.card1.title" data-aos="flip-up" data-aos-delay="160">Cairo Metro Line Extension</h3>
+            <p class="project-text" data-translate="projects.card1.text" data-aos="zoom-out" data-aos-delay="060">Major infrastructure project connecting key districts with modern transit solutions.</p>
+            
+            <!-- Stat cards -->
+            <div class="project-stats">
+              <div class="stat-card" data-aos="zoom-in" data-aos-delay="100">
+                42km <span data-translate="projects.stats.length">Length</span>
+              </div>
+              <div class="stat-card" data-aos="zoom-in" data-aos-delay="200">
+                34 <span data-translate="projects.stats.stations">Stations</span>
+              </div>
+              <div class="stat-card" data-aos="zoom-in" data-aos-delay="300">
+                2024 <span data-translate="projects.stats.completion">Completion</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-lg-6" data-aos="fade-left">
+        <div class="project-card h-100">
+          <div class="project-image">
+            <img src="assets/Images/AswanDamAxis-04.webp" alt="Project 1" class="img-fluid">
+            <div class="project-overlay">
+              <span class="project-category badge text-bg-secondary bg-primary-gold" data-translate="projects.category1">Infrastructure</span>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title" data-translate="projects.card1.title" data-aos="flip-up" data-aos-delay="160">Cairo Metro Line Extension</h3>
+            <p class="project-text" data-translate="projects.card1.text" data-aos="zoom-out" data-aos-delay="060">Major infrastructure project connecting key districts with modern transit solutions.</p>
+            
+            <!-- Stat cards -->
+            <div class="project-stats">
+              <div class="stat-card" data-aos="zoom-in" data-aos-delay="100">
+                42km <span data-translate="projects.stats.length">Length</span>
+              </div>
+              <div class="stat-card" data-aos="zoom-in" data-aos-delay="200">
+                34 <span data-translate="projects.stats.stations">Stations</span>
+              </div>
+              <div class="stat-card" data-aos="zoom-in" data-aos-delay="300">
+                2024 <span data-translate="projects.stats.completion">Completion</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+    </div>
+  </div>
+</section>
 
 
 
 
 
-
-
-
-<style>
-      .news-card {
-      background: var(--bg-card);
-      border-radius: 15px;
-      box-shadow: var(--shadow-light);
-      overflow: hidden;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      cursor: pointer;
-      display: flex;
-      flex-direction: column;
-      height: 100%;
-    }
-
-    .news-card:hover {
-      transform: translateY(-8px) scale(1.02);
-      box-shadow: var(--shadow-hover);
-    }
-
-    .news-image {
-      position: relative;
-      height: 220px;
-      overflow: hidden;
-      border-bottom: 1px solid var(--border-light);
-    }
-
-    .news-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.5s ease;
-      display: block;
-    }
-
-    .news-card:hover .news-image img {
-      transform: scale(1.05);
-    }
-
-    .news-date {
-      position: absolute;
-      top: 12px;
-      left: 12px;
-      background: var(--primary-color);
-      color: white;
-      padding: 0.5rem 0.7rem;
-      border-radius: 10px;
-      font-weight: 700;
-      font-size: 0.85rem;
-      text-align: center;
-      user-select: none;
-      pointer-events: none;
-      opacity: 0;
-      transform: translateY(10px);
-      transition: opacity 0.4s ease, transform 0.4s ease;
-      z-index: 5;
-    }
-
-    /* Animate date fade-in after card animation */
-    [data-aos].aos-animate .news-date {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .news-content {
-      padding: 1.5rem 1.8rem;
-      flex-grow: 1;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .news-title {
-      font-size: 1.25rem;
-      color: var(--text-dark);
-      margin-bottom: 0.7rem;
-      line-height: 1.2;
-    }
-
-    .news-text {
-      color: var(--text-dark);
-      flex-grow: 1;
-      margin-bottom: 1rem;
-      line-height: 1.4;
-    }
-
-    .news-link {
-      align-self: flex-start;
-      font-weight: 600;
-      color: var(--primary-color);
-      text-decoration: none;
-      transition: color 0.3s ease;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.3rem;
-    }
-
-    .news-link:hover,
-    .news-link:focus {
-      color: var(--primary-color-dark);
-      text-decoration: underline;
-    }
-
-    .news-link i {
-      transition: transform 0.3s ease;
-    }
-
-    .news-link:hover i {
-      transform: translateX(4px);
-    }
-
-
-
-
-
-
-
-    .news-date {
-  position: absolute;
-  top: 12px;
-  left: 12px;
-  background: var(--primary-color);
-  color: white;
-  padding: 0.5rem 0.7rem;
-  border-radius: 10px;
-  font-weight: 700;
-  font-size: 0.85rem;
-  text-align: center;
-  user-select: none;
-  pointer-events: none;
-  opacity: 0;
-  transform: translateY(10px);
-  transition: opacity 0.4s ease, transform 0.4s ease;
-  z-index: 5;
-
-  /* Add animation */
-  animation: floatUpDown 3s ease-in-out infinite;
-}
-
-/* Keyframes for floating up and down */
-@keyframes floatUpDown {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-8px);
-  }
-}
-
-/* Animate date fade-in after card animation */
-[data-aos].aos-animate .news-date {
-  opacity: 1;
-  /* override translateY to 0 here, but animation will override it, so remove transform */
-  transform: none;
-}
-
-
-
-
-    
-  </style>
 
 
 
@@ -602,7 +448,7 @@
           <div class="footer-section">
             <div class="d-flex align-items-center mb-3">
               <div class="logo-container me-3">
-                <img src="assets/images/logo.webp" alt="Arab Contractors Logo" class="img-fluid"
+                <img src="assets/Images/logo.webp" alt="Arab Contractors Logo" class="img-fluid"
                   style="max-height: 50px;" loading="lazy">
               </div>
               <div>

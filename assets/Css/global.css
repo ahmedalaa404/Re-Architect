@@ -550,3 +550,6 @@ footer {
   transition: var(--transition);
 }
 
+.bg-primary-gold{
+  background-color: var(--primary-gold) !important;
+}
