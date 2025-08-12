@@ -116,6 +116,19 @@
       border:1px solid var(--border); border-radius:10px;
     }
 
+    /* Language Switch */
+    .lang-switch{ display:flex; gap:8px; align-items:center }
+    .lang-btn{
+      border:1px solid var(--border);
+      background: var(--card);
+      color: var(--text);
+      padding:8px 10px; border-radius:10px; font-size:12px; cursor:pointer;
+      transition: background-color .2s ease, color .2s ease, border-color .2s ease, transform .2s ease;
+    }
+    .lang-btn[aria-pressed="true"], .lang-btn:hover{
+      background: linear-gradient(135deg, var(--gold), var(--gold-600)); color:#fff; border-color: transparent; transform: translateY(-1px);
+    }
+
     /* Destination Tabs */
     .tabs{ display:flex; flex-wrap:wrap; gap:8px }
     .tab{
@@ -174,6 +187,21 @@
       padding: 12px 12px 14px;
       display:flex; align-items:flex-start; justify-content:space-between; gap: 10px;
     }
+    .project-actions{ display:flex; align-items:center }
+    .details-btn{
+      border:none; cursor:pointer; border-radius:10px; padding:8px 10px; font-size:12px;
+      color:#fff; background: linear-gradient(135deg, var(--gold), var(--gold-600));
+      box-shadow: var(--shadow); transition: transform .2s ease, box-shadow .2s ease, opacity .2s ease;
+    }
+    .details-btn:hover{ transform: translateY(-1px); box-shadow: var(--shadow-lg) }
+    /* Show Details button only on hover, float above overlay */
+    .project-card .project-actions{
+      position: absolute; left: 0; right: 0; bottom: 12px;
+      display: flex; justify-content: center; pointer-events: none;
+      opacity: 0; transform: translateY(6px); z-index: 3;
+      transition: opacity .35s ease, transform .35s ease;
+    }
+    .project-card:hover .project-actions{ opacity:1; transform: translateY(0); pointer-events: auto }
     .project-info{
       min-width:0;
     }
@@ -221,6 +249,9 @@
     .overlay-title{ margin:6px 0 4px; font-weight:800; letter-spacing:.3px }
     .overlay-loc{ margin:0 0 8px; font-size:13px; opacity:.95 }
     .overlay-desc{ margin:0; font-size:13px; opacity:.95; line-height:1.45 }
+    .overlay-dates{ margin-top:10px; display:flex; gap:14px; justify-content:center; flex-wrap:wrap; font-size:12px; opacity:.95 }
+    .date-item{ display:flex; align-items:center; gap:6px; background: rgba(255,255,255,.12); border-radius:999px; padding:6px 10px }
+    .date-item svg{ opacity:.9 }
 
     /* Enter / Leave animations for filtering */
     @keyframes cardIn{
@@ -245,6 +276,22 @@
       color:var(--muted);
       background: color-mix(in oklab, var(--card) 86%, var(--bg));
     }
+
+    /* Modal */
+    .modal-backdrop{ position:fixed; inset:0; background: rgba(0,0,0,.5); display:flex; align-items:center; justify-content:center; padding:20px; opacity:0; pointer-events:none; transition: opacity .25s ease }
+    .modal-backdrop[data-open="true"]{ opacity:1; pointer-events:auto }
+    .modal{ width:min(860px, 96vw); background: var(--card); border:1px solid var(--border); border-radius:16px; box-shadow: var(--shadow-lg); overflow:hidden; transform: translateY(8px) scale(.98); transition: transform .25s ease }
+    .modal-backdrop[data-open="true"] .modal{ transform: translateY(0) scale(1) }
+    .modal-header{ display:flex; justify-content:space-between; align-items:center; padding:14px 16px; border-bottom:1px solid var(--border) }
+    .modal-title{ margin:0; font-size:18px }
+    .modal-close{ border:none; background:transparent; cursor:pointer; color: var(--muted); font-size:18px; padding:6px; border-radius:8px }
+    .modal-close:hover{ color: var(--text); background: color-mix(in oklab, var(--card) 85%, var(--bg)) }
+    .modal-body{ display:grid; grid-template-columns: 1fr 1fr; gap:16px; padding:16px }
+    .modal-img{ width:100%; height: 260px; object-fit: cover; border-radius:12px; border:1px solid var(--border) }
+    .modal-section{ font-size:14px }
+    .modal-meta{ display:flex; flex-wrap:wrap; gap:10px; margin:8px 0 12px; color: var(--muted) }
+    .badge{ display:inline-flex; align-items:center; gap:6px; padding:6px 10px; border-radius:999px; background: color-mix(in oklab, var(--card) 85%, var(--bg)); border:1px solid var(--border) }
+    @media (max-width: 720px){ .modal-body{ grid-template-columns: 1fr } .modal-img{ height:200px } }
   </style>
 </head>
 <body>
@@ -257,193 +304,54 @@
               <path d="M4 20h16M4 10l8-6 8 6M6 10v10M18 10v10M10 20v-6h4v6" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </div>
-          <h1>Projects</h1>
+          <h1 data-i18n="title">Projects</h1>
         </div>
-        <p class="subtitle">Explore Arab Contractors' flagship projects across regions.</p>
+        <p class="subtitle" data-i18n="subtitle">Explore Arab Contractors' flagship projects across regions.</p>
       </div>
-
-      <div class="count" id="countLabel">0 projects</div>
+      <div class="lang-switch">
+        <button class="lang-btn" id="langEn" aria-pressed="true">EN</button>
+        <button class="lang-btn" id="langAr" aria-pressed="false">AR</button>
+        <div class="count" id="countLabel">0 projects</div>
+      </div>
     </section>
 
     <section class="filters" aria-label="Project Filters">
       <div class="filter">
-        <label class="label">Destination</label>
-        <div class="tabs" id="destinationTabs" role="tablist" aria-label="Destination filter"></div>
+        <label class="label" data-i18n="destination">Destination</label>
+        <div class="tabs" id="destinationTabs" role="tablist" aria-label="Destination filter">
+          <button type="button" class="tab" role="tab" data-value="all" aria-selected="true" data-i18n="all">All</button>
+          <button type="button" class="tab" role="tab" data-value="Egypt" aria-selected="false">Egypt</button>
+          <button type="button" class="tab" role="tab" data-value="UAE" aria-selected="false">UAE</button>
+          <button type="button" class="tab" role="tab" data-value="KSA" aria-selected="false">KSA</button>
+          <button type="button" class="tab" role="tab" data-value="Qatar" aria-selected="false">Qatar</button>
+        </div>
       </div>
 
       <div class="filter">
-        <label class="label" for="locationSelect">Location</label>
+        <label class="label" for="locationSelect" data-i18n="location">Location</label>
         <div class="select">
           <select id="locationSelect" aria-label="Location filter">
-            <option value="all">All Locations</option>
+            <option value="all" data-i18n="allLocations">All Locations</option>
           </select>
         </div>
       </div>
     </section>
 
-    <section class="grid" id="projectsGrid" aria-live="polite" aria-busy="false"></section>
-  </main>
-
-  <script>
-    // Sample Data (at least 6 projects)
-    const projects = [
-      {
-        id: 1,
-        title: "New Administrative Capital Central Business District",
-        destination: "Egypt",
-        location: "Cairo",
-        image: "https://picsum.photos/seed/cairo-cbd/800/600",
-        description: "Iconic high-rise development forming the heart of Egypt’s new capital."
-      },
-      {
-        id: 2,
-        title: "Alexandria Waterfront Revitalization",
-        destination: "Egypt",
-        location: "Alexandria",
-        image: "https://picsum.photos/seed/alex-waterfront/800/600",
-        description: "Upgrading coastal infrastructure and public realm along the Corniche."
-      },
-      {
-        id: 3,
-        title: "Sheikh Zayed Bridge Enhancement",
-        destination: "UAE",
-        location: "Abu Dhabi",
-        image: "https://picsum.photos/seed/abudhabi-bridge/800/600",
-        description: "Structural enhancements and intelligent transport systems integration."
-      },
-      {
-        id: 4,
-        title: "Dubai Creek Mixed-Use Park",
-        destination: "UAE",
-        location: "Dubai",
-        image: "https://picsum.photos/seed/dubai-creek/800/600",
-        description: "Green waterfront destination blending leisure with commerce."
-      },
-      {
-        id: 5,
-        title: "King Salman Road Interchange",
-        destination: "KSA",
-        location: "Riyadh",
-        image: "https://picsum.photos/seed/riyadh-road/800/600",
-        description: "High-capacity grade-separated interchange improving city mobility."
-      },
-      {
-        id: 6,
-        title: "Jeddah Waterfront Promenade",
-        destination: "KSA",
-        location: "Jeddah",
-        image: "https://picsum.photos/seed/jeddah-promenade/800/600",
-        description: "Public realm upgrades with resilient coastal protection solutions."
-      },
-      {
-        id: 7,
-        title: "Doha Metro Extension",
-        destination: "Qatar",
-        location: "Doha",
-        image: "https://picsum.photos/seed/doha-metro/800/600",
-        description: "Underground stations and tunneling for rapid urban transit."
-      },
-      {
-        id: 8,
-        title: "Lusail Marina District Infrastructure",
-        destination: "Qatar",
-        location: "Lusail",
-        image: "https://picsum.photos/seed/lusail-marina/800/600",
-        description: "Land development, utilities, and roadworks for a modern marina city."
-      }
-    ];
-
-    // DOM refs
-    const destinationTabs = document.getElementById('destinationTabs');
-    const locationSelect = document.getElementById('locationSelect');
-    const projectsGrid = document.getElementById('projectsGrid');
-    const countLabel = document.getElementById('countLabel');
-    let activeDestination = 'all';
-
-    // Populate dropdowns
-    function uniqueDestinations(list){
-      return Array.from(new Set(list.map(p => p.destination))).sort();
-    }
-    function uniqueLocations(list, destination){
-      const scoped = destination && destination !== 'all'
-        ? list.filter(p => p.destination === destination)
-        : list;
-      return Array.from(new Set(scoped.map(p => p.location))).sort();
-    }
-
-    function buildDestinationTabs(){
-      const dests = uniqueDestinations(projects);
-      const items = ['all', ...dests];
-      destinationTabs.innerHTML = '';
-      items.forEach((val) => {
-        const btn = document.createElement('button');
-        btn.type = 'button';
-        btn.className = 'tab';
-        btn.setAttribute('role','tab');
-        btn.setAttribute('data-value', val);
-        const selected = val === activeDestination;
-        btn.setAttribute('aria-selected', selected ? 'true' : 'false');
-        btn.tabIndex = selected ? 0 : -1;
-        btn.textContent = val === 'all' ? 'All' : val;
-        btn.addEventListener('click', () => {
-          if(activeDestination === val) return;
-          activeDestination = val;
-          // update selected state
-          Array.from(destinationTabs.children).forEach(child => {
-            const isSel = child.getAttribute('data-value') === val;
-            child.setAttribute('aria-selected', isSel ? 'true' : 'false');
-            child.tabIndex = isSel ? 0 : -1;
-          });
-          fillLocationOptions(activeDestination);
-          locationSelect.value = 'all';
-          applyFilters();
-        });
-        destinationTabs.appendChild(btn);
-      });
-    }
-
-    function fillLocationOptions(destValue){
-      const locs = uniqueLocations(projects, destValue);
-      locationSelect.innerHTML = `<option value="all">All Locations</option>` +
-        locs.map(l => `<option value="${l}">${l}</option>`).join('');
-    }
-
-    // Filtering
-    function applyFilters(){
-      const dest = activeDestination;
-      const loc = locationSelect.value;
-
-      let filtered = projects.slice();
-      if(dest !== 'all') filtered = filtered.filter(p => p.destination === dest);
-      if(loc !== 'all') filtered = filtered.filter(p => p.location === loc);
-
-      renderProjects(filtered);
-      updateCount(filtered.length);
-    }
-
-    // Render helpers
-    function updateCount(n){
-      countLabel.textContent = `${n} project${n === 1 ? '' : 's'}`;
-    }
-
-    function createCard(p){
-      const card = document.createElement('article');
-      card.className = 'project-card enter';
-      card.setAttribute('tabindex','0');
-      card.innerHTML = `
-        <img class="project-image" src="${p.image}" alt="${p.title}" loading="lazy">
+    <section class="grid" id="projectsGrid" aria-live="polite" aria-busy="false">
+      <!-- Static project cards; filtered by data attributes -->
+      <article class="project-card" data-destination="Egypt" data-location="Cairo" data-start="2017-03" data-end="2022-10">
+        <img class="project-image" src="https://picsum.photos/seed/cairo-cbd/800/600" alt="New Administrative Capital Central Business District" loading="lazy">
         <div class="project-body">
           <div class="project-info">
-            <h3 class="project-title" title="${p.title}">${p.title}</h3>
-            <div class="project-meta" title="${p.destination} • ${p.location}">
+            <h3 class="project-title" title="New Administrative Capital Central Business District">New Administrative Capital Central Business District</h3>
+            <div class="project-meta" title="Egypt • Cairo">
               <span class="dot" aria-hidden="true"></span>
-              <span>${p.destination}</span>
+              <span>Egypt</span>
               <span>•</span>
-              <span>${p.location}</span>
+              <span>Cairo</span>
             </div>
           </div>
         </div>
-
         <div class="overlay" aria-hidden="true">
           <div class="overlay-content">
             <div class="overlay-icon">
@@ -451,66 +359,516 @@
                 <path d="M4 20h16M4 10l8-6 8 6M6 10v10M18 10v10M10 20v-6h4v6" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </div>
-            <div class="overlay-title">${p.title}</div>
-            <div class="overlay-loc">${p.destination} • ${p.location}</div>
-            <p class="overlay-desc">${p.description}</p>
+            <div class="overlay-title">New Administrative Capital Central Business District</div>
+            <div class="overlay-loc">Egypt • Cairo</div>
+            <p class="overlay-desc">Iconic high-rise development forming the heart of Egypt’s new capital.</p>
+            <div class="overlay-dates">
+              <div class="date-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M7 2v3M17 2v3M3 9h18M5 6h14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2Z" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg><span data-i18n="start">Start</span>: <span class="date-start">2017-03</span></div>
+              <div class="date-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M7 2v3M17 2v3M3 9h18M5 6h14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2Z" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg><span data-i18n="end">End</span>: <span class="date-end">2022-10</span></div>
+            </div>
           </div>
         </div>
-      `;
-      return card;
+        <div class="project-actions" style="padding:0 12px 12px">
+          <button class="details-btn" data-action="details" data-title="New Administrative Capital Central Business District" data-destination="Egypt" data-location="Cairo" data-image="https://picsum.photos/seed/cairo-cbd/800/600" data-description="Iconic high-rise development forming the heart of Egypt’s new capital." data-start="2017-03" data-end="2022-10" data-i18n="details">Details</button>
+        </div>
+      </article>
+
+      <article class="project-card" data-destination="Egypt" data-location="Alexandria" data-start="2018-06" data-end="2021-12">
+        <img class="project-image" src="https://picsum.photos/seed/alex-waterfront/800/600" alt="Alexandria Waterfront Revitalization" loading="lazy">
+        <div class="project-body">
+          <div class="project-info">
+            <h3 class="project-title" title="Alexandria Waterfront Revitalization">Alexandria Waterfront Revitalization</h3>
+            <div class="project-meta" title="Egypt • Alexandria">
+              <span class="dot" aria-hidden="true"></span>
+              <span>Egypt</span>
+              <span>•</span>
+              <span>Alexandria</span>
+            </div>
+          </div>
+        </div>
+        <div class="overlay" aria-hidden="true">
+          <div class="overlay-content">
+            <div class="overlay-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M4 20h16M4 10l8-6 8 6M6 10v10M18 10v10M10 20v-6h4v6" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="overlay-title">Alexandria Waterfront Revitalization</div>
+            <div class="overlay-loc">Egypt • Alexandria</div>
+            <p class="overlay-desc">Upgrading coastal infrastructure and public realm along the Corniche.</p>
+            <div class="overlay-dates">
+              <div class="date-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M7 2v3M17 2v3M3 9h18M5 6h14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2Z" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg><span data-i18n="start">Start</span>: <span class="date-start">2018-06</span></div>
+              <div class="date-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M7 2v3M17 2v3M3 9h18M5 6h14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2Z" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg><span data-i18n="end">End</span>: <span class="date-end">2021-12</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="project-actions" style="padding:0 12px 12px">
+          <button class="details-btn" data-action="details" data-title="Alexandria Waterfront Revitalization" data-destination="Egypt" data-location="Alexandria" data-image="https://picsum.photos/seed/alex-waterfront/800/600" data-description="Upgrading coastal infrastructure and public realm along the Corniche." data-start="2018-06" data-end="2021-12" data-i18n="details">Details</button>
+        </div>
+      </article>
+
+      <article class="project-card" data-destination="UAE" data-location="Abu Dhabi" data-start="2019-04" data-end="2023-05">
+        <img class="project-image" src="https://picsum.photos/seed/abudhabi-bridge/800/600" alt="Sheikh Zayed Bridge Enhancement" loading="lazy">
+        <div class="project-body">
+          <div class="project-info">
+            <h3 class="project-title" title="Sheikh Zayed Bridge Enhancement">Sheikh Zayed Bridge Enhancement</h3>
+            <div class="project-meta" title="UAE • Abu Dhabi">
+              <span class="dot" aria-hidden="true"></span>
+              <span>UAE</span>
+              <span>•</span>
+              <span>Abu Dhabi</span>
+            </div>
+          </div>
+        </div>
+        <div class="overlay" aria-hidden="true">
+          <div class="overlay-content">
+            <div class="overlay-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M4 20h16M4 10l8-6 8 6M6 10v10M18 10v10M10 20v-6h4v6" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="overlay-title">Sheikh Zayed Bridge Enhancement</div>
+            <div class="overlay-loc">UAE • Abu Dhabi</div>
+            <p class="overlay-desc">Structural enhancements and intelligent transport systems integration.</p>
+            <div class="overlay-dates">
+              <div class="date-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M7 2v3M17 2v3M3 9h18M5 6h14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2Z" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg><span data-i18n="start">Start</span>: <span class="date-start">2019-04</span></div>
+              <div class="date-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M7 2v3M17 2v3M3 9h18M5 6h14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2Z" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg><span data-i18n="end">End</span>: <span class="date-end">2023-05</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="project-actions" style="padding:0 12px 12px">
+          <button class="details-btn" data-action="details" data-title="Sheikh Zayed Bridge Enhancement" data-destination="UAE" data-location="Abu Dhabi" data-image="https://picsum.photos/seed/abudhabi-bridge/800/600" data-description="Structural enhancements and intelligent transport systems integration." data-start="2019-04" data-end="2023-05" data-i18n="details">Details</button>
+        </div>
+      </article>
+
+      <article class="project-card" data-destination="UAE" data-location="Dubai" data-start="2020-02" data-end="2024-01">
+        <img class="project-image" src="https://picsum.photos/seed/dubai-creek/800/600" alt="Dubai Creek Mixed-Use Park" loading="lazy">
+        <div class="project-body">
+          <div class="project-info">
+            <h3 class="project-title" title="Dubai Creek Mixed-Use Park">Dubai Creek Mixed-Use Park</h3>
+            <div class="project-meta" title="UAE • Dubai">
+              <span class="dot" aria-hidden="true"></span>
+              <span>UAE</span>
+              <span>•</span>
+              <span>Dubai</span>
+            </div>
+          </div>
+        </div>
+        <div class="overlay" aria-hidden="true">
+          <div class="overlay-content">
+            <div class="overlay-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M4 20h16M4 10l8-6 8 6M6 10v10M18 10v10M10 20v-6h4v6" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="overlay-title">Dubai Creek Mixed-Use Park</div>
+            <div class="overlay-loc">UAE • Dubai</div>
+            <p class="overlay-desc">Green waterfront destination blending leisure with commerce.</p>
+            <div class="overlay-dates">
+              <div class="date-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M7 2v3M17 2v3M3 9h18M5 6h14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2Z" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg><span data-i18n="start">Start</span>: <span class="date-start">2020-02</span></div>
+              <div class="date-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M7 2v3M17 2v3M3 9h18M5 6h14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2Z" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg><span data-i18n="end">End</span>: <span class="date-end">2024-01</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="project-actions" style="padding:0 12px 12px">
+          <button class="details-btn" data-action="details" data-title="Dubai Creek Mixed-Use Park" data-destination="UAE" data-location="Dubai" data-image="https://picsum.photos/seed/dubai-creek/800/600" data-description="Green waterfront destination blending leisure with commerce." data-start="2020-02" data-end="2024-01" data-i18n="details">Details</button>
+        </div>
+      </article>
+
+      <article class="project-card" data-destination="KSA" data-location="Riyadh" data-start="2016-01" data-end="2020-06">
+        <img class="project-image" src="https://picsum.photos/seed/riyadh-road/800/600" alt="King Salman Road Interchange" loading="lazy">
+        <div class="project-body">
+          <div class="project-info">
+            <h3 class="project-title" title="King Salman Road Interchange">King Salman Road Interchange</h3>
+            <div class="project-meta" title="KSA • Riyadh">
+              <span class="dot" aria-hidden="true"></span>
+              <span>KSA</span>
+              <span>•</span>
+              <span>Riyadh</span>
+            </div>
+          </div>
+        </div>
+        <div class="overlay" aria-hidden="true">
+          <div class="overlay-content">
+            <div class="overlay-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M4 20h16M4 10l8-6 8 6M6 10v10M18 10v10M10 20v-6h4v6" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="overlay-title">King Salman Road Interchange</div>
+            <div class="overlay-loc">KSA • Riyadh</div>
+            <p class="overlay-desc">High-capacity grade-separated interchange improving city mobility.</p>
+            <div class="overlay-dates">
+              <div class="date-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M7 2v3M17 2v3M3 9h18M5 6h14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2Z" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg><span data-i18n="start">Start</span>: <span class="date-start">2016-01</span></div>
+              <div class="date-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M7 2v3M17 2v3M3 9h18M5 6h14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2Z" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg><span data-i18n="end">End</span>: <span class="date-end">2020-06</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="project-actions" style="padding:0 12px 12px">
+          <button class="details-btn" data-action="details" data-title="King Salman Road Interchange" data-destination="KSA" data-location="Riyadh" data-image="https://picsum.photos/seed/riyadh-road/800/600" data-description="High-capacity grade-separated interchange improving city mobility." data-start="2016-01" data-end="2020-06" data-i18n="details">Details</button>
+        </div>
+      </article>
+
+      <article class="project-card" data-destination="KSA" data-location="Jeddah" data-start="2018-01" data-end="2022-04">
+        <img class="project-image" src="https://picsum.photos/seed/jeddah-promenade/800/600" alt="Jeddah Waterfront Promenade" loading="lazy">
+        <div class="project-body">
+          <div class="project-info">
+            <h3 class="project-title" title="Jeddah Waterfront Promenade">Jeddah Waterfront Promenade</h3>
+            <div class="project-meta" title="KSA • Jeddah">
+              <span class="dot" aria-hidden="true"></span>
+              <span>KSA</span>
+              <span>•</span>
+              <span>Jeddah</span>
+            </div>
+          </div>
+        </div>
+        <div class="overlay" aria-hidden="true">
+          <div class="overlay-content">
+            <div class="overlay-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M4 20h16M4 10l8-6 8 6M6 10v10M18 10v10M10 20v-6h4v6" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="overlay-title">Jeddah Waterfront Promenade</div>
+            <div class="overlay-loc">KSA • Jeddah</div>
+            <p class="overlay-desc">Public realm upgrades with resilient coastal protection solutions.</p>
+            <div class="overlay-dates">
+              <div class="date-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M7 2v3M17 2v3M3 9h18M5 6h14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2Z" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg><span data-i18n="start">Start</span>: <span class="date-start">2018-01</span></div>
+              <div class="date-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M7 2v3M17 2v3M3 9h18M5 6h14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2Z" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg><span data-i18n="end">End</span>: <span class="date-end">2022-04</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="project-actions" style="padding:0 12px 12px">
+          <button class="details-btn" data-action="details" data-title="Jeddah Waterfront Promenade" data-destination="KSA" data-location="Jeddah" data-image="https://picsum.photos/seed/jeddah-promenade/800/600" data-description="Public realm upgrades with resilient coastal protection solutions." data-start="2018-01" data-end="2022-04" data-i18n="details">Details</button>
+        </div>
+      </article>
+
+      <article class="project-card" data-destination="Qatar" data-location="Doha" data-start="2019-10" data-end="2023-08">
+        <img class="project-image" src="https://picsum.photos/seed/doha-metro/800/600" alt="Doha Metro Extension" loading="lazy">
+        <div class="project-body">
+          <div class="project-info">
+            <h3 class="project-title" title="Doha Metro Extension">Doha Metro Extension</h3>
+            <div class="project-meta" title="Qatar • Doha">
+              <span class="dot" aria-hidden="true"></span>
+              <span>Qatar</span>
+              <span>•</span>
+              <span>Doha</span>
+            </div>
+          </div>
+        </div>
+        <div class="overlay" aria-hidden="true">
+          <div class="overlay-content">
+            <div class="overlay-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M4 20h16M4 10l8-6 8 6M6 10v10M18 10v10M10 20v-6h4v6" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="overlay-title">Doha Metro Extension</div>
+            <div class="overlay-loc">Qatar • Doha</div>
+            <p class="overlay-desc">Underground stations and tunneling for rapid urban transit.</p>
+            <div class="overlay-dates">
+              <div class="date-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M7 2v3M17 2v3M3 9h18M5 6h14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2Z" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg><span data-i18n="start">Start</span>: <span class="date-start">2019-10</span></div>
+              <div class="date-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M7 2v3M17 2v3M3 9h18M5 6h14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2Z" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg><span data-i18n="end">End</span>: <span class="date-end">2023-08</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="project-actions" style="padding:0 12px 12px">
+          <button class="details-btn" data-action="details" data-title="Doha Metro Extension" data-destination="Qatar" data-location="Doha" data-image="https://picsum.photos/seed/doha-metro/800/600" data-description="Underground stations and tunneling for rapid urban transit." data-start="2019-10" data-end="2023-08" data-i18n="details">Details</button>
+        </div>
+      </article>
+
+      <article class="project-card" data-destination="Qatar" data-location="Lusail" data-start="2020-05" data-end="2024-03">
+        <img class="project-image" src="https://picsum.photos/seed/lusail-marina/800/600" alt="Lusail Marina District Infrastructure" loading="lazy">
+        <div class="project-body">
+          <div class="project-info">
+            <h3 class="project-title" title="Lusail Marina District Infrastructure">Lusail Marina District Infrastructure</h3>
+            <div class="project-meta" title="Qatar • Lusail">
+              <span class="dot" aria-hidden="true"></span>
+              <span>Qatar</span>
+              <span>•</span>
+              <span>Lusail</span>
+            </div>
+          </div>
+        </div>
+        <div class="overlay" aria-hidden="true">
+          <div class="overlay-content">
+            <div class="overlay-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M4 20h16M4 10l8-6 8 6M6 10v10M18 10v10M10 20v-6h4v6" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="overlay-title">Lusail Marina District Infrastructure</div>
+            <div class="overlay-loc">Qatar • Lusail</div>
+            <p class="overlay-desc">Land development, utilities, and roadworks for a modern marina city.</p>
+            <div class="overlay-dates">
+              <div class="date-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M7 2v3M17 2v3M3 9h18M5 6h14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2Z" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg><span data-i18n="start">Start</span>: <span class="date-start">2020-05</span></div>
+              <div class="date-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M7 2v3M17 2v3M3 9h18M5 6h14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2Z" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg><span data-i18n="end">End</span>: <span class="date-end">2024-03</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="project-actions" style="padding:0 12px 12px">
+          <button class="details-btn" data-action="details" data-title="Lusail Marina District Infrastructure" data-destination="Qatar" data-location="Lusail" data-image="https://picsum.photos/seed/lusail-marina/800/600" data-description="Land development, utilities, and roadworks for a modern marina city." data-start="2020-05" data-end="2024-03" data-i18n="details">Details</button>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <script>
+    // i18n strings
+    const i18n = {
+      en: {
+        title: 'Projects',
+        subtitle: "Explore Arab Contractors' flagship projects across regions.",
+        destination: 'Destination',
+        location: 'Location',
+        all: 'All',
+        allLocations: 'All Locations',
+        details: 'Details',
+        start: 'Start',
+        end: 'End',
+        noResults: 'No projects match your filters.',
+        projectCount: (n) => `${n} project${n === 1 ? '' : 's'}`
+      },
+      ar: {
+        title: 'المشروعات',
+        subtitle: 'استكشف أبرز مشروعات شركة المقاولون العرب عبر المناطق.',
+        destination: 'الدولة',
+        location: 'المدينة',
+        all: 'الكل',
+        allLocations: 'كل المدن',
+        details: 'التفاصيل',
+        start: 'البداية',
+        end: 'النهاية',
+        noResults: 'لا توجد مشروعات مطابقة لخيارات التصفية.',
+        projectCount: (n) => `${n} مشروع${n === 1 ? '' : (n <= 10 ? 'ات' : '')}`
+      }
+    };
+
+    let currentLang = 'en';
+
+    // DOM refs
+    const destinationTabs = document.getElementById('destinationTabs');
+    const locationSelect = document.getElementById('locationSelect');
+    const projectsGrid = document.getElementById('projectsGrid');
+    const countLabel = document.getElementById('countLabel');
+    const langEnBtn = document.getElementById('langEn');
+    const langArBtn = document.getElementById('langAr');
+    let activeDestination = 'all';
+
+    // Keep references to the original cards from HTML
+    const allCards = Array.from(projectsGrid.querySelectorAll('.project-card'));
+
+    function uniqueLocationsFromDOM(dest){
+      const cards = allCards.filter(card => dest === 'all' || card.dataset.destination === dest);
+      return Array.from(new Set(cards.map(c => c.dataset.location))).sort();
     }
 
-    // Smooth list transition: fade out old → render new with staggered enter
-    function renderProjects(list){
-      // 1) Leave animation for current cards
-      const currentCards = Array.from(projectsGrid.children);
-      if(currentCards.length){
-        projectsGrid.setAttribute('aria-busy','true');
-        currentCards.forEach((el, i) => {
-          el.classList.add('leave');
-          el.style.transitionDelay = `${i * 60}ms`;
-        });
+    function fillLocationOptions(destValue){
+      const locs = uniqueLocationsFromDOM(destValue);
+      locationSelect.innerHTML = `<option value="all">All Locations</option>` +
+        locs.map(l => `<option value="${l}">${l}</option>`).join('');
+    }
 
-        // Wait for the last leave to finish, then swap content
-        const totalLeave = (currentCards.length - 1) * 60 + 240;
+    function updateCount(n){
+      countLabel.textContent = i18n[currentLang].projectCount(n);
+    }
+
+    function renderFromDOM(cards){
+      const current = Array.from(projectsGrid.children);
+      if(current.length){
+        projectsGrid.setAttribute('aria-busy','true');
+        current.forEach((el, i) => {
+          if(el.classList && el.classList.contains('project-card')){
+            el.classList.add('leave');
+            el.style.transitionDelay = `${i * 60}ms`;
+          }
+        });
+        const totalLeave = (current.length - 1) * 60 + 240;
         setTimeout(() => {
           projectsGrid.innerHTML = '';
-          insertNew(list);
+          insertExisting(cards);
           projectsGrid.setAttribute('aria-busy','false');
         }, totalLeave);
-      }else{
-        // First render (no leave needed)
-        insertNew(list);
+      } else {
+        insertExisting(cards);
       }
     }
 
-    function insertNew(list){
-      if(!list.length){
+    function insertExisting(cards){
+      if(!cards.length){
         const empty = document.createElement('div');
         empty.className = 'empty';
-        empty.textContent = 'No projects match your filters.';
+        empty.textContent = i18n[currentLang].noResults;
         projectsGrid.appendChild(empty);
         return;
       }
-      list.forEach((p, i) => {
-        const card = createCard(p);
+      cards.forEach((card, i) => {
+        card.classList.remove('leave');
+        card.classList.add('enter');
         card.style.animationDelay = `${i * 70}ms`;
         projectsGrid.appendChild(card);
       });
-      // Clean up enter class after all run (optional)
-      const totalEnter = (list.length - 1) * 70 + 500;
+      const totalEnter = (cards.length - 1) * 70 + 500;
       setTimeout(() => {
         projectsGrid.querySelectorAll('.enter').forEach(el => el.classList.remove('enter'));
       }, totalEnter);
     }
 
-    // Events
+    function applyFilters(){
+      const dest = activeDestination;
+      const loc = locationSelect.value;
+      const filtered = allCards.filter(card => {
+        const okDest = dest === 'all' || card.dataset.destination === dest;
+        const okLoc = loc === 'all' || card.dataset.location === loc;
+        return okDest && okLoc;
+      });
+      renderFromDOM(filtered);
+      updateCount(filtered.length);
+    }
+
+    // Tabs: use existing buttons in HTML
+    Array.from(destinationTabs.querySelectorAll('.tab')).forEach(btn => {
+      btn.addEventListener('click', () => {
+        const val = btn.getAttribute('data-value');
+        if(activeDestination === val) return;
+        activeDestination = val;
+        Array.from(destinationTabs.children).forEach(child => {
+          const isSel = child.getAttribute('data-value') === val;
+          child.setAttribute('aria-selected', isSel ? 'true' : 'false');
+          child.tabIndex = isSel ? 0 : -1;
+        });
+        fillLocationOptions(activeDestination);
+        locationSelect.value = 'all';
+        applyFilters();
+      });
+    });
+
+    // Location change
     locationSelect.addEventListener('change', applyFilters);
 
+    // Language switching
+    function swapDir(){
+      if(currentLang === 'ar'){
+        document.documentElement.setAttribute('dir','rtl');
+        document.documentElement.setAttribute('lang','ar');
+      }else{
+        document.documentElement.setAttribute('dir','ltr');
+        document.documentElement.setAttribute('lang','en');
+      }
+    }
+
+    function applyTranslations(){
+      const t = i18n[currentLang];
+      document.querySelectorAll('[data-i18n]')
+        .forEach(el => {
+          const key = el.getAttribute('data-i18n');
+          if(key === 'all'){
+            el.textContent = t.all;
+          }else if(key === 'allLocations'){
+            // Only affect the placeholder option label for now
+            if(el.tagName.toLowerCase() === 'option') el.textContent = t.allLocations;
+          }else if(key in t){
+            el.textContent = t[key];
+          }
+        });
+
+      // Update location select placeholder
+      const firstOpt = locationSelect.querySelector('option[value="all"]');
+      if(firstOpt) firstOpt.textContent = t.allLocations;
+
+      // Update Details buttons
+      document.querySelectorAll('.details-btn').forEach(btn => btn.textContent = t.details);
+
+      // Update overlay Start/End labels
+      document.querySelectorAll('.overlay .date-item').forEach(item => {
+        const span = item.querySelector('span[data-i18n]');
+        if(!span) return;
+        const k = span.getAttribute('data-i18n');
+        span.textContent = t[k];
+      });
+    }
+
+    langEnBtn.addEventListener('click', () => {
+      if(currentLang === 'en') return;
+      currentLang = 'en';
+      langEnBtn.setAttribute('aria-pressed','true');
+      langArBtn.setAttribute('aria-pressed','false');
+      swapDir();
+      applyTranslations();
+    });
+    langArBtn.addEventListener('click', () => {
+      if(currentLang === 'ar') return;
+      currentLang = 'ar';
+      langEnBtn.setAttribute('aria-pressed','false');
+      langArBtn.setAttribute('aria-pressed','true');
+      swapDir();
+      applyTranslations();
+    });
+
+    // Modal logic
+    function ensureModal(){
+      let backdrop = document.getElementById('projectModalBackdrop');
+      if(backdrop) return backdrop;
+      backdrop = document.createElement('div');
+      backdrop.id = 'projectModalBackdrop';
+      backdrop.className = 'modal-backdrop';
+      backdrop.innerHTML = `
+        <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+          <div class="modal-header">
+            <h3 class="modal-title" id="modalTitle"></h3>
+            <button class="modal-close" aria-label="Close">✕</button>
+          </div>
+          <div class="modal-body">
+            <img class="modal-img" alt="" />
+            <div class="modal-section">
+              <div class="modal-meta">
+                <span class="badge" id="modalDest"></span>
+                <span class="badge" id="modalLoc"></span>
+                <span class="badge" id="modalStart"></span>
+                <span class="badge" id="modalEnd"></span>
+              </div>
+              <p id="modalDesc"></p>
+            </div>
+          </div>
+        </div>`;
+      document.body.appendChild(backdrop);
+      const closeBtn = backdrop.querySelector('.modal-close');
+      backdrop.addEventListener('click', (e) => { if(e.target === backdrop) toggleModal(false); });
+      closeBtn.addEventListener('click', () => toggleModal(false));
+      return backdrop;
+    }
+
+    function toggleModal(open){
+      const backdrop = ensureModal();
+      backdrop.setAttribute('data-open', open ? 'true' : 'false');
+      document.body.style.overflow = open ? 'hidden' : '';
+    }
+
+    function openDetails(btn){
+      const backdrop = ensureModal();
+      const t = i18n[currentLang];
+      backdrop.querySelector('#modalTitle').textContent = btn.dataset.title || '';
+      const img = backdrop.querySelector('.modal-img');
+      img.src = btn.dataset.image || '';
+      img.alt = btn.dataset.title || '';
+      backdrop.querySelector('#modalDesc').textContent = btn.dataset.description || '';
+      backdrop.querySelector('#modalDest').textContent = `${t.destination}: ${btn.dataset.destination || ''}`;
+      backdrop.querySelector('#modalLoc').textContent = `${t.location}: ${btn.dataset.location || ''}`;
+      backdrop.querySelector('#modalStart').textContent = `${t.start}: ${btn.dataset.start || ''}`;
+      backdrop.querySelector('#modalEnd').textContent = `${t.end}: ${btn.dataset.end || ''}`;
+      toggleModal(true);
+    }
+
+    document.addEventListener('click', (e) => {
+      const btn = e.target.closest('button.details-btn');
+      if(!btn) return;
+      openDetails(btn);
+    });
+
     // Init
-    buildDestinationTabs();
     fillLocationOptions('all');
     applyFilters();
+    applyTranslations();
   </script>
 </body>
 </html>
