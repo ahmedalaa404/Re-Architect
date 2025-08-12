@@ -1,1022 +1,471 @@
 <!DOCTYPE html>
-<html data-theme="light">
-
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title data-i18n="page_title">Arab Contractors - Our Projects</title>
-  <meta name="description" content="Discover our world-class construction and infrastructure projects across the Middle East.">
-  <meta name="keywords" content="Arab Contractors, projects, construction, infrastructure, engineering">
-  <meta name="robots" content="index, follow">
-  
-  <!-- AOS CSS -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Projects | Arab Contractors</title>
   <style>
-    :root {
-      --primary-color: #2563eb;
-      --secondary-color: #f59e0b;
-      --accent-color: #10b981;
-      --text-dark: #1f2937;
-      --text-light: #6b7280;
-      --bg-light: #ffffff;
-      --bg-gray: #f8fafc;
-      --bg-card: #ffffff;
-      --border-light: #e5e7eb;
-      --shadow-light: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-      --shadow-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-      --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      --gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-      --gradient-tertiary: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    :root{
+      --bg: #f7f7f8;
+      --text: #1b1f23;
+      --muted: #6b7280;
+      --card: #ffffff;
+      --border: #e5e7eb;
+      --gold: #c9a227;
+      --gold-600: #b6911f;
+      --shadow: 0 8px 24px rgba(0,0,0,0.08);
+      --shadow-lg: 0 14px 38px rgba(0,0,0,0.12);
+      --overlay: rgba(9,11,15,0.45);
     }
-
-    [data-theme="dark"] {
-      --text-dark: #f9fafb;
-      --text-light: #d1d5db;
-      --bg-light: #111827;
-      --bg-gray: #1f2937;
-      --bg-card: #1f2937;
-      --border-light: #374151;
-      --shadow-light: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
-      --shadow-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.4);
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      background-color: var(--bg-light);
-      color: var(--text-dark);
-      line-height: 1.6;
-      transition: all 0.3s ease;
-    }
-
-    /* Navigation Styles */
-    .navbar {
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(20px);
-      border-bottom: 1px solid var(--border-light);
-      transition: all 0.3s ease;
-      padding: 1rem 0;
-    }
-
-    [data-theme="dark"] .navbar {
-      background: rgba(17, 24, 39, 0.95);
-    }
-
-    .navbar-brand {
-      font-weight: 700;
-      font-size: 1.5rem;
-      color: var(--primary-color) !important;
-    }
-
-    .nav-link {
-      color: var(--text-dark) !important;
-      font-weight: 500;
-      transition: all 0.3s ease;
-      position: relative;
-    }
-
-    .nav-link:hover {
-      color: var(--primary-color) !important;
-    }
-
-    .nav-link::after {
-      content: '';
-      position: absolute;
-      bottom: -5px;
-      left: 50%;
-      width: 0;
-      height: 2px;
-      background: var(--primary-color);
-      transition: all 0.3s ease;
-      transform: translateX(-50%);
-    }
-
-    .nav-link:hover::after {
-      width: 100%;
-    }
-
-    /* Hero Section */
-    .hero-section {
-      background: var(--gradient-primary);
-      padding: 120px 0 80px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero-section::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="%23ffffff" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="%23ffffff" opacity="0.1"/><circle cx="50" cy="10" r="0.5" fill="%23ffffff" opacity="0.1"/><circle cx="10" cy="60" r="0.5" fill="%23ffffff" opacity="0.1"/><circle cx="90" cy="40" r="0.5" fill="%23ffffff" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
-      opacity: 0.5;
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 2;
-    }
-
-    .hero-title {
-      font-size: 3.5rem;
-      font-weight: 800;
-      color: white;
-      margin-bottom: 1.5rem;
-      text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    }
-
-    .hero-subtitle {
-      font-size: 1.2rem;
-      color: rgba(255, 255, 255, 0.9);
-      margin-bottom: 2rem;
-    }
-
-    /* Filter Section */
-    .filter-section {
-      background: var(--bg-gray);
-      padding: 2rem 0;
-      border-bottom: 1px solid var(--border-light);
-    }
-
-    .filter-btn {
-      background: var(--bg-card);
-      border: 2px solid var(--border-light);
-      color: var(--text-dark);
-      padding: 0.8rem 1.5rem;
-      border-radius: 50px;
-      font-weight: 600;
-      transition: all 0.3s ease;
-      margin: 0.25rem;
-    }
-
-    .filter-btn:hover,
-    .filter-btn.active {
-      background: var(--primary-color);
-      border-color: var(--primary-color);
-      color: white;
-      transform: translateY(-2px);
-      box-shadow: var(--shadow-hover);
-    }
-
-    /* Projects Grid */
-    .projects-section {
-      padding: 4rem 0;
-    }
-
-    .project-card {
-      background: var(--bg-card);
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: var(--shadow-light);
-      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      border: 1px solid var(--border-light);
-      height: 100%;
-    }
-
-    .project-card:hover {
-      transform: translateY(-15px) scale(1.02);
-      box-shadow: var(--shadow-hover);
-    }
-
-    .project-image {
-      position: relative;
-      overflow: hidden;
-      height: 250px;
-    }
-
-    .project-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: all 0.4s ease;
-    }
-
-    .project-card:hover .project-image img {
-      transform: scale(1.1);
-    }
-
-    .project-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: linear-gradient(45deg, rgba(37, 99, 235, 0.8), rgba(147, 51, 234, 0.8));
-      opacity: 0;
-      transition: all 0.3s ease;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .project-card:hover .project-overlay {
-      opacity: 1;
-    }
-
-    .overlay-icon {
-      color: white;
-      font-size: 2rem;
-      transform: scale(0);
-      transition: all 0.3s ease;
-    }
-
-    .project-card:hover .overlay-icon {
-      transform: scale(1);
-    }
-
-    .project-content {
-      padding: 2rem;
-    }
-
-    .project-category {
-      display: inline-block;
-      background: var(--gradient-secondary);
-      color: white;
-      padding: 0.5rem 1rem;
-      border-radius: 25px;
-      font-size: 0.8rem;
-      font-weight: 600;
-      margin-bottom: 1rem;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-
-    .project-title {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: var(--text-dark);
-      margin-bottom: 1rem;
-      line-height: 1.3;
-    }
-
-    .project-description {
-      color: var(--text-light);
-      margin-bottom: 1.5rem;
-      line-height: 1.6;
-    }
-
-    .project-stats {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 1.5rem;
-      padding-top: 1rem;
-      border-top: 1px solid var(--border-light);
-    }
-
-    .stat-item {
-      text-align: center;
-    }
-
-    .stat-value {
-      font-size: 1.2rem;
-      font-weight: 700;
-      color: var(--primary-color);
-      display: block;
-    }
-
-    .stat-label {
-      font-size: 0.8rem;
-      color: var(--text-light);
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-
-    .project-btn {
-      background: var(--gradient-tertiary);
-      color: white;
-      border: none;
-      padding: 0.8rem 2rem;
-      border-radius: 50px;
-      font-weight: 600;
-      transition: all 0.3s ease;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .project-btn:hover {
-      color: white;
-      transform: translateY(-2px);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    }
-
-    /* Language Support */
-    [dir="rtl"] .project-card {
-      text-align: right;
-    }
-
-    [dir="rtl"] .hero-title,
-    [dir="rtl"] .hero-subtitle {
-      text-align: right;
-    }
-
-    /* Responsive Design */
-    @media (max-width: 768px) {
-      .hero-title {
-        font-size: 2.5rem;
-      }
-      
-      .project-card {
-        margin-bottom: 2rem;
-      }
-      
-      .filter-btn {
-        font-size: 0.9rem;
-        padding: 0.6rem 1rem;
+    @media (prefers-color-scheme: dark){
+      :root{
+        --bg: #0f1216;
+        --text: #e7eaee;
+        --muted: #a3acb9;
+        --card: #161b22;
+        --border: #283040;
+        --shadow: 0 10px 30px rgba(0,0,0,0.45);
+        --shadow-lg: 0 18px 46px rgba(0,0,0,0.5);
+        --overlay: rgba(0,0,0,0.55);
       }
     }
 
-
-
-    /* Loading Animation */
-    .loading {
-      opacity: 0;
-      transform: translateY(30px);
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      background: var(--bg);
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
 
-    .loaded {
-      opacity: 1;
-      transform: translateY(0);
-      transition: all 0.6s ease;
+    .page{
+      max-width: 1200px;
+      padding: 32px 20px 56px;
+      margin: 0 auto;
+    }
+
+    .header{
+      display:flex; align-items:flex-end; justify-content:space-between; gap:16px; margin-bottom:20px;
+      flex-wrap:wrap;
+    }
+    .title{
+      display:flex; align-items:center; gap:12px;
+    }
+    .title-badge{
+      width:40px; height:40px; border-radius:12px;
+      background: linear-gradient(135deg, var(--gold), var(--gold-600));
+      display:grid; place-items:center; box-shadow: var(--shadow);
+      color:white;
+    }
+    .title h1{
+      margin:0; font-size: clamp(22px, 3vw, 28px); letter-spacing: 0.2px;
+    }
+    .subtitle{
+      margin:4px 0 0; color: var(--muted); font-size: 14px;
+    }
+
+    .filters{
+      width:100%;
+      display:flex; gap:12px; flex-wrap:wrap; align-items:center;
+      background: var(--card);
+      border:1px solid var(--border);
+      border-radius:16px;
+      padding:12px;
+      box-shadow: var(--shadow);
+    }
+    .filter{
+      position:relative; min-width: 220px; flex: 1 1 240px;
+    }
+    .label{
+      display:block; font-size:12px; color:var(--muted); margin: 0 0 6px 4px; letter-spacing: .2px;
+    }
+    .select{
+      position:relative;
+    }
+    .select select{
+      appearance:none; -webkit-appearance:none; -moz-appearance:none;
+      width:100%;
+      padding:12px 44px 12px 14px;
+      border-radius:12px;
+      border:1px solid var(--border);
+      background: var(--card);
+      color: var(--text);
+      font-size:14px;
+      transition: border-color .25s ease, box-shadow .25s ease, transform .2s ease;
+      outline: none;
+    }
+    .select select:hover{ transform: translateY(-1px) }
+    .select select:focus{
+      border-color: var(--gold);
+      box-shadow: 0 0 0 4px color-mix(in oklab, var(--gold) 22%, transparent);
+    }
+    .select::after{
+      content:"";
+      position:absolute; right:12px; top:50%; transform: translateY(-4px);
+      pointer-events:none; width: 10px; height: 10px;
+      background:
+        conic-gradient(from 45deg at 50% 50%, var(--muted) 0 90deg, #0000 0) 0 0/100% 100%;
+      clip-path: polygon(50% 100%, 0 0, 100% 0);
+    }
+    .count{
+      margin-left:auto; font-size:13px; color:var(--muted);
+      padding:8px 10px; background: color-mix(in oklab, var(--card) 85%, var(--bg));
+      border:1px solid var(--border); border-radius:10px;
+    }
+
+    .grid{
+      margin-top:20px;
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 16px;
+    }
+
+    .project-card{
+      position:relative;
+      border-radius:16px;
+      overflow:hidden;
+      background: var(--card);
+      border:1px solid var(--border);
+      box-shadow: var(--shadow);
+      transform: translateZ(0);
+      transition: transform .25s ease, box-shadow .25s ease;
+      isolation: isolate;
+    }
+    .project-card:hover{
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+    }
+    .project-image{
+      width:100%; height: 190px; object-fit:cover; display:block;
+      background: #d1d5db;
+    }
+    .project-body{
+      padding: 12px 12px 14px;
+      display:flex; align-items:flex-start; justify-content:space-between; gap: 10px;
+    }
+    .project-info{
+      min-width:0;
+    }
+    .project-title{
+      margin:0 0 6px;
+      font-size: 16px; font-weight: 700; letter-spacing: .2px;
+    }
+    .project-meta{
+      font-size: 13px; color: var(--muted); display:flex; gap: 10px; align-items:center;
+      white-space: nowrap; overflow:hidden; text-overflow: ellipsis;
+    }
+    .dot{
+      width:6px; height:6px; border-radius:50%; background: var(--gold); display:inline-block;
+    }
+
+    /* Hover Overlay */
+    .overlay{
+      position:absolute; inset:0; display:grid; place-items:center; padding:20px;
+      background: var(--overlay);
+      opacity:0;
+      transform: scale(0.98);
+      transition: opacity .35s ease, transform .35s ease;
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+    }
+    .project-card:hover .overlay{ opacity:1; transform: scale(1) }
+    .overlay-content{
+      text-align:center; color:#fff; max-width: 90%;
+      transform: translateY(10px);
+      transition: transform .35s ease;
+    }
+    .project-card:hover .overlay-content{ transform: translateY(0) }
+    .overlay-icon{
+      width:44px; height:44px;
+      display:grid; place-items:center;
+      margin: 0 auto 10px;
+      border-radius:12px;
+      background: linear-gradient(135deg, var(--gold), var(--gold-600));
+      box-shadow: 0 10px 24px rgba(0,0,0,0.2);
+      color:#fff;
+      opacity:0; transform: scale(.9);
+      transition: opacity .35s ease, transform .35s ease;
+    }
+    .project-card:hover .overlay-icon{ opacity:1; transform: scale(1) }
+    .overlay-title{ margin:6px 0 4px; font-weight:800; letter-spacing:.3px }
+    .overlay-loc{ margin:0 0 8px; font-size:13px; opacity:.95 }
+    .overlay-desc{ margin:0; font-size:13px; opacity:.95; line-height:1.45 }
+
+    /* Enter / Leave animations for filtering */
+    @keyframes cardIn{
+      from{ opacity:0; transform: translateY(8px) scale(.98) }
+      to{ opacity:1; transform: translateY(0) scale(1) }
+    }
+    .enter{
+      animation: cardIn .42s cubic-bezier(.22,.61,.36,1) both;
+    }
+    .leave{
+      opacity:0;
+      transform: translateY(8px) scale(.98);
+      transition: opacity .22s ease, transform .22s ease;
+    }
+
+    /* Empty state */
+    .empty{
+      border:1px dashed var(--border);
+      border-radius:14px;
+      padding:28px;
+      text-align:center;
+      color:var(--muted);
+      background: color-mix(in oklab, var(--card) 86%, var(--bg));
     }
   </style>
 </head>
-
 <body>
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg fixed-top">
-    <div class="container">
-      <a class="navbar-brand d-flex align-items-center" href="index.html">
-        <div class="logo-container me-3">
-          <img src="assets/images/logo.webp" alt="Arab Contractors Logo" class="img-fluid" style="max-height: 40px;" loading="lazy">
+  <main class="page">
+    <section class="header">
+      <div>
+        <div class="title">
+          <div class="title-badge" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+              <path d="M4 20h16M4 10l8-6 8 6M6 10v10M18 10v10M10 20v-6h4v6" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h1>Projects</h1>
         </div>
-        <div>
-          <span class="en-text" data-translate="brand_name">Arab Contractors</span>
-          <span class="ar-text" data-translate="brand_name_ar">المقاولون العرب</span>
-        </div>
-      </a>
+        <p class="subtitle">Explore Arab Contractors' flagship projects across regions.</p>
+      </div>
 
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <i class="fa-solid fa-bars"></i>
-      </button>
+      <div class="count" id="countLabel">0 projects</div>
+    </section>
 
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link" href="index.html" data-translate="nav.home">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="about.html" data-translate="nav.about">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="projects.html" data-translate="nav.projects">Projects</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="leadership.html" data-translate="nav.leadership">Leadership</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="contact.html" data-translate="nav.contact">Contact</a>
-          </li>
-        </ul>
-
-        <div class="navbar-controls d-flex align-items-center ms-3">
-          <button id="langToggle" class="btn btn-outline-primary btn-sm me-2">
-            <span class="en-text">AR</span>
-            <span class="ar-text">EN</span>
-          </button>
-          <button id="themeToggle" class="theme-toggle">
-            <i class="fas fa-moon"></i>
-          </button>
+    <section class="filters" aria-label="Project Filters">
+      <div class="filter">
+        <label class="label" for="destinationSelect">Destination</label>
+        <div class="select">
+          <select id="destinationSelect" aria-label="Destination filter">
+            <option value="all">All Destinations</option>
+          </select>
         </div>
       </div>
-    </div>
-  </nav>
 
-  <!-- Hero Section -->
-  <section class="hero-section">
-    <div class="container">
-      <div class="hero-content text-center" data-aos="fade-up" data-aos-duration="1000">
-        <h1 class="hero-title">
-          <span class="en-text">Our Projects</span>
-          <span class="ar-text">مشاريعنا</span>
-        </h1>
-        <p class="hero-subtitle">
-          <span class="en-text">Discover our world-class construction and infrastructure projects that shape the future</span>
-          <span class="ar-text">اكتشف مشاريع البناء والبنية التحتية عالمية المستوى التي تشكل المستقبل</span>
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Filter Section -->
-  <section class="filter-section">
-    <div class="container">
-      <div class="text-center" data-aos="fade-up" data-aos-delay="200">
-        <div class="filter-buttons">
-          <button class="filter-btn active" data-filter="all">
-            <span class="en-text">All Projects</span>
-            <span class="ar-text">جميع المشاريع</span>
-          </button>
-          <button class="filter-btn" data-filter="infrastructure">
-            <span class="en-text">Infrastructure</span>
-            <span class="ar-text">البنية التحتية</span>
-          </button>
-          <button class="filter-btn" data-filter="commercial">
-            <span class="en-text">Commercial</span>
-            <span class="ar-text">تجاري</span>
-          </button>
-          <button class="filter-btn" data-filter="residential">
-            <span class="en-text">Residential</span>
-            <span class="ar-text">سكني</span>
-          </button>
-          <button class="filter-btn" data-filter="industrial">
-            <span class="en-text">Industrial</span>
-            <span class="ar-text">صناعي</span>
-          </button>
+      <div class="filter">
+        <label class="label" for="locationSelect">Location</label>
+        <div class="select">
+          <select id="locationSelect" aria-label="Location filter">
+            <option value="all">All Locations</option>
+          </select>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Projects Grid -->
-  <section class="projects-section">
-    <div class="container">
-      <div class="row g-4" id="projectsGrid">
-        
-        <!-- Project 1 -->
-        <div class="col-lg-4 col-md-6 project-item" data-category="infrastructure" data-aos="fade-up" data-aos-delay="100">
-          <div class="project-card">
-            <div class="project-image">
-              <img src="https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Metro System" loading="lazy">
-              <div class="project-overlay">
-                <i class="fas fa-eye overlay-icon"></i>
-              </div>
-            </div>
-            <div class="project-content">
-              <span class="project-category">Infrastructure</span>
-              <h3 class="project-title">
-                <span class="en-text">Cairo Metro Line 3</span>
-                <span class="ar-text">خط مترو القاهرة الثالث</span>
-              </h3>
-              <p class="project-description">
-                <span class="en-text">Modern metro system connecting major districts with advanced safety features</span>
-                <span class="ar-text">نظام مترو حديث يربط الأحياء الرئيسية بميزات أمان متقدمة</span>
-              </p>
-              <div class="project-stats">
-                <div class="stat-item">
-                  <span class="stat-value">180k</span>
-                  <span class="stat-label">Sqm</span>
-                </div>
-                <div class="stat-item">
-                  <span class="stat-value">300</span>
-                  <span class="stat-label">Stores</span>
-                </div>
-                <div class="stat-item">
-                  <span class="stat-value">2024</span>
-                  <span class="stat-label">Opening</span>
-                </div>
-              </div>
-              <a href="#" class="project-btn">
-                <span class="en-text">View Details</span>
-                <span class="ar-text">عرض التفاصيل</span>
-                <i class="fas fa-arrow-right"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- Statistics Section -->
-  <section class="py-5" style="background: var(--bg-gray);">
-    <div class="container">
-      <div class="row text-center">
-        <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
-          <div class="stat-card p-4">
-            <div class="stat-icon mb-3">
-              <i class="fas fa-building" style="font-size: 3rem; color: var(--primary-color);"></i>
-            </div>
-            <h3 class="stat-number" data-count="500">0</h3>
-            <p class="stat-text">
-              <span class="en-text">Completed Projects</span>
-              <span class="ar-text">مشروع مكتمل</span>
-            </p>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
-          <div class="stat-card p-4">
-            <div class="stat-icon mb-3">
-              <i class="fas fa-users" style="font-size: 3rem; color: var(--secondary-color);"></i>
-            </div>
-            <h3 class="stat-number" data-count="10000">0</h3>
-            <p class="stat-text">
-              <span class="en-text">Team Members</span>
-              <span class="ar-text">عضو فريق</span>
-            </p>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="300">
-          <div class="stat-card p-4">
-            <div class="stat-icon mb-3">
-              <i class="fas fa-globe" style="font-size: 3rem; color: var(--accent-color);"></i>
-            </div>
-            <h3 class="stat-number" data-count="25">0</h3>
-            <p class="stat-text">
-              <span class="en-text">Countries</span>
-              <span class="ar-text">دولة</span>
-            </p>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="400">
-          <div class="stat-card p-4">
-            <div class="stat-icon mb-3">
-              <i class="fas fa-award" style="font-size: 3rem; color: var(--primary-color);"></i>
-            </div>
-            <h3 class="stat-number" data-count="68">0</h3>
-            <p class="stat-text">
-              <span class="en-text">Years Experience</span>
-              <span class="ar-text">سنة خبرة</span>
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="py-5" style="background: var(--bg-card); border-top: 1px solid var(--border-light);">
-    <div class="container">
-      <div class="row g-4">
-        <div class="col-lg-4 col-md-6">
-          <div class="footer-section">
-            <div class="d-flex align-items-center mb-3">
-              <img src="assets/images/logo.webp" alt="Arab Contractors Logo" class="me-3" style="max-height: 50px;">
-              <h5 class="mb-0">
-                <span class="en-text">Arab Contractors</span>
-                <span class="ar-text">المقاولون العرب</span>
-              </h5>
-            </div>
-            <p class="mb-3" style="color: var(--text-light);">
-              <span class="en-text">Building the future with excellence, innovation, and sustainable development.</span>
-              <span class="ar-text">بناء المستقبل بالتميز والابتكار والتنمية المستدامة.</span>
-            </p>
-          </div>
-        </div>
-        <div class="col-lg-2 col-md-6">
-          <h6 class="mb-3" style="color: var(--text-dark);">
-            <span class="en-text">Quick Links</span>
-            <span class="ar-text">روابط سريعة</span>
-          </h6>
-          <ul class="list-unstyled">
-            <li class="mb-2"><a href="index.html" style="color: var(--text-light); text-decoration: none;">Home</a></li>
-            <li class="mb-2"><a href="about.html" style="color: var(--text-light); text-decoration: none;">About</a></li>
-            <li class="mb-2"><a href="projects.html" style="color: var(--text-light); text-decoration: none;">Projects</a></li>
-            <li class="mb-2"><a href="contact.html" style="color: var(--text-light); text-decoration: none;">Contact</a></li>
-          </ul>
-        </div>
-        <div class="col-lg-3 col-md-6">
-          <h6 class="mb-3" style="color: var(--text-dark);">
-            <span class="en-text">Contact Info</span>
-            <span class="ar-text">معلومات التواصل</span>
-          </h6>
-          <div style="color: var(--text-light);">
-            <p class="mb-2"><i class="fas fa-map-marker-alt me-2"></i>Cairo, Egypt</p>
-            <p class="mb-2"><i class="fas fa-phone me-2"></i>+20 2 1234 5678</p>
-            <p class="mb-2"><i class="fas fa-envelope me-2"></i>info@arabcontractors.com</p>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-6">
-          <h6 class="mb-3" style="color: var(--text-dark);">
-            <span class="en-text">Follow Us</span>
-            <span class="ar-text">تابعنا</span>
-          </h6>
-          <div class="social-links">
-            <a href="#" class="me-3" style="color: var(--text-light); font-size: 1.5rem;"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" class="me-3" style="color: var(--text-light); font-size: 1.5rem;"><i class="fab fa-twitter"></i></a>
-            <a href="#" class="me-3" style="color: var(--text-light); font-size: 1.5rem;"><i class="fab fa-linkedin-in"></i></a>
-            <a href="#" style="color: var(--text-light); font-size: 1.5rem;"><i class="fab fa-instagram"></i></a>
-          </div>
-        </div>
-      </div>
-      <div class="footer-bottom mt-4 pt-4" style="border-top: 1px solid var(--border-light);">
-        <div class="row align-items-center">
-          <div class="col-md-6">
-            <p class="mb-0" style="color: var(--text-light);">
-              <span class="en-text">&copy; 2025 Arab Contractors. All rights reserved.</span>
-              <span class="ar-text">&copy; 2025 المقاولون العرب. جميع الحقوق محفوظة.</span>
-            </p>
-          </div>
-          <div class="col-md-6 text-md-end">
-            <a href="privacy-policy.html" style="color: var(--text-light); text-decoration: none;" class="me-3">Privacy Policy</a>
-            <a href="contact.html" style="color: var(--text-light); text-decoration: none;">Contact</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <section class="grid" id="projectsGrid" aria-live="polite" aria-busy="false"></section>
+  </main>
 
   <script>
-    // Initialize AOS
-    AOS.init({
-      duration: 800,
-      easing: 'ease-in-out',
-      once: true,
-      offset: 100
-    });
-
-    // Language and Theme Management
-    let currentLang = 'en';
-    let currentTheme = 'light';
-
-    // Language Toggle
-    document.getElementById('langToggle').addEventListener('click', function() {
-      currentLang = currentLang === 'en' ? 'ar' : 'en';
-      toggleLanguage();
-    });
-
-    function toggleLanguage() {
-      document.documentElement.setAttribute('dir', currentLang === 'ar' ? 'rtl' : 'ltr');
-      document.documentElement.setAttribute('lang', currentLang);
-      
-      // Show/hide language-specific content
-      const enElements = document.querySelectorAll('.en-text');
-      const arElements = document.querySelectorAll('.ar-text');
-      
-      if (currentLang === 'ar') {
-        enElements.forEach(el => el.style.display = 'none');
-        arElements.forEach(el => el.style.display = 'inline');
-      } else {
-        enElements.forEach(el => el.style.display = 'inline');
-        arElements.forEach(el => el.style.display = 'none');
+    // Sample Data (at least 6 projects)
+    const projects = [
+      {
+        id: 1,
+        title: "New Administrative Capital Central Business District",
+        destination: "Egypt",
+        location: "Cairo",
+        image: "https://picsum.photos/seed/cairo-cbd/800/600",
+        description: "Iconic high-rise development forming the heart of Egypt’s new capital."
+      },
+      {
+        id: 2,
+        title: "Alexandria Waterfront Revitalization",
+        destination: "Egypt",
+        location: "Alexandria",
+        image: "https://picsum.photos/seed/alex-waterfront/800/600",
+        description: "Upgrading coastal infrastructure and public realm along the Corniche."
+      },
+      {
+        id: 3,
+        title: "Sheikh Zayed Bridge Enhancement",
+        destination: "UAE",
+        location: "Abu Dhabi",
+        image: "https://picsum.photos/seed/abudhabi-bridge/800/600",
+        description: "Structural enhancements and intelligent transport systems integration."
+      },
+      {
+        id: 4,
+        title: "Dubai Creek Mixed-Use Park",
+        destination: "UAE",
+        location: "Dubai",
+        image: "https://picsum.photos/seed/dubai-creek/800/600",
+        description: "Green waterfront destination blending leisure with commerce."
+      },
+      {
+        id: 5,
+        title: "King Salman Road Interchange",
+        destination: "KSA",
+        location: "Riyadh",
+        image: "https://picsum.photos/seed/riyadh-road/800/600",
+        description: "High-capacity grade-separated interchange improving city mobility."
+      },
+      {
+        id: 6,
+        title: "Jeddah Waterfront Promenade",
+        destination: "KSA",
+        location: "Jeddah",
+        image: "https://picsum.photos/seed/jeddah-promenade/800/600",
+        description: "Public realm upgrades with resilient coastal protection solutions."
+      },
+      {
+        id: 7,
+        title: "Doha Metro Extension",
+        destination: "Qatar",
+        location: "Doha",
+        image: "https://picsum.photos/seed/doha-metro/800/600",
+        description: "Underground stations and tunneling for rapid urban transit."
+      },
+      {
+        id: 8,
+        title: "Lusail Marina District Infrastructure",
+        destination: "Qatar",
+        location: "Lusail",
+        image: "https://picsum.photos/seed/lusail-marina/800/600",
+        description: "Land development, utilities, and roadworks for a modern marina city."
       }
+    ];
+
+    // DOM refs
+    const destinationSelect = document.getElementById('destinationSelect');
+    const locationSelect = document.getElementById('locationSelect');
+    const projectsGrid = document.getElementById('projectsGrid');
+    const countLabel = document.getElementById('countLabel');
+
+    // Populate dropdowns
+    function uniqueDestinations(list){
+      return Array.from(new Set(list.map(p => p.destination))).sort();
+    }
+    function uniqueLocations(list, destination){
+      const scoped = destination && destination !== 'all'
+        ? list.filter(p => p.destination === destination)
+        : list;
+      return Array.from(new Set(scoped.map(p => p.location))).sort();
     }
 
-    // Theme Toggle
-    document.getElementById('themeToggle').addEventListener('click', function() {
-      currentTheme = currentTheme === 'light' ? 'dark' : 'light';
-      document.documentElement.setAttribute('data-theme', currentTheme);
-      
-      const icon = this.querySelector('i');
-      icon.className = currentTheme === 'light' ? 'fas fa-moon' : 'fas fa-sun';
-    });
+    function fillDestinationOptions(){
+      const dests = uniqueDestinations(projects);
+      destinationSelect.innerHTML = `<option value="all">All Destinations</option>` +
+        dests.map(d => `<option value="${d}">${d}</option>`).join('');
+    }
 
-    // Project Filtering
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    const projectItems = document.querySelectorAll('.project-item');
+    function fillLocationOptions(destValue){
+      const locs = uniqueLocations(projects, destValue);
+      locationSelect.innerHTML = `<option value="all">All Locations</option>` +
+        locs.map(l => `<option value="${l}">${l}</option>`).join('');
+    }
 
-    filterButtons.forEach(button => {
-      button.addEventListener('click', function() {
-        // Remove active class from all buttons
-        filterButtons.forEach(btn => btn.classList.remove('active'));
-        // Add active class to clicked button
-        this.classList.add('active');
-        
-        const filterValue = this.getAttribute('data-filter');
-        
-        projectItems.forEach(item => {
-          if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
-            item.style.display = 'block';
-            item.classList.add('loaded');
-          } else {
-            item.style.display = 'none';
-          }
+    // Filtering
+    function applyFilters(){
+      const dest = destinationSelect.value;
+      const loc = locationSelect.value;
+
+      let filtered = projects.slice();
+      if(dest !== 'all') filtered = filtered.filter(p => p.destination === dest);
+      if(loc !== 'all') filtered = filtered.filter(p => p.location === loc);
+
+      renderProjects(filtered);
+      updateCount(filtered.length);
+    }
+
+    // Render helpers
+    function updateCount(n){
+      countLabel.textContent = `${n} project${n === 1 ? '' : 's'}`;
+    }
+
+    function createCard(p){
+      const card = document.createElement('article');
+      card.className = 'project-card enter';
+      card.setAttribute('tabindex','0');
+      card.innerHTML = `
+        <img class="project-image" src="${p.image}" alt="${p.title}" loading="lazy">
+        <div class="project-body">
+          <div class="project-info">
+            <h3 class="project-title" title="${p.title}">${p.title}</h3>
+            <div class="project-meta" title="${p.destination} • ${p.location}">
+              <span class="dot" aria-hidden="true"></span>
+              <span>${p.destination}</span>
+              <span>•</span>
+              <span>${p.location}</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="overlay" aria-hidden="true">
+          <div class="overlay-content">
+            <div class="overlay-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M4 20h16M4 10l8-6 8 6M6 10v10M18 10v10M10 20v-6h4v6" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="overlay-title">${p.title}</div>
+            <div class="overlay-loc">${p.destination} • ${p.location}</div>
+            <p class="overlay-desc">${p.description}</p>
+          </div>
+        </div>
+      `;
+      return card;
+    }
+
+    // Smooth list transition: fade out old → render new with staggered enter
+    function renderProjects(list){
+      // 1) Leave animation for current cards
+      const currentCards = Array.from(projectsGrid.children);
+      if(currentCards.length){
+        projectsGrid.setAttribute('aria-busy','true');
+        currentCards.forEach((el, i) => {
+          el.classList.add('leave');
+          el.style.transitionDelay = `${i * 60}ms`;
         });
-      });
-    });
 
-    // Counter Animation
-    function animateCounters() {
-      const counters = document.querySelectorAll('.stat-number');
-      
-      counters.forEach(counter => {
-        const target = parseInt(counter.getAttribute('data-count'));
-        const duration = 2000;
-        const increment = target / (duration / 16);
-        let current = 0;
-        
-        const timer = setInterval(() => {
-          current += increment;
-          if (current >= target) {
-            counter.textContent = target.toLocaleString();
-            clearInterval(timer);
-          } else {
-            counter.textContent = Math.floor(current).toLocaleString();
-          }
-        }, 16);
-      });
-    }
-
-    // Intersection Observer for counter animation
-    const observerOptions = {
-      threshold: 0.5,
-      rootMargin: '0px 0px -100px 0px'
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          animateCounters();
-          observer.unobserve(entry.target);
-        }
-      });
-    }, observerOptions);
-
-    // Observe the statistics section
-    const statsSection = document.querySelector('.py-5[style*="background: var(--bg-gray)"]');
-    if (statsSection) {
-      observer.observe(statsSection);
-    }
-
-    // Smooth scrolling for navigation links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          target.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
-        }
-      });
-    });
-
-    // Navbar scroll effect
-    window.addEventListener('scroll', function() {
-      const navbar = document.querySelector('.navbar');
-      if (window.scrollY > 100) {
-        navbar.style.background = currentTheme === 'light' 
-          ? 'rgba(255, 255, 255, 0.98)' 
-          : 'rgba(17, 24, 39, 0.98)';
-        navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
-      } else {
-        navbar.style.background = currentTheme === 'light' 
-          ? 'rgba(255, 255, 255, 0.95)' 
-          : 'rgba(17, 24, 39, 0.95)';
-        navbar.style.boxShadow = 'none';
-      }
-    });
-
-    // Initialize language display
-    toggleLanguage();
-
-    // Loading animation for project cards
-    window.addEventListener('load', function() {
-      projectItems.forEach((item, index) => {
+        // Wait for the last leave to finish, then swap content
+        const totalLeave = (currentCards.length - 1) * 60 + 240;
         setTimeout(() => {
-          item.classList.add('loaded');
-        }, index * 100);
-      });
-    });
-
-    // Add hover sound effect (optional)
-    const projectCards = document.querySelectorAll('.project-card');
-    projectCards.forEach(card => {
-      card.addEventListener('mouseenter', function() {
-        this.style.transform = 'translateY(-15px) scale(1.02)';
-      });
-      
-      card.addEventListener('mouseleave', function() {
-        this.style.transform = 'translateY(0) scale(1)';
-      });
-    });
-
-    // Parallax effect for hero section
-    window.addEventListener('scroll', function() {
-      const scrolled = window.pageYOffset;
-      const heroSection = document.querySelector('.hero-section');
-      if (heroSection) {
-        heroSection.style.transform = `translateY(${scrolled * 0.5}px)`;
+          projectsGrid.innerHTML = '';
+          insertNew(list);
+          projectsGrid.setAttribute('aria-busy','false');
+        }, totalLeave);
+      }else{
+        // First render (no leave needed)
+        insertNew(list);
       }
+    }
+
+    function insertNew(list){
+      if(!list.length){
+        const empty = document.createElement('div');
+        empty.className = 'empty';
+        empty.textContent = 'No projects match your filters.';
+        projectsGrid.appendChild(empty);
+        return;
+      }
+      list.forEach((p, i) => {
+        const card = createCard(p);
+        card.style.animationDelay = `${i * 70}ms`;
+        projectsGrid.appendChild(card);
+      });
+      // Clean up enter class after all run (optional)
+      const totalEnter = (list.length - 1) * 70 + 500;
+      setTimeout(() => {
+        projectsGrid.querySelectorAll('.enter').forEach(el => el.classList.remove('enter'));
+      }, totalEnter);
+    }
+
+    // Events
+    destinationSelect.addEventListener('change', () => {
+      fillLocationOptions(destinationSelect.value);
+      locationSelect.value = 'all';
+      applyFilters();
     });
+    locationSelect.addEventListener('change', applyFilters);
+
+    // Init
+    fillDestinationOptions();
+    fillLocationOptions('all');
+    applyFilters();
   </script>
 </body>
-
 </html>
-                <div class="stat-item">
-                  <span class="stat-value">42km</span>
-                  <span class="stat-label">Length</span>
-                </div>
-                <div class="stat-item">
-                  <span class="stat-value">34</span>
-                  <span class="stat-label">Stations</span>
-                </div>
-                <div class="stat-item">
-                  <span class="stat-value">2024</span>
-                  <span class="stat-label">Completed</span>
-                </div>
-              </div>
-              <a href="#" class="project-btn">
-                <span class="en-text">View Details</span>
-                <span class="ar-text">عرض التفاصيل</span>
-                <i class="fas fa-arrow-right"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Project 2 -->
-        <div class="col-lg-4 col-md-6 project-item" data-category="commercial" data-aos="fade-up" data-aos-delay="200">
-          <div class="project-card">
-            <div class="project-image">
-              <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Business Tower" loading="lazy">
-              <div class="project-overlay">
-                <i class="fas fa-eye overlay-icon"></i>
-              </div>
-            </div>
-            <div class="project-content">
-              <span class="project-category">Commercial</span>
-              <h3 class="project-title">
-                <span class="en-text">New Capital Business District</span>
-                <span class="ar-text">الحي التجاري بالعاصمة الإدارية</span>
-              </h3>
-              <p class="project-description">
-                <span class="en-text">State-of-the-art business towers with sustainable design and smart building technology</span>
-                <span class="ar-text">أبراج تجارية حديثة بتصميم مستدام وتقنية المباني الذكية</span>
-              </p>
-              <div class="project-stats">
-                <div class="stat-item">
-                  <span class="stat-value">60</span>
-                  <span class="stat-label">Floors</span>
-                </div>
-                <div class="stat-item">
-                  <span class="stat-value">150k</span>
-                  <span class="stat-label">Sqm</span>
-                </div>
-                <div class="stat-item">
-                  <span class="stat-value">2025</span>
-                  <span class="stat-label">Delivery</span>
-                </div>
-              </div>
-              <a href="#" class="project-btn">
-                <span class="en-text">View Details</span>
-                <span class="ar-text">عرض التفاصيل</span>
-                <i class="fas fa-arrow-right"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Project 3 -->
-        <div class="col-lg-4 col-md-6 project-item" data-category="infrastructure" data-aos="fade-up" data-aos-delay="300">
-          <div class="project-card">
-            <div class="project-image">
-              <img src="https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Dam Project" loading="lazy">
-              <div class="project-overlay">
-                <i class="fas fa-eye overlay-icon"></i>
-              </div>
-            </div>
-            <div class="project-content">
-              <span class="project-category">Infrastructure</span>
-              <h3 class="project-title">
-                <span class="en-text">Aswan High Dam Extension</span>
-                <span class="ar-text">توسعة السد العالي بأسوان</span>
-              </h3>
-              <p class="project-description">
-                <span class="en-text">Major infrastructure project to increase water storage capacity and power generation</span>
-                <span class="ar-text">مشروع بنية تحتية كبير لزيادة سعة تخزين المياه وتوليد الكهرباء</span>
-              </p>
-              <div class="project-stats">
-                <div class="stat-item">
-                  <span class="stat-value">2.1B</span>
-                  <span class="stat-label">m³ Water</span>
-                </div>
-                <div class="stat-item">
-                  <span class="stat-value">400MW</span>
-                  <span class="stat-label">Power</span>
-                </div>
-                <div class="stat-item">
-                  <span class="stat-value">2023</span>
-                  <span class="stat-label">Completed</span>
-                </div>
-              </div>
-              <a href="#" class="project-btn">
-                <span class="en-text">View Details</span>
-                <span class="ar-text">عرض التفاصيل</span>
-                <i class="fas fa-arrow-right"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Project 4 -->
-        <div class="col-lg-4 col-md-6 project-item" data-category="residential" data-aos="fade-up" data-aos-delay="400">
-          <div class="project-card">
-            <div class="project-image">
-              <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Residential Complex" loading="lazy">
-              <div class="project-overlay">
-                <i class="fas fa-eye overlay-icon"></i>
-              </div>
-            </div>
-            <div class="project-content">
-              <span class="project-category">Residential</span>
-              <h3 class="project-title">
-                <span class="en-text">Madinaty Residential Complex</span>
-                <span class="ar-text">مجمع مدينتي السكني</span>
-              </h3>
-              <p class="project-description">
-                <span class="en-text">Luxury residential development with green spaces and modern amenities</span>
-                <span class="ar-text">تطوير سكني فاخر مع مساحات خضراء ووسائل راحة حديثة</span>
-              </p>
-              <div class="project-stats">
-                <div class="stat-item">
-                  <span class="stat-value">1200</span>
-                  <span class="stat-label">Units</span>
-                </div>
-                <div class="stat-item">
-                  <span class="stat-value">85%</span>
-                  <span class="stat-label">Green Area</span>
-                </div>
-                <div class="stat-item">
-                  <span class="stat-value">2024</span>
-                  <span class="stat-label">Delivery</span>
-                </div>
-              </div>
-              <a href="#" class="project-btn">
-                <span class="en-text">View Details</span>
-                <span class="ar-text">عرض التفاصيل</span>
-                <i class="fas fa-arrow-right"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Project 5 -->
-        <div class="col-lg-4 col-md-6 project-item" data-category="industrial" data-aos="fade-up" data-aos-delay="500">
-          <div class="project-card">
-            <div class="project-image">
-              <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Industrial Complex" loading="lazy">
-              <div class="project-overlay">
-                <i class="fas fa-eye overlay-icon"></i>
-              </div>
-            </div>
-            <div class="project-content">
-              <span class="project-category">Industrial</span>
-              <h3 class="project-title">
-                <span class="en-text">Suez Industrial Zone</span>
-                <span class="ar-text">المنطقة الصناعية بالسويس</span>
-              </h3>
-              <p class="project-description">
-                <span class="en-text">Modern industrial facilities with advanced logistics and manufacturing capabilities</span>
-                <span class="ar-text">مرافق صناعية حديثة مع قدرات لوجستية وتصنيعية متقدمة</span>
-              </p>
-              <div class="project-stats">
-                <div class="stat-item">
-                  <span class="stat-value">500</span>
-                  <span class="stat-label">Hectares</span>
-                </div>
-                <div class="stat-item">
-                  <span class="stat-value">50</span>
-                  <span class="stat-label">Factories</span>
-                </div>
-                <div class="stat-item">
-                  <span class="stat-value">2025</span>
-                  <span class="stat-label">Phase 1</span>
-                </div>
-              </div>
-              <a href="#" class="project-btn">
-                <span class="en-text">View Details</span>
-                <span class="ar-text">عرض التفاصيل</span>
-                <i class="fas fa-arrow-right"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Project 6 -->
-        <div class="col-lg-4 col-md-6 project-item" data-category="commercial" data-aos="fade-up" data-aos-delay="600">
-          <div class="project-card">
-            <div class="project-image">
-              <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Shopping Mall" loading="lazy">
-              <div class="project-overlay">
-                <i class="fas fa-eye overlay-icon"></i>
-              </div>
-            </div>
-            <div class="project-content">
-              <span class="project-category">Commercial</span>
-              <h3 class="project-title">
-                <span class="en-text">Almaza Bay Mall</span>
-                <span class="ar-text">مول الماظة باي</span>
-              </h3>
-              <p class="project-description">
-                <span class="en-text">Premium shopping destination with entertainment facilities and dining options</span>
-                <span class="ar-text">وجهة تسوق راقية مع مرافق ترفيهية وخيارات طعام متنوعة</span>
-              </p>
-              <div class="project-stats">
